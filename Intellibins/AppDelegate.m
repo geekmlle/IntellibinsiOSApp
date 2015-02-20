@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "ListViewController.h"
+#import "TutorialViewController.h"
+
+#define FORCE_TUTORIAL 1
+#define TUTORIAL_KEY @"kIntellibinTutorial"
 
 @interface AppDelegate ()
 
@@ -16,7 +21,28 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    ListViewController *mainVC = [[ListViewController alloc] init];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:mainVC];
+    [self.window setRootViewController:nvc];
+    
+    //Checking if it's first time launch, if so, show tutorial
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    if(![defaults boolForKey:TUTORIAL_KEY] || FORCE_TUTORIAL)
+    {
+        TutorialViewController *tutorial = [[TutorialViewController alloc] init];
+        [nvc pushViewController:tutorial animated:NO];
+        
+        [defaults setBool:YES forKey:TUTORIAL_KEY];
+        [defaults synchronize];
+    }
+    
     return YES;
 }
 

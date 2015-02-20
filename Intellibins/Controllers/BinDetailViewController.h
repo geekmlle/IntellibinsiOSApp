@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BinDetailViewController.h
 //  Intellibins
 //
 //  Created by Ben on 20/2/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BinDetailViewController : UIViewController
 
 @end
-

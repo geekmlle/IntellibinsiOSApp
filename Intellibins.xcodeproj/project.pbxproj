@@ -26,6 +26,8 @@
 		490875E71A9711B300BA5338 /* BinDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490875E51A9711B300BA5338 /* BinDetailViewController.xib */; };
 		490875EB1A9711DC00BA5338 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 490875E91A9711DC00BA5338 /* MapViewController.m */; };
 		490875EC1A9711DC00BA5338 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490875EA1A9711DC00BA5338 /* MapViewController.xib */; };
+		490875F41A981EF500BA5338 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490875F31A981EF500BA5338 /* UIKit.framework */; };
+		490875F61A981EF900BA5338 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490875F51A981EF900BA5338 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		490875E81A9711DC00BA5338 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Controllers/MapViewController.h; sourceTree = "<group>"; };
 		490875E91A9711DC00BA5338 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = Controllers/MapViewController.m; sourceTree = "<group>"; };
 		490875EA1A9711DC00BA5338 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = Controllers/MapViewController.xib; sourceTree = "<group>"; };
+		490875F31A981EF500BA5338 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		490875F51A981EF900BA5338 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490875F61A981EF900BA5338 /* AVFoundation.framework in Frameworks */,
+				490875F41A981EF500BA5338 /* UIKit.framework in Frameworks */,
 				490875D31A97101A00BA5338 /* CoreLocation.framework in Frameworks */,
 				490875D11A970FDE00BA5338 /* libsqlite3.dylib in Frameworks */,
 				490875CF1A970F9C00BA5338 /* MapKit.framework in Frameworks */,
@@ -191,6 +197,8 @@
 		490875CD1A970F8300BA5338 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				490875F51A981EF900BA5338 /* AVFoundation.framework */,
+				490875F31A981EF500BA5338 /* UIKit.framework */,
 				490875D21A97101A00BA5338 /* CoreLocation.framework */,
 				490875D01A970FDE00BA5338 /* libsqlite3.dylib */,
 				490875CE1A970F9C00BA5338 /* MapKit.framework */,
@@ -503,6 +511,7 @@
 				490875B51A9709EC00BA5338 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		490875B61A9709EC00BA5338 /* Build configuration list for PBXNativeTarget "IntellibinsTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +520,7 @@
 				490875B81A9709EC00BA5338 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

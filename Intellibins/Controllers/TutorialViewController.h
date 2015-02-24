@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TutorialViewController : UIViewController
+@interface TutorialViewController : UIViewController <UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 {
-    UIPageControl *pageControl;
-    UIImageView *imageView;
-    UILabel *description;
+    IBOutlet UICollectionView *_collectionView;
+    IBOutlet UIScrollView *_scrollView;
+    IBOutlet UIView *img1;
+    IBOutlet UIView *img2;
+    IBOutlet UIView *img3;
 }
 
 - (IBAction)getStartedClicked:(id)sender;

@@ -28,6 +28,22 @@
 		490875EC1A9711DC00BA5338 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490875EA1A9711DC00BA5338 /* MapViewController.xib */; };
 		490875F41A981EF500BA5338 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490875F31A981EF500BA5338 /* UIKit.framework */; };
 		490875F61A981EF900BA5338 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490875F51A981EF900BA5338 /* AVFoundation.framework */; };
+		490875FA1A9C504900BA5338 /* TutorialViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 490875F81A9C504900BA5338 /* TutorialViewCell.m */; };
+		4908760C1A9C5C8400BA5338 /* button-hover.png in Resources */ = {isa = PBXBuildFile; fileRef = 490875FD1A9C5C8400BA5338 /* button-hover.png */; };
+		4908760D1A9C5C8400BA5338 /* button-hover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 490875FE1A9C5C8400BA5338 /* button-hover@2x.png */; };
+		4908760E1A9C5C8400BA5338 /* button-hover@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 490875FF1A9C5C8400BA5338 /* button-hover@3x.png */; };
+		4908760F1A9C5C8400BA5338 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 490876001A9C5C8400BA5338 /* button.png */; };
+		490876101A9C5C8400BA5338 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 490876011A9C5C8400BA5338 /* button@2x.png */; };
+		490876111A9C5C8400BA5338 /* button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 490876021A9C5C8400BA5338 /* button@3x.png */; };
+		490876121A9C5C8400BA5338 /* tutorial1.png in Resources */ = {isa = PBXBuildFile; fileRef = 490876031A9C5C8400BA5338 /* tutorial1.png */; };
+		490876131A9C5C8400BA5338 /* tutorial1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 490876041A9C5C8400BA5338 /* tutorial1@2x.png */; };
+		490876141A9C5C8400BA5338 /* tutorial1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 490876051A9C5C8400BA5338 /* tutorial1@3x.png */; };
+		490876151A9C5C8400BA5338 /* tutorial2.png in Resources */ = {isa = PBXBuildFile; fileRef = 490876061A9C5C8400BA5338 /* tutorial2.png */; };
+		490876161A9C5C8400BA5338 /* tutorial2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 490876071A9C5C8400BA5338 /* tutorial2@2x.png */; };
+		490876171A9C5C8400BA5338 /* tutorial2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 490876081A9C5C8400BA5338 /* tutorial2@3x.png */; };
+		490876181A9C5C8400BA5338 /* tutorial3.png in Resources */ = {isa = PBXBuildFile; fileRef = 490876091A9C5C8400BA5338 /* tutorial3.png */; };
+		490876191A9C5C8400BA5338 /* tutorial3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4908760A1A9C5C8400BA5338 /* tutorial3@2x.png */; };
+		4908761A1A9C5C8400BA5338 /* tutorial3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4908760B1A9C5C8400BA5338 /* tutorial3@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +88,23 @@
 		490875EA1A9711DC00BA5338 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = Controllers/MapViewController.xib; sourceTree = "<group>"; };
 		490875F31A981EF500BA5338 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		490875F51A981EF900BA5338 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		490875F71A9C504900BA5338 /* TutorialViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialViewCell.h; path = Cells/TutorialViewCell.h; sourceTree = "<group>"; };
+		490875F81A9C504900BA5338 /* TutorialViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialViewCell.m; path = Cells/TutorialViewCell.m; sourceTree = "<group>"; };
+		490875FD1A9C5C8400BA5338 /* button-hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-hover.png"; sourceTree = "<group>"; };
+		490875FE1A9C5C8400BA5338 /* button-hover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-hover@2x.png"; sourceTree = "<group>"; };
+		490875FF1A9C5C8400BA5338 /* button-hover@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-hover@3x.png"; sourceTree = "<group>"; };
+		490876001A9C5C8400BA5338 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		490876011A9C5C8400BA5338 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
+		490876021A9C5C8400BA5338 /* button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@3x.png"; sourceTree = "<group>"; };
+		490876031A9C5C8400BA5338 /* tutorial1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial1.png; sourceTree = "<group>"; };
+		490876041A9C5C8400BA5338 /* tutorial1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial1@2x.png"; sourceTree = "<group>"; };
+		490876051A9C5C8400BA5338 /* tutorial1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial1@3x.png"; sourceTree = "<group>"; };
+		490876061A9C5C8400BA5338 /* tutorial2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial2.png; sourceTree = "<group>"; };
+		490876071A9C5C8400BA5338 /* tutorial2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial2@2x.png"; sourceTree = "<group>"; };
+		490876081A9C5C8400BA5338 /* tutorial2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial2@3x.png"; sourceTree = "<group>"; };
+		490876091A9C5C8400BA5338 /* tutorial3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial3.png; sourceTree = "<group>"; };
+		4908760A1A9C5C8400BA5338 /* tutorial3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial3@2x.png"; sourceTree = "<group>"; };
+		4908760B1A9C5C8400BA5338 /* tutorial3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial3@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +158,7 @@
 				490875C51A970DFA00BA5338 /* Util.h */,
 				490875C61A970DFA00BA5338 /* Util.m */,
 				490875BE1A970D6E00BA5338 /* Models */,
+				490875FC1A9C504D00BA5338 /* Cells */,
 				490875BC1A970D6300BA5338 /* ViewControllers */,
 				4908759D1A9709EC00BA5338 /* Main.storyboard */,
 				490875A01A9709EC00BA5338 /* Images.xcassets */,
@@ -183,6 +217,21 @@
 		490875BD1A970D6800BA5338 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				490875FD1A9C5C8400BA5338 /* button-hover.png */,
+				490875FE1A9C5C8400BA5338 /* button-hover@2x.png */,
+				490875FF1A9C5C8400BA5338 /* button-hover@3x.png */,
+				490876001A9C5C8400BA5338 /* button.png */,
+				490876011A9C5C8400BA5338 /* button@2x.png */,
+				490876021A9C5C8400BA5338 /* button@3x.png */,
+				490876031A9C5C8400BA5338 /* tutorial1.png */,
+				490876041A9C5C8400BA5338 /* tutorial1@2x.png */,
+				490876051A9C5C8400BA5338 /* tutorial1@3x.png */,
+				490876061A9C5C8400BA5338 /* tutorial2.png */,
+				490876071A9C5C8400BA5338 /* tutorial2@2x.png */,
+				490876081A9C5C8400BA5338 /* tutorial2@3x.png */,
+				490876091A9C5C8400BA5338 /* tutorial3.png */,
+				4908760A1A9C5C8400BA5338 /* tutorial3@2x.png */,
+				4908760B1A9C5C8400BA5338 /* tutorial3@3x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -205,6 +254,15 @@
 			);
 			name = Frameworks;
 			path = Intellibins;
+			sourceTree = "<group>";
+		};
+		490875FC1A9C504D00BA5338 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				490875F71A9C504900BA5338 /* TutorialViewCell.h */,
+				490875F81A9C504900BA5338 /* TutorialViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,13 +345,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4908760F1A9C5C8400BA5338 /* button.png in Resources */,
+				490876191A9C5C8400BA5338 /* tutorial3@2x.png in Resources */,
+				490876171A9C5C8400BA5338 /* tutorial2@3x.png in Resources */,
+				490876111A9C5C8400BA5338 /* button@3x.png in Resources */,
+				4908760E1A9C5C8400BA5338 /* button-hover@3x.png in Resources */,
+				4908761A1A9C5C8400BA5338 /* tutorial3@3x.png in Resources */,
+				490876141A9C5C8400BA5338 /* tutorial1@3x.png in Resources */,
+				490876131A9C5C8400BA5338 /* tutorial1@2x.png in Resources */,
+				4908760C1A9C5C8400BA5338 /* button-hover.png in Resources */,
+				490876181A9C5C8400BA5338 /* tutorial3.png in Resources */,
 				4908759F1A9709EC00BA5338 /* Main.storyboard in Resources */,
+				490876121A9C5C8400BA5338 /* tutorial1.png in Resources */,
 				490875DD1A97118500BA5338 /* TutorialViewController.xib in Resources */,
+				4908760D1A9C5C8400BA5338 /* button-hover@2x.png in Resources */,
 				490875D81A97116600BA5338 /* ListViewController.xib in Resources */,
 				490875A41A9709EC00BA5338 /* LaunchScreen.xib in Resources */,
+				490876151A9C5C8400BA5338 /* tutorial2.png in Resources */,
 				490875EC1A9711DC00BA5338 /* MapViewController.xib in Resources */,
 				490875A11A9709EC00BA5338 /* Images.xcassets in Resources */,
+				490876101A9C5C8400BA5338 /* button@2x.png in Resources */,
 				490875E71A9711B300BA5338 /* BinDetailViewController.xib in Resources */,
+				490876161A9C5C8400BA5338 /* tutorial2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +390,7 @@
 				490875EB1A9711DC00BA5338 /* MapViewController.m in Sources */,
 				490875DC1A97118500BA5338 /* TutorialViewController.m in Sources */,
 				490875D71A97116600BA5338 /* ListViewController.m in Sources */,
+				490875FA1A9C504900BA5338 /* TutorialViewCell.m in Sources */,
 				490875991A9709EC00BA5338 /* Intellibins.xcdatamodeld in Sources */,
 				490875931A9709EC00BA5338 /* main.m in Sources */,
 			);

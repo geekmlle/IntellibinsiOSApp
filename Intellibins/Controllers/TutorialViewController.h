@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TutorialViewController : UIViewController <UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface TutorialViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 {
     IBOutlet UICollectionView *_collectionView;
     IBOutlet UIScrollView *_scrollView;

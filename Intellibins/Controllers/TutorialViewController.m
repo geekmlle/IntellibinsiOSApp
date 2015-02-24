@@ -22,26 +22,16 @@
     [self.navigationController setNavigationBarHidden:YES];
     
     [_collectionView registerClass:[TutorialViewCell class] forCellWithReuseIdentifier:@"CellIdentifier"];
+    [_collectionView setHidden:YES];
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    CGSize screenSize = self.view.frame.size;
-    NSLog(@"%@", NSStringFromCGSize(screenSize));
+    [_collectionView setHidden:NO];
+  //  CGSize screenSize = self.view.frame.size;
+//    NSLog(@"%@", NSStringFromCGSize(screenSize));
     
     [_collectionView setFrame:self.view.frame];
-    //[_scrollView setContentSize:CGSizeMake(screenSize.width * 3, 1)];
-    
-/*
-    CGRect frame = CGRectMake(0, -20, screenSize.width, screenSize.height);
-    [img1 setFrame:frame];
-    
-    frame.origin.x += screenSize.width;
-    [img2 setFrame:frame];
-    
-    frame.origin.x += screenSize.width;
-    [img3 setFrame:frame];
-    */
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -59,11 +49,6 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    
-}
-
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -77,28 +62,16 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return self.view.frame.size;
+    CGSize size = [UIScreen mainScreen].bounds.size;
+    NSLog(@"%@", NSStringFromCGSize(size));
+    return size;
 }
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%ld", (long)indexPath.row);
-    
     TutorialViewCell *cell = (TutorialViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CellIdentifier" forIndexPath:indexPath];
-    /*
-    if(indexPath.row == 0)
-    {
-        [cell.mainImg setImage:[UIImage imageNamed:@"tutorial1"]];
-        [cell.descriptionLabel setText:@"Find the nearest recycling bins within walking distance."];
-    }
-    else if(indexPath.row == 1)
-    {
-        [cell.mainImg setImage:[UIImage imageNamed:@"tutorial2"]];
-        [cell.descriptionLabel setText:@"Learn about which stores take stuff back."];
-    }
-    */
-    cell.backgroundColor = [UIColor blueColor];
+    cell.backgroundColor = [UIColor clearColor];
     
     switch(indexPath.row % 3)
     {

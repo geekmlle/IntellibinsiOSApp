@@ -10,7 +10,8 @@
 
 @interface TutorialViewCell : UICollectionViewCell
 
-@property (nonatomic, retain) UIImageView *mainImg;
-@property (nonatomic, retain) UILabel *descriptionLabel;
+@property (nonatomic, assign) IBOutlet UIView *mainView;
+@property (nonatomic, assign) IBOutlet UIImageView *mainImg;
+@property (nonatomic, retain) IBOutlet UILabel *descriptionLabel;
 
 @end

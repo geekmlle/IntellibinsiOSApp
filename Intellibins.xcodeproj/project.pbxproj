@@ -44,6 +44,7 @@
 		490876181A9C5C8400BA5338 /* tutorial3.png in Resources */ = {isa = PBXBuildFile; fileRef = 490876091A9C5C8400BA5338 /* tutorial3.png */; };
 		490876191A9C5C8400BA5338 /* tutorial3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4908760A1A9C5C8400BA5338 /* tutorial3@2x.png */; };
 		4908761A1A9C5C8400BA5338 /* tutorial3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4908760B1A9C5C8400BA5338 /* tutorial3@3x.png */; };
+		4908761C1A9C704600BA5338 /* TutorialViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4908761B1A9C704600BA5338 /* TutorialViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		490876091A9C5C8400BA5338 /* tutorial3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial3.png; sourceTree = "<group>"; };
 		4908760A1A9C5C8400BA5338 /* tutorial3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial3@2x.png"; sourceTree = "<group>"; };
 		4908760B1A9C5C8400BA5338 /* tutorial3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial3@3x.png"; sourceTree = "<group>"; };
+		4908761B1A9C704600BA5338 /* TutorialViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TutorialViewCell.xib; path = Cells/TutorialViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 			children = (
 				490875F71A9C504900BA5338 /* TutorialViewCell.h */,
 				490875F81A9C504900BA5338 /* TutorialViewCell.m */,
+				4908761B1A9C704600BA5338 /* TutorialViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				490876181A9C5C8400BA5338 /* tutorial3.png in Resources */,
 				4908759F1A9709EC00BA5338 /* Main.storyboard in Resources */,
 				490876121A9C5C8400BA5338 /* tutorial1.png in Resources */,
+				4908761C1A9C704600BA5338 /* TutorialViewCell.xib in Resources */,
 				490875DD1A97118500BA5338 /* TutorialViewController.xib in Resources */,
 				4908760D1A9C5C8400BA5338 /* button-hover@2x.png in Resources */,
 				490875D81A97116600BA5338 /* ListViewController.xib in Resources */,

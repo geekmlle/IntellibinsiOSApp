@@ -28,9 +28,6 @@
 - (void) viewDidAppear:(BOOL)animated
 {
     [_collectionView setHidden:NO];
-  //  CGSize screenSize = self.view.frame.size;
-//    NSLog(@"%@", NSStringFromCGSize(screenSize));
-    
     [_collectionView setFrame:self.view.frame];
 }
 
@@ -53,6 +50,7 @@
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;
+    
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -63,7 +61,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGSize size = [UIScreen mainScreen].bounds.size;
-    NSLog(@"%@", NSStringFromCGSize(size));
+    size.height += 10;
     return size;
 }
 
@@ -72,6 +70,7 @@
 {
     TutorialViewCell *cell = (TutorialViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CellIdentifier" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor clearColor];
+    [pageControl setCurrentPage:indexPath.row];
     
     switch(indexPath.row % 3)
     {
@@ -92,6 +91,11 @@
     return cell;
 }
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    int page = scrollView.contentOffset.x / scrollView.frame.size.width;
+    [pageControl setCurrentPage:page];
+}
 
 /*
 #pragma mark - Navigation

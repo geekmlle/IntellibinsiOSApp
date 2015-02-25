@@ -9,6 +9,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TutorialViewController">
             <connections>
                 <outlet property="_collectionView" destination="d7b-kl-lmw" id="XvX-Ry-RbA"/>
+                <outlet property="pageControl" destination="8sr-2Q-9MM" id="c9g-Xl-xPd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="d7b-kl-lmw">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="d7b-kl-lmw">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="JxW-OO-IFj">
                         <size key="itemSize" width="320" height="568"/>
@@ -31,7 +32,7 @@
                     </connections>
                 </collectionView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mz7-qR-qsr">
-                    <rect key="frame" x="20" y="488" width="280" height="48"/>
+                    <rect key="frame" x="20" y="480" width="280" height="48"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Mz7-qR-qsr" secondAttribute="height" multiplier="35:6" id="UwS-el-HiA"/>
                         <constraint firstAttribute="width" secondItem="Mz7-qR-qsr" secondAttribute="height" multiplier="7:1" id="aFm-e4-uSs"/>
@@ -52,11 +53,16 @@
                         <action selector="getStartedClicked:" destination="-1" eventType="touchUpInside" id="EHx-eH-zyo"/>
                     </connections>
                 </button>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="8sr-2Q-9MM">
+                    <rect key="frame" x="141" y="435" width="39" height="37"/>
+                </pageControl>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Mz7-qR-qsr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="5vk-jH-faY"/>
+                <constraint firstAttribute="centerX" secondItem="8sr-2Q-9MM" secondAttribute="centerX" constant="-0.5" id="8hB-ge-xqN"/>
                 <constraint firstAttribute="bottom" secondItem="Mz7-qR-qsr" secondAttribute="bottom" constant="40" id="ARf-pT-HeW"/>
+                <constraint firstItem="Mz7-qR-qsr" firstAttribute="top" secondItem="8sr-2Q-9MM" secondAttribute="bottom" constant="8" id="KEG-Cm-zhf"/>
                 <constraint firstAttribute="trailing" secondItem="Mz7-qR-qsr" secondAttribute="trailing" constant="20" id="hZG-0p-ksq"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

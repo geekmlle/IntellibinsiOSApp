@@ -17,11 +17,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w7m-Yt-jOs">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w7m-Yt-jOs">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="113" translatesAutoresizingMaskIntoConstraints="NO" id="afX-XD-hK8">
-                    <rect key="frame" x="20" y="310" width="280" height="50"/>
+                    <rect key="frame" x="20" y="368" width="280" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="2fG-Uq-gXg"/>
                     </constraints>
@@ -34,7 +34,7 @@
             <constraints>
                 <constraint firstItem="w7m-Yt-jOs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6fF-GX-SVa"/>
                 <constraint firstItem="afX-XD-hK8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="HxS-fN-qvq"/>
-                <constraint firstAttribute="bottom" secondItem="afX-XD-hK8" secondAttribute="bottom" constant="208" id="PkQ-XG-m3k"/>
+                <constraint firstAttribute="bottom" secondItem="afX-XD-hK8" secondAttribute="bottom" constant="150" id="PkQ-XG-m3k"/>
                 <constraint firstItem="w7m-Yt-jOs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UYb-mH-Saz"/>
                 <constraint firstAttribute="trailing" secondItem="w7m-Yt-jOs" secondAttribute="trailing" id="X0y-uL-mh7"/>
                 <constraint firstAttribute="trailing" secondItem="afX-XD-hK8" secondAttribute="trailing" constant="20" id="w2M-br-Jve"/>

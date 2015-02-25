@@ -11,10 +11,7 @@
 @interface TutorialViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 {
     IBOutlet UICollectionView *_collectionView;
-    IBOutlet UIScrollView *_scrollView;
-    IBOutlet UIView *img1;
-    IBOutlet UIView *img2;
-    IBOutlet UIView *img3;
+    IBOutlet UIPageControl *pageControl;
 }
 
 - (IBAction)getStartedClicked:(id)sender;

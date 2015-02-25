@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListViewController : UIViewController
+@interface ListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+{
+    IBOutlet UITableView *_tableView;
+    
+    NSArray *categories;
+}
 
 @end

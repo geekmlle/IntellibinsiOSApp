@@ -10,6 +10,9 @@
 
 @interface Util : NSObject
 
+@property (nonatomic, retain) NSArray *categories;
+
 + (Util *) sharedInstance;
++ (void) loadCategories;
 
 @end

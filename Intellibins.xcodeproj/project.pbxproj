@@ -45,6 +45,9 @@
 		490876191A9C5C8400BA5338 /* tutorial3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4908760A1A9C5C8400BA5338 /* tutorial3@2x.png */; };
 		4908761A1A9C5C8400BA5338 /* tutorial3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4908760B1A9C5C8400BA5338 /* tutorial3@3x.png */; };
 		4908761C1A9C704600BA5338 /* TutorialViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4908761B1A9C704600BA5338 /* TutorialViewCell.xib */; };
+		490876201A9DAD0300BA5338 /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4908761E1A9DAD0300BA5338 /* CategoryTableViewCell.m */; };
+		490876211A9DAD0300BA5338 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4908761F1A9DAD0300BA5338 /* CategoryTableViewCell.xib */; };
+		490876261A9DB19200BA5338 /* TempItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 490876251A9DB19200BA5338 /* TempItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +110,11 @@
 		4908760A1A9C5C8400BA5338 /* tutorial3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial3@2x.png"; sourceTree = "<group>"; };
 		4908760B1A9C5C8400BA5338 /* tutorial3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tutorial3@3x.png"; sourceTree = "<group>"; };
 		4908761B1A9C704600BA5338 /* TutorialViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TutorialViewCell.xib; path = Cells/TutorialViewCell.xib; sourceTree = "<group>"; };
+		4908761D1A9DAD0300BA5338 /* CategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryTableViewCell.h; path = Cells/CategoryTableViewCell.h; sourceTree = "<group>"; };
+		4908761E1A9DAD0300BA5338 /* CategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryTableViewCell.m; path = Cells/CategoryTableViewCell.m; sourceTree = "<group>"; };
+		4908761F1A9DAD0300BA5338 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryTableViewCell.xib; path = Cells/CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		490876241A9DB19200BA5338 /* TempItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TempItem.h; path = Models/TempItem.h; sourceTree = "<group>"; };
+		490876251A9DB19200BA5338 /* TempItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TempItem.m; path = Models/TempItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +249,8 @@
 		490875BE1A970D6E00BA5338 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				490876241A9DB19200BA5338 /* TempItem.h */,
+				490876251A9DB19200BA5338 /* TempItem.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -264,6 +274,9 @@
 				490875F71A9C504900BA5338 /* TutorialViewCell.h */,
 				490875F81A9C504900BA5338 /* TutorialViewCell.m */,
 				4908761B1A9C704600BA5338 /* TutorialViewCell.xib */,
+				4908761D1A9DAD0300BA5338 /* CategoryTableViewCell.h */,
+				4908761E1A9DAD0300BA5338 /* CategoryTableViewCell.m */,
+				4908761F1A9DAD0300BA5338 /* CategoryTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -351,6 +364,7 @@
 				4908760F1A9C5C8400BA5338 /* button.png in Resources */,
 				490876191A9C5C8400BA5338 /* tutorial3@2x.png in Resources */,
 				490876171A9C5C8400BA5338 /* tutorial2@3x.png in Resources */,
+				490876211A9DAD0300BA5338 /* CategoryTableViewCell.xib in Resources */,
 				490876111A9C5C8400BA5338 /* button@3x.png in Resources */,
 				4908760E1A9C5C8400BA5338 /* button-hover@3x.png in Resources */,
 				4908761A1A9C5C8400BA5338 /* tutorial3@3x.png in Resources */,
@@ -389,10 +403,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				490875E61A9711B300BA5338 /* BinDetailViewController.m in Sources */,
+				490876201A9DAD0300BA5338 /* CategoryTableViewCell.m in Sources */,
 				490875C71A970DFA00BA5338 /* Util.m in Sources */,
 				490875961A9709EC00BA5338 /* AppDelegate.m in Sources */,
 				490875EB1A9711DC00BA5338 /* MapViewController.m in Sources */,
 				490875DC1A97118500BA5338 /* TutorialViewController.m in Sources */,
+				490876261A9DB19200BA5338 /* TempItem.m in Sources */,
 				490875D71A97116600BA5338 /* ListViewController.m in Sources */,
 				490875FA1A9C504900BA5338 /* TutorialViewCell.m in Sources */,
 				490875991A9709EC00BA5338 /* Intellibins.xcdatamodeld in Sources */,

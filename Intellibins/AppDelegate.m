@@ -8,9 +8,11 @@
 
 #import "AppDelegate.h"
 #import "ListViewController.h"
+#import "MapViewController.h"
 #import "TutorialViewController.h"
+#import "Util.h"
 
-#define FORCE_TUTORIAL 1
+#define FORCE_TUTORIAL 0
 #define TUTORIAL_KEY @"kIntellibinTutorial"
 
 @interface AppDelegate ()
@@ -20,16 +22,24 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+ 
+    [Util loadCategories];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    ListViewController *mainVC = [[ListViewController alloc] init];
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:mainVC];
+    ListViewController *listVC = [[ListViewController alloc] init];
+    MapViewController *mapVC = [[MapViewController alloc] init];
+    
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:mapVC];
+    //[nvc pushViewController:listVC animated:NO];
     [self.window setRootViewController:nvc];
+    
+    [nvc presentViewController:listVC animated:NO completion:nil];
     
     //Checking if it's first time launch, if so, show tutorial
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

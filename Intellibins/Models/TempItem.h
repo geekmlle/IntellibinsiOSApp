@@ -12,5 +12,6 @@
 
 @property (nonatomic, retain) NSString *item_name;
 @property (nonatomic, retain) NSString *item_type;
+@property (nonatomic, assign) BOOL is_toggled;
 
 @end

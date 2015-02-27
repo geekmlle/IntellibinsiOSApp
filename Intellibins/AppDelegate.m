@@ -33,13 +33,15 @@
     [self.window makeKeyAndVisible];
     
     ListViewController *listVC = [[ListViewController alloc] init];
+    UINavigationController *listNVC = [[UINavigationController alloc] initWithRootViewController:listVC];
+    
     MapViewController *mapVC = [[MapViewController alloc] init];
     
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:mapVC];
     //[nvc pushViewController:listVC animated:NO];
     [self.window setRootViewController:nvc];
     
-    [nvc presentViewController:listVC animated:NO completion:nil];
+    [nvc presentViewController:listNVC animated:NO completion:nil];
     
     //Checking if it's first time launch, if so, show tutorial
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

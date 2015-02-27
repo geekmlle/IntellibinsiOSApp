@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController">
             <connections>
+                <outlet property="_mapView" destination="vsY-c7-rZT" id="xld-Qs-ggA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,11 +16,20 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vsY-c7-rZT">
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vsY-c7-rZT">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="jiA-OD-1bj"/>
+                    </connections>
                 </mapView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="vsY-c7-rZT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1QS-wU-A0U"/>
+                <constraint firstAttribute="bottom" secondItem="vsY-c7-rZT" secondAttribute="bottom" id="6B8-LK-Qrb"/>
+                <constraint firstAttribute="trailing" secondItem="vsY-c7-rZT" secondAttribute="trailing" id="Ytm-Dr-heW"/>
+                <constraint firstItem="vsY-c7-rZT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="b8t-5N-MwG"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

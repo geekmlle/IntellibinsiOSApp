@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface MapViewController : UIViewController <MKMapViewDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+{
+    IBOutlet MKMapView *_mapView;
+    
+    CLLocation *userLocation;
+    CLLocationCoordinate2D userCoordinate;
+    CLLocationManager *locationManager;
+}
 
 @end

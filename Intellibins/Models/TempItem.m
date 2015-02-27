@@ -9,6 +9,6 @@
 #import "TempItem.h"
 
 @implementation TempItem
-@synthesize item_name, item_type;
+@synthesize item_name, item_type, is_toggled;
 
 @end

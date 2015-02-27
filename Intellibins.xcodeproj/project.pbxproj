@@ -48,6 +48,8 @@
 		490876201A9DAD0300BA5338 /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4908761E1A9DAD0300BA5338 /* CategoryTableViewCell.m */; };
 		490876211A9DAD0300BA5338 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4908761F1A9DAD0300BA5338 /* CategoryTableViewCell.xib */; };
 		490876261A9DB19200BA5338 /* TempItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 490876251A9DB19200BA5338 /* TempItem.m */; };
+		490876291A9EFEF000BA5338 /* HelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 490876281A9EFEF000BA5338 /* HelpView.m */; };
+		4908762B1A9EFF0D00BA5338 /* HelpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4908762A1A9EFF0D00BA5338 /* HelpView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,9 @@
 		4908761F1A9DAD0300BA5338 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryTableViewCell.xib; path = Cells/CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		490876241A9DB19200BA5338 /* TempItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TempItem.h; path = Models/TempItem.h; sourceTree = "<group>"; };
 		490876251A9DB19200BA5338 /* TempItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TempItem.m; path = Models/TempItem.m; sourceTree = "<group>"; };
+		490876271A9EFEF000BA5338 /* HelpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelpView.h; path = Views/HelpView.h; sourceTree = "<group>"; };
+		490876281A9EFEF000BA5338 /* HelpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelpView.m; path = Views/HelpView.m; sourceTree = "<group>"; };
+		4908762A1A9EFF0D00BA5338 /* HelpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HelpView.xib; path = Views/HelpView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +225,9 @@
 				490875E31A9711B300BA5338 /* BinDetailViewController.h */,
 				490875E41A9711B300BA5338 /* BinDetailViewController.m */,
 				490875E51A9711B300BA5338 /* BinDetailViewController.xib */,
+				490876271A9EFEF000BA5338 /* HelpView.h */,
+				490876281A9EFEF000BA5338 /* HelpView.m */,
+				4908762A1A9EFF0D00BA5338 /* HelpView.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -380,6 +388,7 @@
 				490875D81A97116600BA5338 /* ListViewController.xib in Resources */,
 				490875A41A9709EC00BA5338 /* LaunchScreen.xib in Resources */,
 				490876151A9C5C8400BA5338 /* tutorial2.png in Resources */,
+				4908762B1A9EFF0D00BA5338 /* HelpView.xib in Resources */,
 				490875EC1A9711DC00BA5338 /* MapViewController.xib in Resources */,
 				490875A11A9709EC00BA5338 /* Images.xcassets in Resources */,
 				490876101A9C5C8400BA5338 /* button@2x.png in Resources */,
@@ -403,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				490875E61A9711B300BA5338 /* BinDetailViewController.m in Sources */,
+				490876291A9EFEF000BA5338 /* HelpView.m in Sources */,
 				490876201A9DAD0300BA5338 /* CategoryTableViewCell.m in Sources */,
 				490875C71A970DFA00BA5338 /* Util.m in Sources */,
 				490875961A9709EC00BA5338 /* AppDelegate.m in Sources */,

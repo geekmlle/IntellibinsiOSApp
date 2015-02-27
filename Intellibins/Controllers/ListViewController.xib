@@ -24,18 +24,6 @@
                         <outlet property="delegate" destination="-1" id="vJh-kU-PoD"/>
                     </connections>
                 </tableView>
-                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9vT-ci-D9a">
-                    <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                    <items>
-                        <navigationItem title="Title" id="Q1I-Ps-3Bs">
-                            <barButtonItem key="rightBarButtonItem" title="Apply" style="plain" id="j7R-oZ-aRp">
-                                <connections>
-                                    <action selector="applyFilterClicked:" destination="-1" id="feF-g8-dto"/>
-                                </connections>
-                            </barButtonItem>
-                        </navigationItem>
-                    </items>
-                </navigationBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>

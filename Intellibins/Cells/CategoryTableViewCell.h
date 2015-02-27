@@ -10,8 +10,9 @@
 
 @interface CategoryTableViewCell : UITableViewCell
 
+@property (nonatomic, assign) IBOutlet UIView *mainView;
 @property (nonatomic, assign) IBOutlet UIImageView *icon;
 @property (nonatomic, assign) IBOutlet UILabel *name;
 @property (nonatomic, assign) IBOutlet UISwitch *toggle;
-@property (nonatomic, assign) 
+
 @end

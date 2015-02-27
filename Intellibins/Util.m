@@ -30,22 +30,27 @@
     TempItem *paper = [[TempItem alloc] init];
     paper.item_name = @"Paper";
     paper.item_type = @"paper";
+    paper.is_toggled = NO;
     
     TempItem *plastic = [[TempItem alloc] init];
-    paper.item_name = @"Plastic";
-    paper.item_type = @"plastic";
+    plastic.item_name = @"Plastic";
+    plastic.item_type = @"plastic";
+    plastic.is_toggled = NO;
     
     TempItem *metal = [[TempItem alloc] init];
-    paper.item_name = @"Metal";
-    paper.item_type = @"metal";
+    metal.item_name = @"Metal";
+    metal.item_type = @"metal";
+    metal.is_toggled = NO;
     
     TempItem *glass = [[TempItem alloc] init];
-    paper.item_name = @"Glass";
-    paper.item_type = @"glass";
+    glass.item_name = @"Glass";
+    glass.item_type = @"glass";
+    glass.is_toggled = NO;
     
     TempItem *hazard = [[TempItem alloc] init];
-    paper.item_name = @"Hazard";
-    paper.item_type = @"hazard";
+    hazard.item_name = @"Hazard";
+    hazard.item_type = @"hazard";
+    hazard.is_toggled = NO;
     
     [Util sharedInstance].categories = [[NSArray alloc] initWithObjects:paper, plastic, metal, glass, hazard, nil];
 }

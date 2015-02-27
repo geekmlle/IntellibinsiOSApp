@@ -7,8 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryTableViewCell">
             <connections>
+                <outlet property="icon" destination="Ioy-O0-jzf" id="V6o-i6-TsG"/>
+                <outlet property="mainView" destination="KGk-i7-Jjw" id="lNv-rq-qqQ"/>
                 <outlet property="name" destination="CTe-kA-rUq" id="dvy-uq-rag"/>
-                <outlet property="selectedBackgroundView" destination="Ioy-O0-jzf" id="xwl-6E-E9X"/>
                 <outlet property="toggle" destination="uRj-TS-q4i" id="3m6-wZ-F1v"/>
             </connections>
         </placeholder>
@@ -29,14 +30,16 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRj-TS-q4i">
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRj-TS-q4i">
                         <rect key="frame" x="253" y="16" width="51" height="31"/>
-                        <connections>
-                            <action selector="switchClicked:" destination="-1" eventType="valueChanged" id="s9u-xg-uSS"/>
-                        </connections>
                     </switch>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerY" secondItem="uRj-TS-q4i" secondAttribute="centerY" constant="0.5" id="Vup-FK-sZf"/>
+                    <constraint firstAttribute="trailing" secondItem="uRj-TS-q4i" secondAttribute="trailing" constant="18" id="pQ8-7f-VjY"/>
+                </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="377" y="311"/>
         </tableViewCell>
     </objects>

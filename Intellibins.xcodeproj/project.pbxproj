@@ -50,6 +50,10 @@
 		490876261A9DB19200BA5338 /* TempItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 490876251A9DB19200BA5338 /* TempItem.m */; };
 		490876291A9EFEF000BA5338 /* HelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 490876281A9EFEF000BA5338 /* HelpView.m */; };
 		4908762B1A9EFF0D00BA5338 /* HelpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4908762A1A9EFF0D00BA5338 /* HelpView.xib */; };
+		49AE844D1AA5942B00C27822 /* locations-v01.json in Resources */ = {isa = PBXBuildFile; fileRef = 49AE844C1AA5942B00C27822 /* locations-v01.json */; };
+		49AE84501AA5947900C27822 /* TempBin.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AE844F1AA5947900C27822 /* TempBin.m */; };
+		49AE84531AA59D7F00C27822 /* MapAnnotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AE84521AA59D7F00C27822 /* MapAnnotion.m */; };
+		49AE84551AA6DE1000C27822 /* bin_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49AE84541AA6DE1000C27822 /* bin_data.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +124,12 @@
 		490876271A9EFEF000BA5338 /* HelpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelpView.h; path = Views/HelpView.h; sourceTree = "<group>"; };
 		490876281A9EFEF000BA5338 /* HelpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelpView.m; path = Views/HelpView.m; sourceTree = "<group>"; };
 		4908762A1A9EFF0D00BA5338 /* HelpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HelpView.xib; path = Views/HelpView.xib; sourceTree = "<group>"; };
+		49AE844C1AA5942B00C27822 /* locations-v01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "locations-v01.json"; sourceTree = "<group>"; };
+		49AE844E1AA5947900C27822 /* TempBin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TempBin.h; path = Models/TempBin.h; sourceTree = "<group>"; };
+		49AE844F1AA5947900C27822 /* TempBin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TempBin.m; path = Models/TempBin.m; sourceTree = "<group>"; };
+		49AE84511AA59D7F00C27822 /* MapAnnotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapAnnotion.h; path = Cells/MapAnnotion.h; sourceTree = "<group>"; };
+		49AE84521AA59D7F00C27822 /* MapAnnotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapAnnotion.m; path = Cells/MapAnnotion.m; sourceTree = "<group>"; };
+		49AE84541AA6DE1000C27822 /* bin_data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bin_data.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +245,8 @@
 		490875BD1A970D6800BA5338 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49AE84541AA6DE1000C27822 /* bin_data.txt */,
+				49AE844C1AA5942B00C27822 /* locations-v01.json */,
 				490875FD1A9C5C8400BA5338 /* button-hover.png */,
 				490875FE1A9C5C8400BA5338 /* button-hover@2x.png */,
 				490875FF1A9C5C8400BA5338 /* button-hover@3x.png */,
@@ -259,6 +271,8 @@
 			children = (
 				490876241A9DB19200BA5338 /* TempItem.h */,
 				490876251A9DB19200BA5338 /* TempItem.m */,
+				49AE844E1AA5947900C27822 /* TempBin.h */,
+				49AE844F1AA5947900C27822 /* TempBin.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -285,6 +299,8 @@
 				4908761D1A9DAD0300BA5338 /* CategoryTableViewCell.h */,
 				4908761E1A9DAD0300BA5338 /* CategoryTableViewCell.m */,
 				4908761F1A9DAD0300BA5338 /* CategoryTableViewCell.xib */,
+				49AE84511AA59D7F00C27822 /* MapAnnotion.h */,
+				49AE84521AA59D7F00C27822 /* MapAnnotion.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -385,10 +401,12 @@
 				4908761C1A9C704600BA5338 /* TutorialViewCell.xib in Resources */,
 				490875DD1A97118500BA5338 /* TutorialViewController.xib in Resources */,
 				4908760D1A9C5C8400BA5338 /* button-hover@2x.png in Resources */,
+				49AE84551AA6DE1000C27822 /* bin_data.txt in Resources */,
 				490875D81A97116600BA5338 /* ListViewController.xib in Resources */,
 				490875A41A9709EC00BA5338 /* LaunchScreen.xib in Resources */,
 				490876151A9C5C8400BA5338 /* tutorial2.png in Resources */,
 				4908762B1A9EFF0D00BA5338 /* HelpView.xib in Resources */,
+				49AE844D1AA5942B00C27822 /* locations-v01.json in Resources */,
 				490875EC1A9711DC00BA5338 /* MapViewController.xib in Resources */,
 				490875A11A9709EC00BA5338 /* Images.xcassets in Resources */,
 				490876101A9C5C8400BA5338 /* button@2x.png in Resources */,
@@ -415,8 +433,10 @@
 				490876291A9EFEF000BA5338 /* HelpView.m in Sources */,
 				490876201A9DAD0300BA5338 /* CategoryTableViewCell.m in Sources */,
 				490875C71A970DFA00BA5338 /* Util.m in Sources */,
+				49AE84531AA59D7F00C27822 /* MapAnnotion.m in Sources */,
 				490875961A9709EC00BA5338 /* AppDelegate.m in Sources */,
 				490875EB1A9711DC00BA5338 /* MapViewController.m in Sources */,
+				49AE84501AA5947900C27822 /* TempBin.m in Sources */,
 				490875DC1A97118500BA5338 /* TutorialViewController.m in Sources */,
 				490876261A9DB19200BA5338 /* TempItem.m in Sources */,
 				490875D71A97116600BA5338 /* ListViewController.m in Sources */,

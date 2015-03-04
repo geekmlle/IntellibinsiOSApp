@@ -16,7 +16,7 @@
     NSArray *categories;
     HelpView *help;
     HelpView *help2;
-    BOOL showHelp;
+    BOOL hideHelp;
 }
 
 @end

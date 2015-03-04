@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface HelpView : UIView
+{
+    BOOL hide;
+}
 
 @property (nonatomic, assign) IBOutlet UILabel *textLabel;
 @property (nonatomic, assign) IBOutlet UIView *mainView;

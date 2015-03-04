@@ -8,14 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "HelpView.h"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 {
     IBOutlet MKMapView *_mapView;
+    IBOutlet UICollectionView *categoryCollectionView;
+    
+    HelpView *help;
     
     CLLocation *userLocation;
     CLLocationCoordinate2D userCoordinate;
     CLLocationManager *locationManager;
+    
+    NSArray *binList;
+    NSArray *categoryList;
 }
 
 @end

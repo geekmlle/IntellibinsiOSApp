@@ -43,7 +43,6 @@
             [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                 self.transform = CGAffineTransformIdentity;
             } completion:^(BOOL finished) {
-                
             }];
         }];
     }];
@@ -51,7 +50,7 @@
 
 -(IBAction)hideView:(id)sender
 {
-    [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.transform = CGAffineTransformTranslate(self.transform, 0, -10);
     }completion:^(BOOL finished){
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{

@@ -11,8 +11,9 @@
 @interface Util : NSObject
 
 @property (nonatomic, retain) NSArray *categories;
+@property (nonatomic, retain) NSArray *bins;
 
 + (Util *) sharedInstance;
 + (void) loadCategories;
-
++ (void) loadTempBins;
 @end

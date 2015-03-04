@@ -16,10 +16,17 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at2-hz-2Vo">
-                    <rect key="frame" x="40" y="37" width="240" height="86"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="at2-hz-2Vo">
+                    <rect key="frame" x="60" y="37" width="200" height="86"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Label">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P5-9g-del">
@@ -43,8 +50,8 @@
                 <constraint firstItem="6P5-9g-del" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Fcd-6d-ZGe"/>
                 <constraint firstItem="at2-hz-2Vo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="37" id="GQp-9u-gnO"/>
                 <constraint firstAttribute="bottom" secondItem="at2-hz-2Vo" secondAttribute="bottom" constant="37" id="fPj-JI-0FC"/>
-                <constraint firstAttribute="trailing" secondItem="at2-hz-2Vo" secondAttribute="trailing" constant="40" id="hmF-G6-BgP"/>
-                <constraint firstItem="at2-hz-2Vo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="nuH-Wq-2zj"/>
+                <constraint firstAttribute="trailing" secondItem="at2-hz-2Vo" secondAttribute="trailing" constant="60" id="hmF-G6-BgP"/>
+                <constraint firstItem="at2-hz-2Vo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="60" id="nuH-Wq-2zj"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

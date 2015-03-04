@@ -12,6 +12,7 @@
 #import "TempItem.h"
 
 #define TUTORIAL_KEY @"listTutorial"
+#define TUTORIAL_KEY_2 @"switchTutorial"
 
 @interface ListViewController ()
 
@@ -32,13 +33,12 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    showHelp = YES;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if(![defaults boolForKey:TUTORIAL_KEY])
     {
         [self showTutorial:0];
-        //[defaults setBool:YES forKey:TUTORIAL_KEY];
-        //[defaults synchronize];
+        [defaults setBool:YES forKey:TUTORIAL_KEY];
+        [defaults synchronize];
     }
 }
 
@@ -49,8 +49,9 @@
 
 - (void) showTutorial:(NSInteger)tut
 {
+    hideHelp = YES;
     CGFloat height = self.view.frame.size.width / 2;
-    CGRect frame = CGRectMake(0, self.view.frame.size.height - height, self.view.frame.size.width, height);
+    CGRect frame = CGRectMake(0, self.view.frame.size.height - height, self.view.frame.size.width, height + 20);
     if(tut == 0)
     {
         if(!help){
@@ -114,20 +115,42 @@
 
 - (void) didToggleSwitch:(UISwitch *)_switch
 {
+    if(help)
+    {
+        [help hideView:nil];
+    }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if(![defaults boolForKey:TUTORIAL_KEY_2])
+    {
+        [self showTutorial:1];
+        [defaults setBool:YES forKey:TUTORIAL_KEY_2];
+        [defaults synchronize];
+    }
+    
     TempItem *item = [categories objectAtIndex:_switch.tag];
     item.is_toggled = !item.is_toggled;
-    
     
 }
 
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if(help != nil && showHelp)
+    if(hideHelp)
     {
-        showHelp = NO;
-        [help hideView:nil];
+        hideHelp = NO;
+        if(help) [help hideView:nil];
+        if(help2) [help2 hideView:nil];
     }
 }
 
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if(hideHelp)
+    {
+        hideHelp = NO;
+        if(help) [help hideView:nil];
+        if(help2) [help2 hideView:nil];
+    }
+}
 
 @end

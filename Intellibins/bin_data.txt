@@ -1,0 +1,100 @@
+[{
+"Short Name": "Bin",
+"Borough": "Bronx",
+"Park/Site Name": "227th St. Plgd",
+"Address": "E 227 St/Bronx River Pkway",
+"Latitude": 40.89084899,
+"Longitude": -73.86422392,
+"Bin Type": "Bin",
+"Item Type": "All"
+},
+{
+"Short Name": "Bin",
+"Borough": "Bronx",
+"Park/Site Name": "Allerton Ballfields",
+"Address": "Allerton Ave & Moshulu Pkway",
+"Latitude": 40.84889079,
+"Longitude": -73.87712839,
+"Bin Type": "Bin",
+"Item Type": "All"
+},
+{
+"Short Name": "Bin",
+"Borough": "Bronx",
+"Park/Site Name": "Arthur Ave & E 187 St",
+"Address": "Arthur Ave & 187 St",
+"Latitude": 40.85557,
+"Longitude": -73.887565,
+"Bin Type": "Bin",
+"Item Type": "All"
+},
+{
+"Short Name": "Bin",
+"Borough": "Bronx",
+"Park/Site Name": "Barstow Mansion",
+"Address": "895 Shore Road, Pelham Bay Park",
+"Latitude": 40.871864,
+"Longitude": -73.805549,
+"Bin Type": "Bin",
+"Item Type": "All"
+},
+{
+"Short Name": "Bin",
+"Borough": "Bronx",
+"Park/Site Name": "Bradley Playground",
+"Address": "2001-2017 Bronx Park E",
+"Latitude": 40.851889,
+"Longitude": -73.868549,
+"Bin Type": "Bin",
+"Item Type": "All"
+},
+{
+"Short Name": "Bin",
+"Borough": "Bronx",
+"Park/Site Name": "Bronx Botanical Gardens",
+"Address": "Visitors Service Center",
+"Latitude": 40.861526,
+"Longitude": -73.880659,
+"Bin Type": "Bin",
+"Item Type": "All"
+},
+{
+"Short Name": "Bin",
+"Borough": "Bronx",
+"Park/Site Name": "Bronx Botanical Gardens",
+"Address": "Visitors Service Center",
+"Latitude": 40.860755,
+"Longitude": -73.880423,
+"Bin Type": "Bin",
+"Item Type": "All"
+},
+{
+"Short Name": "Bin",
+"Borough": "Bronx",
+"Park/Site Name": "Bronx Botanical Gardens",
+"Address": "Visitors Service Center",
+"Latitude": 40.859644,
+"Longitude": -73.880472,
+"Bin Type": "Bin",
+"Item Type": "All"
+},
+{
+"Short Name": "Bin",
+"Borough": "Bronx",
+"Park/Site Name": "Bronx Botanical Gardens",
+"Address": "Visitors Service Center",
+"Latitude": 40.862602,
+"Longitude": -73.880171,
+"Bin Type": "Bin",
+"Item Type": "All"
+},
+{
+"Short Name": "Bin",
+"Borough": "Bronx",
+"Park/Site Name": "Bronx County Courthouse",
+"Address": "161 ST/Grand Concourse",
+"Latitude": 40.826939,
+"Longitude": -73.922314,
+"Bin Type": "Bin",
+"Item Type": "All"
+}]

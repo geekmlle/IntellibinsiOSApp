@@ -32,7 +32,8 @@
     locationManager.distanceFilter = 1000;
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     
-    self.distanceFilter = 1000;
+    //Distance Filter is the amount of miles to restrict search of bins
+    self.distanceFilter = 1;
     
     self.binList = [Util sharedInstance].bins;
 }
@@ -81,7 +82,7 @@
 // MKMapViewDelegate Methods
 - (void)mapViewWillStartLocatingUser:(MKMapView *)mapView
 {
-    // Check authorization status (with class method)
+    // Check authorization status
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     
     NSString *title;
@@ -114,7 +115,6 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    NSLog(@"Location Manager updated: %@", newLocation);
     userLocation = newLocation;
     userCoordinate = newLocation.coordinate;
     
@@ -124,16 +124,28 @@
     MKCoordinateRegion region = {{userCoordinate.latitude, userCoordinate.longitude}, {0.02, 0.02}};
     [_mapView setRegion:region animated:YES];
     
-    [self addAnnotationsForBinsNearCoordinate:userCoordinate];
+    CLLocationCoordinate2D binCoord = CLLocationCoordinate2DMake(40.765592, -73.979506);
+    //binCoord = userCoordinate;
+    
+    [self addAnnotationsForBinsNearCoordinate:binCoord];
 }
 
 - (void) addAnnotationsForBinsNearCoordinate:(CLLocationCoordinate2D)coordinate
 {
+    MKMapPoint point = MKMapPointForCoordinate(coordinate);
+    double milesInPoints = MKMapPointsPerMeterAtLatitude(coordinate.latitude) * 1600 * self.distanceFilter;
+    MKMapRect rect = MKMapRectMake(point.x - milesInPoints / 2, point.y - milesInPoints / 2, milesInPoints, milesInPoints);
+    
+    [_mapView setRegion:MKCoordinateRegionForMapRect(rect) animated:YES];
+    
     for(TempBin *bin in self.binList)
     {
-        MapAnnotion *pin = [[MapAnnotion alloc] initWithCoordinate:CLLocationCoordinate2DMake(bin.latitude, bin.longitude) andTitle:bin.short_name andSubtitle:bin.park_site_name andIndex:[self.binList indexOfObject:bin]];
-        
-        [_mapView addAnnotation:pin];
+        MKMapPoint p = MKMapPointForCoordinate(CLLocationCoordinate2DMake(bin.latitude, bin.longitude));
+        if(MKMapRectContainsPoint(rect, p))
+        {
+            MapAnnotion *pin = [[MapAnnotion alloc] initWithCoordinate:CLLocationCoordinate2DMake(bin.latitude, bin.longitude) andTitle:bin.short_name andSubtitle:bin.park_site_name andIndex:[self.binList indexOfObject:bin]];
+            [_mapView addAnnotation:pin];
+        }
     }
 }
 

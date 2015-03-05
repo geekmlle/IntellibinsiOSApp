@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CGBase.h>
 
 @interface Util : NSObject
 
@@ -16,4 +17,7 @@
 + (Util *) sharedInstance;
 + (void) loadCategories;
 + (void) loadTempBins;
+
++ (NSString *) NSStringConsistencyCheck:(NSString *)string;
++ (CGFloat) CGFloatConsistencyCheck:(id)number;
 @end

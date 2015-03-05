@@ -84,7 +84,16 @@
     {
         NSLog(@"Error parsing json - %@", error.localizedDescription);
     }
-    
+}
+
++ (NSString *) NSStringConsistencyCheck:(NSString *)string
+{
+    return (string && ![string isKindOfClass:[NSNull class]]) ? string : @"";
+}
+
++ (CGFloat) CGFloatConsistencyCheck:(id)number
+{
+    return ([number isKindOfClass:[NSNull class]]) ? 0 : [number floatValue];
 }
 
 @end

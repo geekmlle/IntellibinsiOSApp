@@ -26,6 +26,7 @@
                 </mapView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Flj-bf-Qdo">
                     <rect key="frame" x="0.0" y="64" width="320" height="45"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Flj-bf-Qdo" secondAttribute="height" multiplier="64:9" id="On5-RP-Ffw"/>
                     </constraints>

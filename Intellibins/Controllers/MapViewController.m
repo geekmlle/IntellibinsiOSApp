@@ -32,10 +32,9 @@
     locationManager.distanceFilter = 1000;
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     
-    [locationManager requestWhenInUseAuthorization];
+    self.distanceFilter = 1000;
     
-    binList = [Util sharedInstance].bins;
-    [self addAnnotationsForBins];
+    self.binList = [Util sharedInstance].bins;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -79,25 +78,91 @@
     [self presentViewController:nvc animated:YES completion:nil];
 }
 
+// MKMapViewDelegate Methods
+- (void)mapViewWillStartLocatingUser:(MKMapView *)mapView
+{
+    // Check authorization status (with class method)
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    
+    NSString *title;
+    title = (status == kCLAuthorizationStatusDenied) ? @"Location services are off" : @"Background location is not enabled";
+    NSString *message = @"To use background location you must turn on 'Always' in the Location Services Settings";
+    
+    // User has never been asked to decide on location authorization
+    if (status == kCLAuthorizationStatusNotDetermined && [locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        NSLog(@"Requesting when in use auth");
+            [locationManager requestWhenInUseAuthorization];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                            message:message
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:@"Settings", nil];
+        [alertView show];
+    }
+    // User has denied location use (either for this app or for all apps
+    else if (status == kCLAuthorizationStatusDenied) {
+        NSLog(@"Location services denied");
+        // Alert the user and send them to the settings to turn on location
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                            message:message
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:@"Settings", nil];
+        [alertView show];
+    }
+}
+
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
+    NSLog(@"Location Manager updated: %@", newLocation);
     userLocation = newLocation;
     userCoordinate = newLocation.coordinate;
     
-    [locationManager stopUpdatingLocation];
+    [manager stopUpdatingLocation];
+    
     //Creating region for mapview
     MKCoordinateRegion region = {{userCoordinate.latitude, userCoordinate.longitude}, {0.02, 0.02}};
     [_mapView setRegion:region animated:YES];
+    
+    [self addAnnotationsForBinsNearCoordinate:userCoordinate];
 }
 
-- (void) addAnnotationsForBins
+- (void) addAnnotationsForBinsNearCoordinate:(CLLocationCoordinate2D)coordinate
 {
-    for(TempBin *bin in binList)
+    for(TempBin *bin in self.binList)
     {
-        MapAnnotion *pin = [[MapAnnotion alloc] initWithCoordinate:CLLocationCoordinate2DMake(bin.latitude, bin.longitude) andTitle:bin.short_name andSubtitle:bin.park_site_name andIndex:[binList indexOfObject:bin]];
+        MapAnnotion *pin = [[MapAnnotion alloc] initWithCoordinate:CLLocationCoordinate2DMake(bin.latitude, bin.longitude) andTitle:bin.short_name andSubtitle:bin.park_site_name andIndex:[self.binList indexOfObject:bin]];
         
         [_mapView addAnnotation:pin];
     }
+}
+
+/*
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    MKAnnotationView *pinView = nil;
+    if(annotation != mapView.userLocation)
+    {
+        static NSString *defaultPinID = @"IntellibinPin";
+        pinView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
+        if ( pinView == nil )
+            pinView = [[MKAnnotationView alloc]
+                       initWithAnnotation:annotation reuseIdentifier:defaultPinID];
+        
+        pinView.canShowCallout = YES;
+        //pinView.animatesDrop = YES;
+        pinView.image = [UIImage imageNamed:@"circle"];
+    }
+    else {
+        [mapView.userLocation setTitle:@"You are here"];
+    }
+    return pinView;
+}
+*/
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -113,6 +178,15 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return nil;
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        // Send the user to the Settings for this app
+        NSURL *settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        [[UIApplication sharedApplication] openURL:settingsURL];
+    }
 }
 
 @end

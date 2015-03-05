@@ -20,9 +20,11 @@
     CLLocation *userLocation;
     CLLocationCoordinate2D userCoordinate;
     CLLocationManager *locationManager;
-    
-    NSArray *binList;
-    NSArray *categoryList;
 }
+
+@property (nonatomic, retain) NSArray *binList;
+@property (nonatomic, retain) NSArray *categoryList;
+@property (nonatomic, assign) NSInteger distanceFilter;
+
 
 @end

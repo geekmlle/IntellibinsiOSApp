@@ -12,6 +12,7 @@
 #import "TempBin.h"
 #import "TempItem.h"
 #import "MapAnnotion.h"
+#import "BinDetailViewController.h"
 
 #define MAP_TUTORIAL @"map_tutorial"
 
@@ -162,8 +163,8 @@
                        initWithAnnotation:annotation reuseIdentifier:defaultPinID];
         
         pinView.canShowCallout = YES;
-        //pinView.animatesDrop = YES;
         pinView.image = [UIImage imageNamed:@"circle"];
+        pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     }
     else {
         [mapView.userLocation setTitle:@"You are here"];
@@ -171,6 +172,8 @@
     return pinView;
 }
 */
+
+//Temporary method until custom pin images are provided
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
     static NSString *identifier = @"MyLocation";
@@ -192,7 +195,13 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
+    MapAnnotion *annotation = view.annotation;
+    TempBin *bin = [self.binList objectAtIndex:annotation.index];
     
+    BinDetailViewController *detail = [[BinDetailViewController alloc] init];
+    detail.bin = bin;
+    
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView

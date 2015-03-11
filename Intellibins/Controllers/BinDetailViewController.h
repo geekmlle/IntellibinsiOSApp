@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TempBin.h"
 
 @interface BinDetailViewController : UIViewController
+
+@property (nonatomic, retain) TempBin *bin;
 
 @end

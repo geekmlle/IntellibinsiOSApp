@@ -17,15 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = self.bin.short_name;
-    
     [self.view setFrame:[UIScreen mainScreen].bounds];
     [self.content setFrame:[UIScreen mainScreen].bounds];
-    NSLog(@"%@", NSStringFromCGRect(self.content.frame));
     
+    [self.scrollView addSubview:self.content];
+    [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, 504)];
+    
+    self.title = self.bin.short_name;
     self.address.text = self.bin.address;
     
-    [self.view layoutIfNeeded];
+    self.categoryList = [self.bin.item_list componentsSeparatedByString:@","];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,7 +46,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 0;
+    return self.categoryList.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath

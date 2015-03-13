@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 #import "TempBin.h"
 
 @interface BinDetailViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate>
@@ -19,6 +20,7 @@
 @property (nonatomic, assign) IBOutlet UILabel *address;
 @property (nonatomic, assign) IBOutlet UILabel *distance;
 @property (nonatomic, assign) IBOutlet UICollectionView *categoryCollection;
-
+@property (nonatomic, assign) CLLocationCoordinate2D userCoordinate;
+@property (nonatomic, retain) NSArray *categoryList;
 
 @end

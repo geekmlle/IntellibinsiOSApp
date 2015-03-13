@@ -211,6 +211,7 @@
     
     BinDetailViewController *detail = [[BinDetailViewController alloc] init];
     detail.bin = bin;
+    detail.userCoordinate = userCoordinate;
     
     [self.navigationController pushViewController:detail animated:YES];
 }

@@ -8,6 +8,7 @@
 
 #import "TutorialViewController.h"
 #import "TutorialViewCell.h"
+#import "ListViewController.h"
 
 @interface TutorialViewController ()
 
@@ -22,16 +23,28 @@
     [self.navigationController setNavigationBarHidden:YES];
     
     [_collectionView registerClass:[TutorialViewCell class] forCellWithReuseIdentifier:@"CellIdentifier"];
-    [_collectionView setHidden:YES];
+    //[_collectionView setHidden:YES];
+    CGSize size = [UIScreen mainScreen].bounds.size;
+    CGRect frame = CGRectMake(-10, 0, size.width, size.height + 20);
+    
+    [self.view setFrame:frame];
+    [_collectionView setFrame:frame];
+    
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    [flowLayout setItemSize:size];
+    [flowLayout setSectionInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [flowLayout setMinimumLineSpacing:0];
+    [flowLayout setMinimumInteritemSpacing:0];
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    [_collectionView setCollectionViewLayout:flowLayout];
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    [_collectionView setHidden:NO];
-    [_collectionView setFrame:self.view.frame];
+    //[_collectionView setHidden:NO];
 }
 
-- (void) viewWillDisappear:(BOOL)animated
+- (void)viewDidDisappear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO];
 }
@@ -43,7 +56,16 @@
 
 - (IBAction)getStartedClicked:(id)sender
 {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    ListViewController *listVC = [[ListViewController alloc] init];
+    UINavigationController *listNVC = [[UINavigationController alloc] initWithRootViewController:listVC];
+    [self.navigationController presentViewController:listNVC animated:YES completion:^{
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }];
+}
+
+- (void) showCategoryList
+{
+    
 }
 
 
@@ -58,12 +80,17 @@
     return 3;
 }
 
+/*
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGSize size = [UIScreen mainScreen].bounds.size;
-    size.height += 10;
+    //size.height -= 20;
+    
+    NSLog(@"Item: %@", NSStringFromCGSize(size));
+    NSLog(@"View: %@", NSStringFromCGSize(collectionView.frame.size));
+    
     return size;
-}
+}*/
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -97,14 +124,9 @@
     [pageControl setCurrentPage:page];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)pageControlClicked:(UIPageControl *)sender
+{
+    [_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:sender.currentPage inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
 }
-*/
 
 @end

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="d7b-kl-lmw">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="d7b-kl-lmw">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="JxW-OO-IFj">
                         <size key="itemSize" width="320" height="568"/>
@@ -55,6 +55,9 @@
                 </button>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="8sr-2Q-9MM">
                     <rect key="frame" x="141" y="435" width="39" height="37"/>
+                    <connections>
+                        <action selector="pageControlClicked:" destination="-1" eventType="valueChanged" id="czT-6r-fKn"/>
+                    </connections>
                 </pageControl>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -63,7 +66,11 @@
                 <constraint firstAttribute="centerX" secondItem="8sr-2Q-9MM" secondAttribute="centerX" constant="-0.5" id="8hB-ge-xqN"/>
                 <constraint firstAttribute="bottom" secondItem="Mz7-qR-qsr" secondAttribute="bottom" constant="40" id="ARf-pT-HeW"/>
                 <constraint firstItem="Mz7-qR-qsr" firstAttribute="top" secondItem="8sr-2Q-9MM" secondAttribute="bottom" constant="8" id="KEG-Cm-zhf"/>
+                <constraint firstAttribute="bottom" secondItem="d7b-kl-lmw" secondAttribute="bottom" id="eP2-OM-VHQ"/>
+                <constraint firstItem="d7b-kl-lmw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hW0-OW-l0x"/>
                 <constraint firstAttribute="trailing" secondItem="Mz7-qR-qsr" secondAttribute="trailing" constant="20" id="hZG-0p-ksq"/>
+                <constraint firstItem="d7b-kl-lmw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kIe-ln-i9p"/>
+                <constraint firstAttribute="trailing" secondItem="d7b-kl-lmw" secondAttribute="trailing" id="tED-1I-ACp"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="366" y="284"/>

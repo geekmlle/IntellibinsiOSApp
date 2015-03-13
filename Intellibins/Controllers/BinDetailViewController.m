@@ -18,6 +18,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = self.bin.short_name;
+    
+    [self.view setFrame:[UIScreen mainScreen].bounds];
+    [self.content setFrame:[UIScreen mainScreen].bounds];
+    NSLog(@"%@", NSStringFromCGRect(self.content.frame));
+    
+    self.address.text = self.bin.address;
+    
+    [self.view layoutIfNeeded];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,14 +33,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)openGoogleMaps:(id)sender
+{
+    
 }
-*/
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 0;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
 
 @end

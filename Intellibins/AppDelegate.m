@@ -33,20 +33,16 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    ListViewController *listVC = [[ListViewController alloc] init];
-    UINavigationController *listNVC = [[UINavigationController alloc] initWithRootViewController:listVC];
-    
     MapViewController *mapVC = [[MapViewController alloc] init];
     
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:mapVC];
     //[nvc pushViewController:listVC animated:NO];
     [self.window setRootViewController:nvc];
     
-    [nvc presentViewController:listNVC animated:NO completion:nil];
+    //[nvc presentViewController:listNVC animated:NO completion:nil];
     
     //Checking if it's first time launch, if so, show tutorial
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
     if(![defaults boolForKey:TUTORIAL_KEY] || FORCE_TUTORIAL)
     {
         TutorialViewController *tutorial = [[TutorialViewController alloc] init];
@@ -55,8 +51,19 @@
         [defaults setBool:YES forKey:TUTORIAL_KEY];
         [defaults synchronize];
     }
+    else
+    {
+        [self performSelector:@selector(showCategoryList) withObject:nil afterDelay:0.5];
+    }
     
     return YES;
+}
+
+- (void) showCategoryList
+{
+    ListViewController *listVC = [[ListViewController alloc] init];
+    UINavigationController *listNVC = [[UINavigationController alloc] initWithRootViewController:listVC];
+    [self.window.rootViewController presentViewController:listNVC animated:NO completion:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

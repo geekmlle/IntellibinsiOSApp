@@ -37,6 +37,8 @@
     self.distanceFilter = 1;
     
     self.binList = [Util sharedInstance].bins;
+    
+    self.title = @"Bins";
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -53,6 +55,8 @@
         [defaults synchronize];
     }
     */
+    
+    [self addAnnotationsForBinsNearCoordinate:CLLocationCoordinate2DMake(40.765592, -73.979506)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,13 +97,16 @@
     // User has never been asked to decide on location authorization
     if (status == kCLAuthorizationStatusNotDetermined && [locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         NSLog(@"Requesting when in use auth");
-            [locationManager requestWhenInUseAuthorization];
+        [locationManager requestWhenInUseAuthorization];
+        
+        /*
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
                                                             message:message
                                                            delegate:self
                                                   cancelButtonTitle:@"Cancel"
                                                   otherButtonTitles:@"Settings", nil];
         [alertView show];
+         */
     }
     // User has denied location use (either for this app or for all apps
     else if (status == kCLAuthorizationStatusDenied) {
@@ -133,6 +140,8 @@
 
 - (void) addAnnotationsForBinsNearCoordinate:(CLLocationCoordinate2D)coordinate
 {
+    [_mapView removeAnnotations:_mapView.annotations];
+    
     MKMapPoint point = MKMapPointForCoordinate(coordinate);
     double milesInPoints = MKMapPointsPerMeterAtLatitude(coordinate.latitude) * 1600 * self.distanceFilter;
     MKMapRect rect = MKMapRectMake(point.x - milesInPoints / 2, point.y - milesInPoints / 2, milesInPoints, milesInPoints);
@@ -187,6 +196,8 @@
         
         annotationView.canShowCallout = YES;
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        annotationView.animatesDrop = YES;
+        
         return annotationView;
     }
     

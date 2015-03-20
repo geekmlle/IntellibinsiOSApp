@@ -7,6 +7,7 @@
 //
 
 #import "BinDetailViewController.h"
+#import "CategoryCollectionViewCell.h"
 
 @interface BinDetailViewController ()
 
@@ -27,6 +28,16 @@
     self.address.text = self.bin.address;
     
     self.categoryList = [self.bin.item_list componentsSeparatedByString:@","];
+    
+    [_categoryCollection registerClass:[CategoryCollectionViewCell class] forCellWithReuseIdentifier:@"CategoryCell"];
+    
+    CLLocation *binLocation = [[CLLocation alloc] initWithLatitude:self.bin.latitude longitude:self.bin.longitude];
+    CLLocation *userLocation = [[CLLocation alloc] initWithLatitude:self.userCoordinate.latitude longitude:self.userCoordinate.longitude];
+    CLLocationDistance meters = [binLocation distanceFromLocation:userLocation];
+    
+    CGFloat miles = meters / 1609.344;
+    
+    self.distance.text = [NSString stringWithFormat:@"%.2f miles away", miles];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,7 +47,19 @@
 
 - (IBAction)openGoogleMaps:(id)sender
 {
-    
+    NSString *urlString = [NSString stringWithFormat:@"comgooglemaps://?saddr=%0.6f,%0.6f&daddr=%0.6f,%0.6f", self.userCoordinate.latitude, self.userCoordinate.longitude, self.bin.latitude, self.bin.longitude];
+    if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:urlString]]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+    }
+    else
+    {
+        CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(self.bin.latitude, self.bin.longitude);
+        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coord addressDictionary:nil];
+        MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+        [mapItem setName:self.bin.short_name];
+        
+        [mapItem openInMapsWithLaunchOptions:nil];
+    }
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -51,7 +74,11 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    CategoryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCell" forIndexPath:indexPath];
+    
+    cell.categoryIcon.image = [UIImage imageNamed:@"button"];
+    
+    return cell;
 }
 
 @end

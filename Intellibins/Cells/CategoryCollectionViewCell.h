@@ -10,4 +10,6 @@
 
 @interface CategoryCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic, retain) UIImageView *categoryIcon;
+
 @end

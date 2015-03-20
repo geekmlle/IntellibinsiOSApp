@@ -54,6 +54,7 @@
 		49AE84501AA5947900C27822 /* TempBin.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AE844F1AA5947900C27822 /* TempBin.m */; };
 		49AE84531AA59D7F00C27822 /* MapAnnotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AE84521AA59D7F00C27822 /* MapAnnotion.m */; };
 		49AE84551AA6DE1000C27822 /* bin_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49AE84541AA6DE1000C27822 /* bin_data.txt */; };
+		49AE84581ABBDA5C00C27822 /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AE84571ABBDA5C00C27822 /* CategoryCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,8 @@
 		49AE84511AA59D7F00C27822 /* MapAnnotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapAnnotion.h; path = Cells/MapAnnotion.h; sourceTree = "<group>"; };
 		49AE84521AA59D7F00C27822 /* MapAnnotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapAnnotion.m; path = Cells/MapAnnotion.m; sourceTree = "<group>"; };
 		49AE84541AA6DE1000C27822 /* bin_data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bin_data.txt; sourceTree = "<group>"; };
+		49AE84561ABBDA5C00C27822 /* CategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryCollectionViewCell.h; path = Cells/CategoryCollectionViewCell.h; sourceTree = "<group>"; };
+		49AE84571ABBDA5C00C27822 /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryCollectionViewCell.m; path = Cells/CategoryCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +304,8 @@
 				4908761F1A9DAD0300BA5338 /* CategoryTableViewCell.xib */,
 				49AE84511AA59D7F00C27822 /* MapAnnotion.h */,
 				49AE84521AA59D7F00C27822 /* MapAnnotion.m */,
+				49AE84561ABBDA5C00C27822 /* CategoryCollectionViewCell.h */,
+				49AE84571ABBDA5C00C27822 /* CategoryCollectionViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -429,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49AE84581ABBDA5C00C27822 /* CategoryCollectionViewCell.m in Sources */,
 				490875E61A9711B300BA5338 /* BinDetailViewController.m in Sources */,
 				490876291A9EFEF000BA5338 /* HelpView.m in Sources */,
 				490876201A9DAD0300BA5338 /* CategoryTableViewCell.m in Sources */,
@@ -565,7 +571,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Intellibins/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -576,7 +582,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Intellibins/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

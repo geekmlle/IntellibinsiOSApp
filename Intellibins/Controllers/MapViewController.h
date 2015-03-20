@@ -26,5 +26,4 @@
 @property (nonatomic, retain) NSArray *categoryList;
 @property (nonatomic, assign) NSInteger distanceFilter;
 
-
 @end

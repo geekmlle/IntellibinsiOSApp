@@ -39,12 +39,13 @@
     self.binList = [Util sharedInstance].bins;
     
     self.title = @"Bins";
+    
+    [locationManager startUpdatingLocation];
+    [self addAnnotationsForBinsNearCoordinate:CLLocationCoordinate2DMake(40.765592, -73.979506)];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [locationManager startUpdatingLocation];
-    
     //Proximity list not implemented for this iteration
     /*
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -55,8 +56,6 @@
         [defaults synchronize];
     }
     */
-    
-    [self addAnnotationsForBinsNearCoordinate:CLLocationCoordinate2DMake(40.765592, -73.979506)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,15 +97,6 @@
     if (status == kCLAuthorizationStatusNotDetermined && [locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         NSLog(@"Requesting when in use auth");
         [locationManager requestWhenInUseAuthorization];
-        
-        /*
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
-                                                            message:message
-                                                           delegate:self
-                                                  cancelButtonTitle:@"Cancel"
-                                                  otherButtonTitles:@"Settings", nil];
-        [alertView show];
-         */
     }
     // User has denied location use (either for this app or for all apps
     else if (status == kCLAuthorizationStatusDenied) {

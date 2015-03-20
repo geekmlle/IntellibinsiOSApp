@@ -29,6 +29,8 @@
     
     categories = [Util sharedInstance].categories;
     [_tableView registerClass:[CategoryTableViewCell class] forCellReuseIdentifier:@"CellIdentifier"];
+    
+    self.title = @"Filter";
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -8,6 +8,7 @@
 
 #import "BinDetailViewController.h"
 #import "CategoryCollectionViewCell.h"
+#import "MapAnnotion.h"
 
 @interface BinDetailViewController ()
 
@@ -38,6 +39,18 @@
     CGFloat miles = meters / 1609.344;
     
     self.distance.text = [NSString stringWithFormat:@"%.2f miles away", miles];
+    
+    MapAnnotion *pin = [[MapAnnotion alloc] initWithCoordinate:CLLocationCoordinate2DMake(self.bin.latitude, self.bin.longitude) andTitle:self.bin.short_name andSubtitle:self.bin.park_site_name andIndex:0];
+    [_mapView addAnnotation:pin];
+    [_mapView setMapType:MKMapTypeSatellite];
+    
+    MKCoordinateRegion region = {{self.bin.latitude, self.bin.longitude}, {0.005, 0.005}};
+    [_mapView setRegion:region animated:NO];
+    [_mapView setAlpha:0.0];
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        [_mapView setAlpha:1.0];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,7 +71,7 @@
         MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
         [mapItem setName:self.bin.short_name];
         
-        [mapItem openInMapsWithLaunchOptions:nil];
+        [mapItem openInMapsWithLaunchOptions:[NSDictionary dictionaryWithObjectsAndKeys:MKLaunchOptionsDirectionsModeDriving, MKLaunchOptionsDirectionsModeKey, nil]];
     }
 }
 

@@ -20,6 +20,7 @@
 @property (nonatomic, assign) IBOutlet UILabel *address;
 @property (nonatomic, assign) IBOutlet UILabel *distance;
 @property (nonatomic, assign) IBOutlet UICollectionView *categoryCollection;
+@property (nonatomic, assign) IBOutlet MKMapView *mapView;
 @property (nonatomic, assign) CLLocationCoordinate2D userCoordinate;
 @property (nonatomic, retain) NSArray *categoryList;
 

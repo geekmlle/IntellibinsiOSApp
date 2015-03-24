@@ -182,8 +182,8 @@
         
         CGRect frame = CGRectMake(0, 0, 20, 20);
         
-        UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(3, 3, frame.size.width - 6, frame.size.height - 6)];
-        colorView.backgroundColor = [Util getColorForCategoryName:<#(NSString *)#>];
+        //UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(3, 3, frame.size.width - 6, frame.size.height - 6)];
+        //colorView.backgroundColor = [Util getColorForCategoryName:<#(NSString *)#>];
         
         pinView.canShowCallout = YES;
         pinView.frame = frame;

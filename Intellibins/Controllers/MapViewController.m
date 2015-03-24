@@ -13,6 +13,7 @@
 #import "TempItem.h"
 #import "MapAnnotion.h"
 #import "BinDetailViewController.h"
+#import "CategoryCollectionViewCell.h"
 
 #define MAP_TUTORIAL @"map_tutorial"
 
@@ -37,11 +38,14 @@
     self.distanceFilter = 1;
     
     self.binList = [Util sharedInstance].bins;
+    self.categoryList = [[NSMutableArray alloc] init];
     
     self.title = @"Bins";
     
     [locationManager startUpdatingLocation];
     [self addAnnotationsForBinsNearCoordinate:CLLocationCoordinate2DMake(40.765592, -73.979506)];
+    
+    [categoryCollectionView registerClass:[CategoryCollectionViewCell class] forCellWithReuseIdentifier:@"CategoryCell"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -56,6 +60,20 @@
         [defaults synchronize];
     }
     */
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.categoryList removeAllObjects];
+    //Refresh selected categories
+    for(TempItem *item in [Util sharedInstance].categories)
+    {
+        if(item.is_toggled)
+        {
+            [self.categoryList addObject:item];
+        }
+    }
+    [categoryCollectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -149,20 +167,27 @@
     }
 }
 
-/*
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
     MKAnnotationView *pinView = nil;
     if(annotation != mapView.userLocation)
     {
+        //TempBin *bin = self.binList objectAtIndex:annotation.
+        
         static NSString *defaultPinID = @"IntellibinPin";
         pinView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
         if ( pinView == nil )
             pinView = [[MKAnnotationView alloc]
                        initWithAnnotation:annotation reuseIdentifier:defaultPinID];
         
+        CGRect frame = CGRectMake(0, 0, 20, 20);
+        
+        UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(3, 3, frame.size.width - 6, frame.size.height - 6)];
+        colorView.backgroundColor = [Util getColorForCategoryName:<#(NSString *)#>];
+        
         pinView.canShowCallout = YES;
-        pinView.image = [UIImage imageNamed:@"circle"];
+        pinView.frame = frame;
+        pinView.backgroundColor = [UIColor whiteColor];
         pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     }
     else {
@@ -170,8 +195,8 @@
     }
     return pinView;
 }
-*/
 
+/*
 //Temporary method until custom pin images are provided
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
@@ -193,6 +218,7 @@
     
     return nil;
 }
+ */
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
@@ -213,12 +239,18 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 0;
+    return [self.categoryList count];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    CategoryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCell" forIndexPath:indexPath];
+    
+    TempItem *category = [self.categoryList objectAtIndex:indexPath.row];
+    cell.categoryIcon.image = [Util getImageForCategoryName:category.item_type];
+    cell.backgroundColor = [Util getColorForCategoryName:category.item_type];
+    
+    return cell;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

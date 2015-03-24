@@ -18,6 +18,12 @@
         // Initialization code
         [self addSubview:self.categoryIcon];
     }
+    
+    CALayer *mask = [CALayer layer];
+    mask.contents = (id)[[UIImage imageNamed:@"avatar_mask"] CGImage];
+    mask.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
+    self.layer.mask = mask;
+    self.layer.masksToBounds = YES;
     return self;
 }
 

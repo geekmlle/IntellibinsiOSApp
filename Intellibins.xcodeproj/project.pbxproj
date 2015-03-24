@@ -55,6 +55,14 @@
 		49AE84531AA59D7F00C27822 /* MapAnnotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AE84521AA59D7F00C27822 /* MapAnnotion.m */; };
 		49AE84551AA6DE1000C27822 /* bin_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49AE84541AA6DE1000C27822 /* bin_data.txt */; };
 		49AE84581ABBDA5C00C27822 /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AE84571ABBDA5C00C27822 /* CategoryCollectionViewCell.m */; };
+		49D60D3D1AC1278B00AD1881 /* electric@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D361AC1278B00AD1881 /* electric@2x.png */; };
+		49D60D3E1AC1278B00AD1881 /* glass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D371AC1278B00AD1881 /* glass@2x.png */; };
+		49D60D3F1AC1278B00AD1881 /* hazard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D381AC1278B00AD1881 /* hazard@2x.png */; };
+		49D60D401AC1278B00AD1881 /* metal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D391AC1278B00AD1881 /* metal@2x.png */; };
+		49D60D411AC1278B00AD1881 /* other@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D3A1AC1278B00AD1881 /* other@2x.png */; };
+		49D60D421AC1278B00AD1881 /* paper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D3B1AC1278B00AD1881 /* paper@2x.png */; };
+		49D60D431AC1278B00AD1881 /* plastic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D3C1AC1278B00AD1881 /* plastic@2x.png */; };
+		49D60D451AC13FBC00AD1881 /* avatar_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D441AC13FBC00AD1881 /* avatar_mask@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +141,14 @@
 		49AE84541AA6DE1000C27822 /* bin_data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bin_data.txt; sourceTree = "<group>"; };
 		49AE84561ABBDA5C00C27822 /* CategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryCollectionViewCell.h; path = Cells/CategoryCollectionViewCell.h; sourceTree = "<group>"; };
 		49AE84571ABBDA5C00C27822 /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryCollectionViewCell.m; path = Cells/CategoryCollectionViewCell.m; sourceTree = "<group>"; };
+		49D60D361AC1278B00AD1881 /* electric@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electric@2x.png"; sourceTree = "<group>"; };
+		49D60D371AC1278B00AD1881 /* glass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glass@2x.png"; sourceTree = "<group>"; };
+		49D60D381AC1278B00AD1881 /* hazard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hazard@2x.png"; sourceTree = "<group>"; };
+		49D60D391AC1278B00AD1881 /* metal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "metal@2x.png"; sourceTree = "<group>"; };
+		49D60D3A1AC1278B00AD1881 /* other@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "other@2x.png"; sourceTree = "<group>"; };
+		49D60D3B1AC1278B00AD1881 /* paper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper@2x.png"; sourceTree = "<group>"; };
+		49D60D3C1AC1278B00AD1881 /* plastic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plastic@2x.png"; sourceTree = "<group>"; };
+		49D60D441AC13FBC00AD1881 /* avatar_mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_mask@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +266,13 @@
 			children = (
 				49AE84541AA6DE1000C27822 /* bin_data.txt */,
 				49AE844C1AA5942B00C27822 /* locations-v01.json */,
+				49D60D361AC1278B00AD1881 /* electric@2x.png */,
+				49D60D371AC1278B00AD1881 /* glass@2x.png */,
+				49D60D381AC1278B00AD1881 /* hazard@2x.png */,
+				49D60D391AC1278B00AD1881 /* metal@2x.png */,
+				49D60D3A1AC1278B00AD1881 /* other@2x.png */,
+				49D60D3B1AC1278B00AD1881 /* paper@2x.png */,
+				49D60D3C1AC1278B00AD1881 /* plastic@2x.png */,
 				490875FD1A9C5C8400BA5338 /* button-hover.png */,
 				490875FE1A9C5C8400BA5338 /* button-hover@2x.png */,
 				490875FF1A9C5C8400BA5338 /* button-hover@3x.png */,
@@ -265,6 +288,7 @@
 				490876091A9C5C8400BA5338 /* tutorial3.png */,
 				4908760A1A9C5C8400BA5338 /* tutorial3@2x.png */,
 				4908760B1A9C5C8400BA5338 /* tutorial3@3x.png */,
+				49D60D441AC13FBC00AD1881 /* avatar_mask@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -391,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4908760F1A9C5C8400BA5338 /* button.png in Resources */,
+				49D60D401AC1278B00AD1881 /* metal@2x.png in Resources */,
 				490876191A9C5C8400BA5338 /* tutorial3@2x.png in Resources */,
 				490876171A9C5C8400BA5338 /* tutorial2@3x.png in Resources */,
 				490876211A9DAD0300BA5338 /* CategoryTableViewCell.xib in Resources */,
@@ -399,13 +424,20 @@
 				4908761A1A9C5C8400BA5338 /* tutorial3@3x.png in Resources */,
 				490876141A9C5C8400BA5338 /* tutorial1@3x.png in Resources */,
 				490876131A9C5C8400BA5338 /* tutorial1@2x.png in Resources */,
+				49D60D451AC13FBC00AD1881 /* avatar_mask@2x.png in Resources */,
 				4908760C1A9C5C8400BA5338 /* button-hover.png in Resources */,
+				49D60D411AC1278B00AD1881 /* other@2x.png in Resources */,
+				49D60D3F1AC1278B00AD1881 /* hazard@2x.png in Resources */,
+				49D60D421AC1278B00AD1881 /* paper@2x.png in Resources */,
 				490876181A9C5C8400BA5338 /* tutorial3.png in Resources */,
 				4908759F1A9709EC00BA5338 /* Main.storyboard in Resources */,
 				490876121A9C5C8400BA5338 /* tutorial1.png in Resources */,
 				4908761C1A9C704600BA5338 /* TutorialViewCell.xib in Resources */,
 				490875DD1A97118500BA5338 /* TutorialViewController.xib in Resources */,
+				49D60D3D1AC1278B00AD1881 /* electric@2x.png in Resources */,
 				4908760D1A9C5C8400BA5338 /* button-hover@2x.png in Resources */,
+				49D60D431AC1278B00AD1881 /* plastic@2x.png in Resources */,
+				49D60D3E1AC1278B00AD1881 /* glass@2x.png in Resources */,
 				49AE84551AA6DE1000C27822 /* bin_data.txt in Resources */,
 				490875D81A97116600BA5338 /* ListViewController.xib in Resources */,
 				490875A41A9709EC00BA5338 /* LaunchScreen.xib in Resources */,

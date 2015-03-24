@@ -9,6 +9,8 @@
 #import "BinDetailViewController.h"
 #import "CategoryCollectionViewCell.h"
 #import "MapAnnotion.h"
+#import "Util.h"
+#import "TempItem.h"
 
 @interface BinDetailViewController ()
 
@@ -89,7 +91,7 @@
 {
     CategoryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CategoryCell" forIndexPath:indexPath];
     
-    cell.categoryIcon.image = [UIImage imageNamed:@"button"];
+    cell.categoryIcon.image = [Util getImageForCategoryName:[self.categoryList objectAtIndex:indexPath.row]];
     
     return cell;
 }

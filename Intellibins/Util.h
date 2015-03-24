@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreGraphics/CGBase.h>
+#import <UIKit/UIKit.h>
 
 @interface Util : NSObject
 
@@ -16,8 +16,11 @@
 
 + (Util *) sharedInstance;
 + (void) loadCategories;
++ (void) saveCategories;
 + (void) loadTempBins;
 
 + (NSString *) NSStringConsistencyCheck:(NSString *)string;
 + (CGFloat) CGFloatConsistencyCheck:(id)number;
++ (UIImage *)getImageForCategoryName:(NSString *)category;
++ (UIColor *)getColorForCategoryName:(NSString *)category;
 @end

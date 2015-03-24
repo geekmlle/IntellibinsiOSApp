@@ -11,5 +11,6 @@
 @interface CategoryCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, retain) UIImageView *categoryIcon;
+@property (nonatomic, retain) UIView *colorView;
 
 @end

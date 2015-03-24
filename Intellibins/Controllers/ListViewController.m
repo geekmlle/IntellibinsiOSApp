@@ -79,6 +79,7 @@
 
 - (void)applyFilterClicked:(id)sender
 {
+    [Util saveCategories];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -110,6 +111,7 @@
     cell.name.text = item.item_name;
     cell.toggle.on = item.is_toggled;
     cell.toggle.tag = indexPath.row;
+    cell.icon.image = [Util getImageForCategoryName:item.item_type];
     [cell.toggle addTarget:self action:@selector(didToggleSwitch:) forControlEvents:UIControlEventValueChanged];
     
     return cell;
@@ -132,7 +134,6 @@
     
     TempItem *item = [categories objectAtIndex:_switch.tag];
     item.is_toggled = !item.is_toggled;
-    
 }
 
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView

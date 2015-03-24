@@ -18,14 +18,14 @@
     {
         if(source)
         {
-            self.bin_type = [Util NSStringConsistencyCheck:[source objectForKey:@"Bin Type"]];
+            self.bin_type = [Util NSStringConsistencyCheck:[source objectForKey:@"Bin"]];
             self.short_name = [Util NSStringConsistencyCheck:[source objectForKey:@"Short Name"]];
             self.borough = [Util NSStringConsistencyCheck:[source objectForKey:@"Borough"]];
             self.park_site_name = [Util NSStringConsistencyCheck:[source objectForKey:@"Park/Site Name"]];
             self.address = [Util NSStringConsistencyCheck:[source objectForKey:@"Address"]];
             self.latitude = [Util CGFloatConsistencyCheck:[source objectForKey:@"Latitude"]];
             self.longitude = [Util CGFloatConsistencyCheck:[source objectForKey:@"Longitude"]];
-            self.item_list = [Util NSStringConsistencyCheck:[source objectForKey:@"Item Type"]];
+            self.item_list = [Util NSStringConsistencyCheck:[source objectForKey:@"Material Type"]];
         }
     }
     return self;

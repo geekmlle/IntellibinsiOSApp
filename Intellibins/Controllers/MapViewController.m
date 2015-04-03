@@ -155,7 +155,7 @@ static BOOL mapChangedFromUserInteraction = NO;
     //Random location near Central Park for testing...
     CLLocationCoordinate2D binCoord = CLLocationCoordinate2DMake(40.765592, -73.979506);
     //Real line to be used:
-    //binCoord = userCoordinate;
+    binCoord = userCoordinate;
     
     [self addAnnotationsForBinsNearCoordinate:binCoord];
 }

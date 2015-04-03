@@ -13,6 +13,7 @@
 
 @property (nonatomic, retain) NSArray *categories;
 @property (nonatomic, retain) NSArray *bins;
+@property (nonatomic, assign) BOOL reloadMap;
 
 + (Util *) sharedInstance;
 + (void) loadCategories;
@@ -23,4 +24,5 @@
 + (CGFloat) CGFloatConsistencyCheck:(id)number;
 + (UIImage *)getImageForCategoryName:(NSString *)category;
 + (UIColor *)getColorForCategoryName:(NSString *)category;
+
 @end

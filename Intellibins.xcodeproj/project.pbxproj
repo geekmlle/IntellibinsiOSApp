@@ -63,6 +63,7 @@
 		49D60D421AC1278B00AD1881 /* paper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D3B1AC1278B00AD1881 /* paper@2x.png */; };
 		49D60D431AC1278B00AD1881 /* plastic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D3C1AC1278B00AD1881 /* plastic@2x.png */; };
 		49D60D451AC13FBC00AD1881 /* avatar_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D441AC13FBC00AD1881 /* avatar_mask@2x.png */; };
+		49D60D481ACF2CA400AD1881 /* MapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D60D471ACF2CA400AD1881 /* MapAnnotationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,8 @@
 		49D60D3B1AC1278B00AD1881 /* paper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper@2x.png"; sourceTree = "<group>"; };
 		49D60D3C1AC1278B00AD1881 /* plastic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plastic@2x.png"; sourceTree = "<group>"; };
 		49D60D441AC13FBC00AD1881 /* avatar_mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_mask@2x.png"; sourceTree = "<group>"; };
+		49D60D461ACF2CA400AD1881 /* MapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapAnnotationView.h; path = Cells/MapAnnotationView.h; sourceTree = "<group>"; };
+		49D60D471ACF2CA400AD1881 /* MapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapAnnotationView.m; path = Cells/MapAnnotationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +331,8 @@
 				4908761F1A9DAD0300BA5338 /* CategoryTableViewCell.xib */,
 				49AE84511AA59D7F00C27822 /* MapAnnotion.h */,
 				49AE84521AA59D7F00C27822 /* MapAnnotion.m */,
+				49D60D461ACF2CA400AD1881 /* MapAnnotationView.h */,
+				49D60D471ACF2CA400AD1881 /* MapAnnotationView.m */,
 				49AE84561ABBDA5C00C27822 /* CategoryCollectionViewCell.h */,
 				49AE84571ABBDA5C00C27822 /* CategoryCollectionViewCell.m */,
 			);
@@ -468,6 +473,7 @@
 			files = (
 				49AE84581ABBDA5C00C27822 /* CategoryCollectionViewCell.m in Sources */,
 				490875E61A9711B300BA5338 /* BinDetailViewController.m in Sources */,
+				49D60D481ACF2CA400AD1881 /* MapAnnotationView.m in Sources */,
 				490876291A9EFEF000BA5338 /* HelpView.m in Sources */,
 				490876201A9DAD0300BA5338 /* CategoryTableViewCell.m in Sources */,
 				490875C71A970DFA00BA5338 /* Util.m in Sources */,

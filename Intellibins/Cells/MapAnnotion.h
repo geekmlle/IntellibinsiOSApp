@@ -17,5 +17,7 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, assign) NSInteger index;
+@property (nonatomic, retain) NSString *item_type;
+@property (nonatomic, retain) UIView *colorView;
 
 @end

@@ -10,6 +10,7 @@
 #import "Util.h"
 #import "CategoryTableViewCell.h"
 #import "TempItem.h"
+#import "MapViewController.h"
 
 #define TUTORIAL_KEY @"listTutorial"
 #define TUTORIAL_KEY_2 @"switchTutorial"
@@ -134,6 +135,9 @@
     
     TempItem *item = [categories objectAtIndex:_switch.tag];
     item.is_toggled = !item.is_toggled;
+    
+    [Util sharedInstance].reloadMap = YES;
+    
 }
 
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView
@@ -155,5 +159,4 @@
         if(help2) [help2 hideView:nil];
     }
 }
-
 @end

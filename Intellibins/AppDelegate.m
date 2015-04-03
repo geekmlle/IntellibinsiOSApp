@@ -36,10 +36,7 @@
     MapViewController *mapVC = [[MapViewController alloc] init];
     
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:mapVC];
-    //[nvc pushViewController:listVC animated:NO];
     [self.window setRootViewController:nvc];
-    
-    //[nvc presentViewController:listNVC animated:NO completion:nil];
     
     //Checking if it's first time launch, if so, show tutorial
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

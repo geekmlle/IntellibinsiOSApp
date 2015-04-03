@@ -14,6 +14,7 @@
 #import "MapAnnotion.h"
 #import "BinDetailViewController.h"
 #import "CategoryCollectionViewCell.h"
+#import "MapAnnotationView.h"
 
 #define MAP_TUTORIAL @"map_tutorial"
 
@@ -74,6 +75,13 @@
         }
     }
     [categoryCollectionView reloadData];
+    
+    if([Util sharedInstance].reloadMap)
+    {
+        [Util sharedInstance].reloadMap = NO;
+        //TODO: Write method for getting bins near MKMapRect, instead of CLLocationCoordinate
+        [self addAnnotationsForBinsNearCoordinate:CLLocationCoordinate2DMake(40.765592, -73.979506)];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -140,7 +148,9 @@
     MKCoordinateRegion region = {{userCoordinate.latitude, userCoordinate.longitude}, {0.02, 0.02}};
     [_mapView setRegion:region animated:YES];
     
+    //Random location near Central Park for testing...
     CLLocationCoordinate2D binCoord = CLLocationCoordinate2DMake(40.765592, -73.979506);
+    //Real line to be used:
     //binCoord = userCoordinate;
     
     [self addAnnotationsForBinsNearCoordinate:binCoord];
@@ -148,20 +158,26 @@
 
 - (void) addAnnotationsForBinsNearCoordinate:(CLLocationCoordinate2D)coordinate
 {
+    //Removing old annotations first, so we don't re-add them
     [_mapView removeAnnotations:_mapView.annotations];
     
+    //Get the rect in mapview where the coordinate is the center and has a radius of 1 mile (1600 meters)
     MKMapPoint point = MKMapPointForCoordinate(coordinate);
     double milesInPoints = MKMapPointsPerMeterAtLatitude(coordinate.latitude) * 1600 * self.distanceFilter;
     MKMapRect rect = MKMapRectMake(point.x - milesInPoints / 2, point.y - milesInPoints / 2, milesInPoints, milesInPoints);
     
+    //We set the visible region to the map
     [_mapView setRegion:MKCoordinateRegionForMapRect(rect) animated:YES];
     
     for(TempBin *bin in self.binList)
     {
+        //Adding bins which are located whithin the maprect area, AND are within the chosen categories
         MKMapPoint p = MKMapPointForCoordinate(CLLocationCoordinate2DMake(bin.latitude, bin.longitude));
-        if(MKMapRectContainsPoint(rect, p))
+        NSArray *itemList = [bin.item_list componentsSeparatedByString:@","];
+        if(MKMapRectContainsPoint(rect, p) && [self binIsIncludedInCategories:itemList])
         {
             MapAnnotion *pin = [[MapAnnotion alloc] initWithCoordinate:CLLocationCoordinate2DMake(bin.latitude, bin.longitude) andTitle:bin.short_name andSubtitle:bin.park_site_name andIndex:[self.binList indexOfObject:bin]];
+            pin.item_type = [[bin.item_list componentsSeparatedByString:@","] firstObject];
             [_mapView addAnnotation:pin];
         }
     }
@@ -169,26 +185,32 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    MKAnnotationView *pinView = nil;
+    MapAnnotationView *pinView = nil;
     if(annotation != mapView.userLocation)
     {
+        
         //TempBin *bin = self.binList objectAtIndex:annotation.
         
         static NSString *defaultPinID = @"IntellibinPin";
-        pinView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
+        pinView = (MapAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
         if ( pinView == nil )
-            pinView = [[MKAnnotationView alloc]
-                       initWithAnnotation:annotation reuseIdentifier:defaultPinID];
+        {
+            pinView = [[MapAnnotationView alloc] initWithAnnotation:annotation
+                                                    reuseIdentifier:defaultPinID
+                                                           andFrame:CGRectMake(0, 0, 20, 20)];
+            pinView.canShowCallout = YES;
+            pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        }
+        else
+        {
+            pinView.annotation = annotation;
+        }
         
-        CGRect frame = CGRectMake(0, 0, 20, 20);
-        
-        //UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(3, 3, frame.size.width - 6, frame.size.height - 6)];
-        //colorView.backgroundColor = [Util getColorForCategoryName:<#(NSString *)#>];
-        
-        pinView.canShowCallout = YES;
-        pinView.frame = frame;
-        pinView.backgroundColor = [UIColor whiteColor];
-        pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        if([annotation isKindOfClass:[MapAnnotion class]])
+        {
+            MapAnnotion *mapA = (MapAnnotion *)annotation;
+            pinView.colorBackground.backgroundColor = [Util getColorForCategoryName:mapA.item_type];
+        }
     }
     else {
         [mapView.userLocation setTitle:@"You are here"];
@@ -196,29 +218,10 @@
     return pinView;
 }
 
-/*
-//Temporary method until custom pin images are provided
--(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
 {
-    static NSString *identifier = @"MyLocation";
-    if (annotation != mapView.userLocation) {
-        MKPinAnnotationView *annotationView = (MKPinAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-        if (annotationView == nil) {
-            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-        } else {
-            annotationView.annotation = annotation;
-        }
-        
-        annotationView.canShowCallout = YES;
-        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        annotationView.animatesDrop = YES;
-        
-        return annotationView;
-    }
     
-    return nil;
 }
- */
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
@@ -260,6 +263,23 @@
         NSURL *settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
         [[UIApplication sharedApplication] openURL:settingsURL];
     }
+}
+
+- (BOOL) binIsIncludedInCategories:(NSArray *)binItems
+{
+    BOOL answer = NO;
+    for(TempItem *item in self.categoryList)
+    {
+        NSArray *temp = [NSArray arrayWithArray:binItems];
+        NSString *search = item.item_type;
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", search];
+        NSArray *results = [temp filteredArrayUsingPredicate:predicate];
+        if([results count] > 0) {
+            answer = YES;
+            break;
+        }
+    }
+    return answer;
 }
 
 @end

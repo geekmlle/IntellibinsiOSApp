@@ -9,7 +9,7 @@
 #import "MapAnnotion.h"
 
 @implementation MapAnnotion
-@synthesize coordinate, subtitle, title, index;
+@synthesize coordinate, subtitle, title, index, item_type;
 
 -(id)initWithCoordinate:(CLLocationCoordinate2D)c andTitle:(NSString *)_title andSubtitle:(NSString *)_subtitle andIndex:(NSInteger)_index
 {

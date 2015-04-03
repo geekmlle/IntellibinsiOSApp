@@ -23,8 +23,19 @@
 @end
 
 @implementation MapViewController
+@synthesize locationManager = _locationManager;
 
 static BOOL mapChangedFromUserInteraction = NO;
+
+- (CLLocationManager *)locationManager
+{
+    if(_locationManager == nil)
+    {
+        _locationManager = [[CLLocationManager alloc] init];
+    }
+    
+    return _locationManager;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,10 +43,10 @@ static BOOL mapChangedFromUserInteraction = NO;
     UIBarButtonItem *filter = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStyleBordered target:self action:@selector(openFilterList:)];
     self.navigationItem.leftBarButtonItem = filter;
     
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.distanceFilter = 1000;
-    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = 1000;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     
     //Distance Filter is the amount of miles to restrict search of bins
     self.distanceFilter = 1;
@@ -45,7 +56,7 @@ static BOOL mapChangedFromUserInteraction = NO;
     
     self.title = @"Bins";
     
-    [locationManager startUpdatingLocation];
+    [self.locationManager startUpdatingLocation];
     [self addAnnotationsForBinsNearCoordinate:CLLocationCoordinate2DMake(40.765592, -73.979506)];
     
     [categoryCollectionView registerClass:[CategoryCollectionViewCell class] forCellWithReuseIdentifier:@"CategoryCell"];
@@ -68,6 +79,7 @@ static BOOL mapChangedFromUserInteraction = NO;
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    NSLog(@"%d, %d", self.userCoordinate.latitude, self.userCoordinate.longitude);
     [super viewWillAppear:animated];
     [self.categoryList removeAllObjects];
     //Refresh selected categories
@@ -84,7 +96,7 @@ static BOOL mapChangedFromUserInteraction = NO;
     {
         [Util sharedInstance].reloadMap = NO;
         //TODO: Write method for getting bins near MKMapRect, instead of CLLocationCoordinate
-        [self addAnnotationsForBinsNearCoordinate:CLLocationCoordinate2DMake(40.765592, -73.979506)];
+        [self addAnnotationsForBinsNearCoordinate:self.userCoordinate];
     }
 }
 
@@ -124,9 +136,9 @@ static BOOL mapChangedFromUserInteraction = NO;
     NSString *message = @"To use background location you must turn on 'Always' in the Location Services Settings";
     
     // User has never been asked to decide on location authorization
-    if (status == kCLAuthorizationStatusNotDetermined && [locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+    if (status == kCLAuthorizationStatusNotDetermined && [self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         NSLog(@"Requesting when in use auth");
-        [locationManager requestWhenInUseAuthorization];
+        [self.locationManager requestWhenInUseAuthorization];
     }
     // User has denied location use (either for this app or for all apps
     else if (status == kCLAuthorizationStatusDenied) {
@@ -143,21 +155,19 @@ static BOOL mapChangedFromUserInteraction = NO;
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    userLocation = newLocation;
-    userCoordinate = newLocation.coordinate;
+    self.userLocation = newLocation;
+    self.userCoordinate = newLocation.coordinate;
+    
+    //Random location near Central Park for testing...
+    //self.userCoordinate = CLLocationCoordinate2DMake(40.765592, -73.979506);
     
     [manager stopUpdatingLocation];
     
     //Creating region for mapview
-    MKCoordinateRegion region = {{userCoordinate.latitude, userCoordinate.longitude}, {0.02, 0.02}};
+    MKCoordinateRegion region = {{self.userCoordinate.latitude, self.userCoordinate.longitude}, {0.02, 0.02}};
     [_mapView setRegion:region animated:YES];
     
-    //Random location near Central Park for testing...
-    CLLocationCoordinate2D binCoord = CLLocationCoordinate2DMake(40.765592, -73.979506);
-    //Real line to be used:
-    binCoord = userCoordinate;
-    
-    [self addAnnotationsForBinsNearCoordinate:binCoord];
+    [self addAnnotationsForBinsNearCoordinate:self.userCoordinate];
 }
 
 - (void) addAnnotationsForBinsNearCoordinate:(CLLocationCoordinate2D)coordinate
@@ -288,7 +298,7 @@ static BOOL mapChangedFromUserInteraction = NO;
     
     BinDetailViewController *detail = [[BinDetailViewController alloc] init];
     detail.bin = bin;
-    detail.userCoordinate = userCoordinate;
+    detail.userCoordinate = self.userCoordinate;
     
     [self.navigationController pushViewController:detail animated:YES];
 }

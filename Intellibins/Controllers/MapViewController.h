@@ -17,12 +17,11 @@
     IBOutlet UIButton *redoSearch;
     
     HelpView *help;
-    
-    CLLocation *userLocation;
-    CLLocationCoordinate2D userCoordinate;
-    CLLocationManager *locationManager;
 }
 
+@property (nonatomic, retain) CLLocation *userLocation;
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, assign) CLLocationCoordinate2D userCoordinate;
 @property (nonatomic, retain) NSArray *binList;
 @property (nonatomic, retain) NSMutableArray *categoryList;
 @property (nonatomic, assign) NSInteger distanceFilter;

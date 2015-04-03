@@ -58,6 +58,7 @@
 
 - (void) showCategoryList
 {
+    [Util sharedInstance].reloadMap = YES;
     ListViewController *listVC = [[ListViewController alloc] init];
     UINavigationController *listNVC = [[UINavigationController alloc] initWithRootViewController:listVC];
     [self.window.rootViewController presentViewController:listNVC animated:NO completion:nil];

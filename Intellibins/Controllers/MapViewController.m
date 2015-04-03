@@ -177,7 +177,8 @@
         if(MKMapRectContainsPoint(rect, p) && [self binIsIncludedInCategories:itemList])
         {
             MapAnnotion *pin = [[MapAnnotion alloc] initWithCoordinate:CLLocationCoordinate2DMake(bin.latitude, bin.longitude) andTitle:bin.short_name andSubtitle:bin.park_site_name andIndex:[self.binList indexOfObject:bin]];
-            pin.item_type = [[bin.item_list componentsSeparatedByString:@","] firstObject];
+            //Iterating through the accepted materials on the list, and the method inside matches the first toggled category who is included in the acceptable mats of the bin
+            pin.item_type = [self filterCategoryListForItem:[bin.item_list componentsSeparatedByString:@","]];
             [_mapView addAnnotation:pin];
         }
     }
@@ -306,6 +307,8 @@
         NSString *search = item.item_type;
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", search];
         NSArray *results = [temp filteredArrayUsingPredicate:predicate];
+        
+        
         if([results count] > 0) {
             answer = YES;
             break;
@@ -314,4 +317,19 @@
     return answer;
 }
 
+-(NSString *)filterCategoryListForItem:(NSArray *)itemTypes
+{
+    for(TempItem *item in self.categoryList)
+    {
+        NSArray *temp = [NSArray arrayWithArray:itemTypes];
+        NSString *search = item.item_type;
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", search];
+        NSArray *results = [temp filteredArrayUsingPredicate:predicate];
+        
+        if([results count] > 0)
+            return [results firstObject];
+    }
+    
+    return nil;
+}
 @end

@@ -220,7 +220,39 @@
 
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
 {
-    
+    MapAnnotationView *aV;
+    for (aV in views) {
+        
+        // Check if current annotation is inside visible map rect, else go to next one or if annotation is user location
+        MKMapPoint point =  MKMapPointForCoordinate(aV.annotation.coordinate);
+        if (!MKMapRectContainsPoint(mapView.visibleMapRect, point) || [aV.annotation isKindOfClass:[MKUserLocation class]]) {
+            continue;
+        }
+        
+        CGRect endFrame = aV.frame;
+        
+        // Move annotation out of view
+        aV.frame = CGRectMake(aV.frame.origin.x, aV.frame.origin.y - self.view.frame.size.height, aV.frame.size.width, aV.frame.size.height);
+        
+        // Animate drop
+        [UIView animateWithDuration:0.5 delay:0.04*[views indexOfObject:aV] options:UIViewAnimationOptionCurveLinear animations:^{
+            
+            aV.frame = endFrame;
+            
+            // Animate squash
+        }completion:^(BOOL finished){
+            if (finished) {
+                [UIView animateWithDuration:0.05 animations:^{
+                    aV.transform = CGAffineTransformMakeScale(1.0, 0.8);
+                    
+                }completion:^(BOOL finished){
+                    [UIView animateWithDuration:0.1 animations:^{
+                        aV.transform = CGAffineTransformIdentity;
+                    }];
+                }];
+            }
+        }];
+    }
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control

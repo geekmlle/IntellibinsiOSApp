@@ -36,6 +36,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if(![defaults boolForKey:TUTORIAL_KEY])
     {

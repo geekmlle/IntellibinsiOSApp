@@ -41,11 +41,13 @@
 
 - (void) viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
     //[_collectionView setHidden:NO];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    [super viewDidDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO];
 }
 

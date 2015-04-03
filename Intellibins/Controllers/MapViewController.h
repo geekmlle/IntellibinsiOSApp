@@ -14,6 +14,7 @@
 {
     IBOutlet MKMapView *_mapView;
     IBOutlet UICollectionView *categoryCollectionView;
+    IBOutlet UIButton *redoSearch;
     
     HelpView *help;
     

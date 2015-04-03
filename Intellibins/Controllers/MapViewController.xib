@@ -10,6 +10,7 @@
             <connections>
                 <outlet property="_mapView" destination="vsY-c7-rZT" id="xld-Qs-ggA"/>
                 <outlet property="categoryCollectionView" destination="Flj-bf-Qdo" id="swY-fn-d83"/>
+                <outlet property="redoSearch" destination="tD7-6P-bxe" id="fjv-h7-gre"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,19 +42,57 @@
                         <outlet property="delegate" destination="-1" id="bGH-Vc-DG9"/>
                     </connections>
                 </collectionView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tD7-6P-bxe">
+                    <rect key="frame" x="20" y="506" width="280" height="48"/>
+                    <color key="backgroundColor" white="1" alpha="0.76000000000000001" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="tD7-6P-bxe" secondAttribute="height" multiplier="7:1" id="XSA-BB-dOK"/>
+                        <constraint firstAttribute="width" secondItem="tD7-6P-bxe" secondAttribute="height" multiplier="35:6" id="c9D-BR-2u2"/>
+                        <constraint firstAttribute="width" secondItem="tD7-6P-bxe" secondAttribute="height" multiplier="35:6" id="kow-Mm-9pC"/>
+                    </constraints>
+                    <state key="normal" title="Redo search in this area" backgroundImage="button.png">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="button-hover.png">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="XSA-BB-dOK"/>
+                            <exclude reference="c9D-BR-2u2"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="redoSearchClicked:" destination="-1" eventType="touchUpInside" id="ZTb-NV-IYe"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="vsY-c7-rZT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1QS-wU-A0U"/>
                 <constraint firstAttribute="bottom" secondItem="vsY-c7-rZT" secondAttribute="bottom" id="6B8-LK-Qrb"/>
+                <constraint firstItem="tD7-6P-bxe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="H5Y-0S-QtF"/>
                 <constraint firstItem="Flj-bf-Qdo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="YI2-Bz-KdA"/>
                 <constraint firstAttribute="trailing" secondItem="vsY-c7-rZT" secondAttribute="trailing" id="Ytm-Dr-heW"/>
+                <constraint firstItem="tD7-6P-bxe" firstAttribute="width" secondItem="tD7-6P-bxe" secondAttribute="height" multiplier="35:6" id="aAM-DA-LGV"/>
                 <constraint firstItem="vsY-c7-rZT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="b8t-5N-MwG"/>
                 <constraint firstItem="Flj-bf-Qdo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gFJ-Ws-8v0"/>
+                <constraint firstAttribute="trailing" secondItem="tD7-6P-bxe" secondAttribute="trailing" constant="20" id="htk-0M-5Bf"/>
                 <constraint firstAttribute="trailing" secondItem="Flj-bf-Qdo" secondAttribute="trailing" id="vgv-DU-eOu"/>
+                <constraint firstAttribute="bottom" secondItem="tD7-6P-bxe" secondAttribute="bottom" constant="14" id="yoI-JR-XFn"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="aAM-DA-LGV"/>
+                </mask>
+            </variation>
         </view>
     </objects>
+    <resources>
+        <image name="button-hover.png" width="280" height="48"/>
+        <image name="button.png" width="280" height="48"/>
+    </resources>
 </document>

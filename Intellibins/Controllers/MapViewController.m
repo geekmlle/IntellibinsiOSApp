@@ -24,6 +24,8 @@
 
 @implementation MapViewController
 
+static BOOL mapChangedFromUserInteraction = NO;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -51,6 +53,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
     //Proximity list not implemented for this iteration
     /*
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -65,6 +68,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [self.categoryList removeAllObjects];
     //Refresh selected categories
     for(TempItem *item in [Util sharedInstance].categories)
@@ -184,6 +188,27 @@
     }
 }
 
+- (void) addAnnotationsForBinsNearMapRect:(MKMapRect)mapRect
+{
+    //Removing old annotations first, so we don't re-add them
+    [_mapView removeAnnotations:_mapView.annotations];
+    
+    for(TempBin *bin in self.binList)
+    {
+        //Adding bins which are located whithin the maprect area, AND are within the chosen categories
+        MKMapPoint p = MKMapPointForCoordinate(CLLocationCoordinate2DMake(bin.latitude, bin.longitude));
+        NSArray *itemList = [bin.item_list componentsSeparatedByString:@","];
+        if(MKMapRectContainsPoint(mapRect, p) && [self binIsIncludedInCategories:itemList])
+        {
+            MapAnnotion *pin = [[MapAnnotion alloc] initWithCoordinate:CLLocationCoordinate2DMake(bin.latitude, bin.longitude) andTitle:bin.short_name andSubtitle:bin.park_site_name andIndex:[self.binList indexOfObject:bin]];
+            //Iterating through the accepted materials on the list, and the method inside matches the first toggled category who is included in the acceptable mats of the bin
+            pin.item_type = [self filterCategoryListForItem:[bin.item_list componentsSeparatedByString:@","]];
+            [_mapView addAnnotation:pin];
+        }
+    }
+}
+
+
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
     MapAnnotationView *pinView = nil;
@@ -268,6 +293,16 @@
     [self.navigationController pushViewController:detail animated:YES];
 }
 
+- (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated
+{
+    mapChangedFromUserInteraction = [self mapViewRegionDidChangeFromUserInteraction];
+    
+    if(redoSearch.isHidden && mapChangedFromUserInteraction)
+    {
+        [self animateSearchButtonHide:NO];
+    }
+}
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;
@@ -331,5 +366,47 @@
     }
     
     return nil;
+}
+
+- (IBAction)redoSearchClicked:(id)sender
+{
+    [self animateSearchButtonHide:YES];
+    [self addAnnotationsForBinsNearMapRect:_mapView.visibleMapRect];
+}
+
+- (BOOL)mapViewRegionDidChangeFromUserInteraction
+{
+    UIView *view = _mapView.subviews.firstObject;
+    //  Look through gesture recognizers to determine whether this region change is from user interaction
+    for(UIGestureRecognizer *recognizer in view.gestureRecognizers) {
+        if(recognizer.state == UIGestureRecognizerStateBegan || recognizer.state == UIGestureRecognizerStateEnded) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+- (void) animateSearchButtonHide:(BOOL)hide
+{
+    if(hide)
+    {
+        redoSearch.alpha = 1.0;
+        [UIView animateWithDuration:1.0 animations:^{
+            redoSearch.alpha = 0.0;
+        } completion:^(BOOL finished){
+            redoSearch.hidden = YES;
+        }];
+    }
+    else
+    {
+        redoSearch.alpha = 0.0;
+        redoSearch.hidden = NO;
+        [UIView animateWithDuration:1.0 animations:^{
+            redoSearch.alpha = 1.0;
+        } completion:^(BOOL finished){
+            
+        }];
+    }
 }
 @end

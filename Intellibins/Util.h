@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "CoreDataManager.h"
 
 @interface Util : NSObject
 
@@ -19,6 +20,8 @@
 + (void) loadCategories;
 + (void) saveCategories;
 + (void) loadTempBins;
+
++ (void ) loadBinsFromCoreData;
 
 + (NSString *) NSStringConsistencyCheck:(NSString *)string;
 + (CGFloat) CGFloatConsistencyCheck:(id)number;

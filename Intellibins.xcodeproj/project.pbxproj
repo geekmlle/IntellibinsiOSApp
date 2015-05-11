@@ -64,6 +64,9 @@
 		49D60D431AC1278B00AD1881 /* plastic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D3C1AC1278B00AD1881 /* plastic@2x.png */; };
 		49D60D451AC13FBC00AD1881 /* avatar_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D441AC13FBC00AD1881 /* avatar_mask@2x.png */; };
 		49D60D481ACF2CA400AD1881 /* MapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D60D471ACF2CA400AD1881 /* MapAnnotationView.m */; };
+		CCDBAEFE1B005D6900609036 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDBAEFD1B005D6900609036 /* Item.m */; };
+		CCDBAF011B005D6A00609036 /* Bin.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDBAF001B005D6A00609036 /* Bin.m */; };
+		CCDBAF041B00632600609036 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDBAF031B00632600609036 /* CoreDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +155,12 @@
 		49D60D441AC13FBC00AD1881 /* avatar_mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_mask@2x.png"; sourceTree = "<group>"; };
 		49D60D461ACF2CA400AD1881 /* MapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapAnnotationView.h; path = Cells/MapAnnotationView.h; sourceTree = "<group>"; };
 		49D60D471ACF2CA400AD1881 /* MapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapAnnotationView.m; path = Cells/MapAnnotationView.m; sourceTree = "<group>"; };
+		CCDBAEFC1B005D6900609036 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = Models/CoreData/Item.h; sourceTree = "<group>"; };
+		CCDBAEFD1B005D6900609036 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = Models/CoreData/Item.m; sourceTree = "<group>"; };
+		CCDBAEFF1B005D6A00609036 /* Bin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bin.h; path = Models/CoreData/Bin.h; sourceTree = "<group>"; };
+		CCDBAF001B005D6A00609036 /* Bin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bin.m; path = Models/CoreData/Bin.m; sourceTree = "<group>"; };
+		CCDBAF021B00632600609036 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataManager.h; path = Models/CoreData/CoreDataManager.h; sourceTree = "<group>"; };
+		CCDBAF031B00632600609036 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataManager.m; path = Models/CoreData/CoreDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,11 +208,10 @@
 		4908758F1A9709EC00BA5338 /* Intellibins */ = {
 			isa = PBXGroup;
 			children = (
+				CC65ED9B1B006F2B0059FD8C /* Utilities */,
 				490875BD1A970D6800BA5338 /* Resources */,
 				490875941A9709EC00BA5338 /* AppDelegate.h */,
 				490875951A9709EC00BA5338 /* AppDelegate.m */,
-				490875C51A970DFA00BA5338 /* Util.h */,
-				490875C61A970DFA00BA5338 /* Util.m */,
 				490875BE1A970D6E00BA5338 /* Models */,
 				490875FC1A9C504D00BA5338 /* Cells */,
 				490875BC1A970D6300BA5338 /* ViewControllers */,
@@ -299,6 +307,7 @@
 		490875BE1A970D6E00BA5338 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CCDBAEFB1B005D4400609036 /* CoreData */,
 				490876241A9DB19200BA5338 /* TempItem.h */,
 				490876251A9DB19200BA5338 /* TempItem.m */,
 				49AE844E1AA5947900C27822 /* TempBin.h */,
@@ -337,6 +346,28 @@
 				49AE84571ABBDA5C00C27822 /* CategoryCollectionViewCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		CC65ED9B1B006F2B0059FD8C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				490875C51A970DFA00BA5338 /* Util.h */,
+				490875C61A970DFA00BA5338 /* Util.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		CCDBAEFB1B005D4400609036 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CCDBAEFF1B005D6A00609036 /* Bin.h */,
+				CCDBAF001B005D6A00609036 /* Bin.m */,
+				CCDBAEFC1B005D6900609036 /* Item.h */,
+				CCDBAEFD1B005D6900609036 /* Item.m */,
+				CCDBAF021B00632600609036 /* CoreDataManager.h */,
+				CCDBAF031B00632600609036 /* CoreDataManager.m */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,9 +502,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCDBAF041B00632600609036 /* CoreDataManager.m in Sources */,
 				49AE84581ABBDA5C00C27822 /* CategoryCollectionViewCell.m in Sources */,
 				490875E61A9711B300BA5338 /* BinDetailViewController.m in Sources */,
 				49D60D481ACF2CA400AD1881 /* MapAnnotationView.m in Sources */,
+				CCDBAF011B005D6A00609036 /* Bin.m in Sources */,
 				490876291A9EFEF000BA5338 /* HelpView.m in Sources */,
 				490876201A9DAD0300BA5338 /* CategoryTableViewCell.m in Sources */,
 				490875C71A970DFA00BA5338 /* Util.m in Sources */,
@@ -483,6 +516,7 @@
 				49AE84501AA5947900C27822 /* TempBin.m in Sources */,
 				490875DC1A97118500BA5338 /* TutorialViewController.m in Sources */,
 				490876261A9DB19200BA5338 /* TempItem.m in Sources */,
+				CCDBAEFE1B005D6900609036 /* Item.m in Sources */,
 				490875D71A97116600BA5338 /* ListViewController.m in Sources */,
 				490875FA1A9C504900BA5338 /* TutorialViewCell.m in Sources */,
 				490875991A9709EC00BA5338 /* Intellibins.xcdatamodeld in Sources */,

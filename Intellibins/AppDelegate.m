@@ -24,9 +24,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
- 
+    NSLog(@"homeDirectory %@", NSHomeDirectory());
+    
+    [Util loadBinsFromCoreData];
+    
     [Util loadCategories];
+    /*
     [Util loadTempBins];
+     */
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.

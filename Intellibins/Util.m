@@ -116,6 +116,24 @@
     }
 }
 
++ (void ) loadBinsFromCoreData
+{
+    NSError *error = nil;
+    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"bin_data" ofType:@"txt"];
+    NSData *data = [NSData dataWithContentsOfFile:filepath options:NSDataReadingMappedIfSafe error:&error];
+    id object = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+    
+    if (error) {
+        NSLog(@"Error parsing json, %@", error);
+    }else {
+        NSArray *bins = (NSArray *)object;
+        for (NSDictionary *dic in bins) {
+            [[CoreDataManager sharedInstance] insertBinWithData:dic];
+        }
+        [[CoreDataManager sharedInstance] saveContext];
+    }
+}
+
 + (NSString *) NSStringConsistencyCheck:(NSString *)string
 {
     return (string && ![string isKindOfClass:[NSNull class]]) ? string : @"";

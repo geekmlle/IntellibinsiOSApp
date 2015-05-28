@@ -79,7 +79,7 @@ static BOOL mapChangedFromUserInteraction = NO;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"%d, %d", self.userCoordinate.latitude, self.userCoordinate.longitude);
+    NSLog(@"%f, %f", self.userCoordinate.latitude, self.userCoordinate.longitude);
     [super viewWillAppear:animated];
     [self.categoryList removeAllObjects];
     //Refresh selected categories

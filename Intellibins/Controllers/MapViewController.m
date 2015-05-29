@@ -15,6 +15,7 @@
 #import "BinDetailViewController.h"
 #import "CategoryCollectionViewCell.h"
 #import "MapAnnotationView.h"
+#import "UIColor+IntellibinsColor.h"
 
 #define MAP_TUTORIAL @"map_tutorial"
 
@@ -41,6 +42,7 @@ static BOOL mapChangedFromUserInteraction = NO;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     UIBarButtonItem *filter = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStyleBordered target:self action:@selector(openFilterList:)];
+    [filter setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Lato-Regular" size:17.], NSForegroundColorAttributeName: [UIColor kIntellibinsGreen]} forState:UIControlStateNormal];
     self.navigationItem.leftBarButtonItem = filter;
     
     
@@ -56,10 +58,13 @@ static BOOL mapChangedFromUserInteraction = NO;
     
     self.title = @"Bins";
     
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    
     [self.locationManager startUpdatingLocation];
     [self addAnnotationsForBinsNearCoordinate:CLLocationCoordinate2DMake(40.765592, -73.979506)];
     
     [categoryCollectionView registerClass:[CategoryCollectionViewCell class] forCellWithReuseIdentifier:@"CategoryCell"];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -122,6 +127,7 @@ static BOOL mapChangedFromUserInteraction = NO;
 {
     ListViewController *listVC = [[ListViewController alloc] init];
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:listVC];
+    nvc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     [self presentViewController:nvc animated:YES completion:nil];
 }
 

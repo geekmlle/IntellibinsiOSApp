@@ -11,6 +11,7 @@
 #import "MapViewController.h"
 #import "TutorialViewController.h"
 #import "Util.h"
+#import "UIColor+IntellibinsColor.h"
 
 #define FORCE_TUTORIAL 0
 #define TUTORIAL_KEY @"kIntellibinTutorial"
@@ -41,6 +42,7 @@
     NSMutableDictionary *titleBarAttributes = [NSMutableDictionary dictionaryWithDictionary: [[UINavigationBar appearance] titleTextAttributes]];
     [titleBarAttributes setValue:[UIFont fontWithName:@"Lato-Regular" size:17] forKey:NSFontAttributeName];
     [[UINavigationBar appearance] setTitleTextAttributes:titleBarAttributes];
+    [[UINavigationBar appearance] setTintColor:[UIColor kIntellibinsGreen]];
     
     //Checking if it's first time launch, if so, show tutorial
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

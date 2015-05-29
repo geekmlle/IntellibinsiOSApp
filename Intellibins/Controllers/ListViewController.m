@@ -11,6 +11,7 @@
 #import "CategoryTableViewCell.h"
 #import "TempItem.h"
 #import "MapViewController.h"
+#import "UIColor+IntellibinsColor.h"
 
 #define TUTORIAL_KEY @"listTutorial"
 #define TUTORIAL_KEY_2 @"switchTutorial"
@@ -26,12 +27,31 @@
     // Do any additional setup after loading the view from its nib.
     
     UIBarButtonItem *applyBtn = [[UIBarButtonItem alloc] initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(applyFilterClicked:)];
+    [applyBtn setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Lato-Regular" size:17.], NSForegroundColorAttributeName: [UIColor kIntellibinsGreen]} forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = applyBtn;
+
     
     categories = [Util sharedInstance].categories;
     [_tableView registerClass:[CategoryTableViewCell class] forCellReuseIdentifier:@"CellIdentifier"];
     
-    self.title = @"Filter";
+    self.title = @"Item Types";
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    _tableView.separatorColor = [UIColor blackColor];
+    
+    _tableView.backgroundColor = [UIColor clearColor];
+    
+    if ([_tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [_tableView setSeparatorInset:UIEdgeInsetsMake(0, 6.0, 0, 6.0)];
+    }
+    
+    if ([_tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [_tableView setLayoutMargins:UIEdgeInsetsZero];
+    }
+    
+    self.view.alpha = 0.8;
 }
 
 - (void)viewDidAppear:(BOOL)animated

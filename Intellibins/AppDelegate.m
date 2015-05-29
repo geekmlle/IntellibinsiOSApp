@@ -38,6 +38,10 @@
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:mapVC];
     [self.window setRootViewController:nvc];
     
+    NSMutableDictionary *titleBarAttributes = [NSMutableDictionary dictionaryWithDictionary: [[UINavigationBar appearance] titleTextAttributes]];
+    [titleBarAttributes setValue:[UIFont fontWithName:@"Lato-Regular" size:17] forKey:NSFontAttributeName];
+    [[UINavigationBar appearance] setTitleTextAttributes:titleBarAttributes];
+    
     //Checking if it's first time launch, if so, show tutorial
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if(![defaults boolForKey:TUTORIAL_KEY] || FORCE_TUTORIAL)
@@ -61,6 +65,8 @@
     [Util sharedInstance].reloadMap = YES;
     ListViewController *listVC = [[ListViewController alloc] init];
     UINavigationController *listNVC = [[UINavigationController alloc] initWithRootViewController:listVC];
+    listNVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+
     [self.window.rootViewController presentViewController:listNVC animated:NO completion:nil];
 }
 

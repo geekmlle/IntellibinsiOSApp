@@ -86,6 +86,16 @@ static BOOL mapChangedFromUserInteraction = NO;
 {
     NSLog(@"%f, %f", self.userCoordinate.latitude, self.userCoordinate.longitude);
     [super viewWillAppear:animated];
+    [self refreshCategoryAndAnnotation];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void) refreshCategoryAndAnnotation
+{
     [self.categoryList removeAllObjects];
     //Refresh selected categories
     for(TempItem *item in [Util sharedInstance].categories)
@@ -103,11 +113,6 @@ static BOOL mapChangedFromUserInteraction = NO;
         //TODO: Write method for getting bins near MKMapRect, instead of CLLocationCoordinate
         [self addAnnotationsForBinsNearCoordinate:self.userCoordinate];
     }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void) showTutorial
@@ -128,6 +133,12 @@ static BOOL mapChangedFromUserInteraction = NO;
     ListViewController *listVC = [[ListViewController alloc] init];
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:listVC];
     nvc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    listVC.onCompletion = ^(BOOL reload) {
+        if(reload)
+        {
+            [self refreshCategoryAndAnnotation];
+        }
+    };
     [self presentViewController:nvc animated:YES completion:nil];
 }
 

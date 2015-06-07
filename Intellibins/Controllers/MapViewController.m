@@ -110,8 +110,8 @@ static BOOL mapChangedFromUserInteraction = NO;
     if([Util sharedInstance].reloadMap)
     {
         [Util sharedInstance].reloadMap = NO;
-        //TODO: Write method for getting bins near MKMapRect, instead of CLLocationCoordinate
-        [self addAnnotationsForBinsNearCoordinate:self.userCoordinate];
+        CLLocationCoordinate2D center = [_mapView centerCoordinate];
+        [self addAnnotationsForBinsNearCoordinate:center];
     }
 }
 

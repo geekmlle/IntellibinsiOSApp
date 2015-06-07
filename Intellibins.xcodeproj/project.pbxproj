@@ -12,7 +12,6 @@
 		490875991A9709EC00BA5338 /* Intellibins.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 490875971A9709EC00BA5338 /* Intellibins.xcdatamodeld */; };
 		4908759F1A9709EC00BA5338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4908759D1A9709EC00BA5338 /* Main.storyboard */; };
 		490875A11A9709EC00BA5338 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 490875A01A9709EC00BA5338 /* Images.xcassets */; };
-		490875A41A9709EC00BA5338 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490875A21A9709EC00BA5338 /* LaunchScreen.xib */; };
 		490875B01A9709EC00BA5338 /* IntellibinsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 490875AF1A9709EC00BA5338 /* IntellibinsTests.m */; };
 		490875C71A970DFA00BA5338 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 490875C61A970DFA00BA5338 /* Util.m */; };
 		490875CF1A970F9C00BA5338 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490875CE1A970F9C00BA5338 /* MapKit.framework */; };
@@ -108,7 +107,6 @@
 		490875981A9709EC00BA5338 /* Intellibins.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Intellibins.xcdatamodel; sourceTree = "<group>"; };
 		4908759E1A9709EC00BA5338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		490875A01A9709EC00BA5338 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		490875A31A9709EC00BA5338 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		490875A91A9709EC00BA5338 /* IntellibinsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntellibinsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		490875AE1A9709EC00BA5338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490875AF1A9709EC00BA5338 /* IntellibinsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntellibinsTests.m; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 				490875BC1A970D6300BA5338 /* ViewControllers */,
 				4908759D1A9709EC00BA5338 /* Main.storyboard */,
 				490875A01A9709EC00BA5338 /* Images.xcassets */,
-				490875A21A9709EC00BA5338 /* LaunchScreen.xib */,
 				490875971A9709EC00BA5338 /* Intellibins.xcdatamodeld */,
 				490875901A9709EC00BA5338 /* Supporting Files */,
 			);
@@ -555,7 +552,6 @@
 				49D60D3E1AC1278B00AD1881 /* glass@2x.png in Resources */,
 				49AE84551AA6DE1000C27822 /* bin_data.txt in Resources */,
 				490875D81A97116600BA5338 /* ListViewController.xib in Resources */,
-				490875A41A9709EC00BA5338 /* LaunchScreen.xib in Resources */,
 				490876151A9C5C8400BA5338 /* tutorial2.png in Resources */,
 				4908762B1A9EFF0D00BA5338 /* HelpView.xib in Resources */,
 				49AE844D1AA5942B00C27822 /* locations-v01.json in Resources */,
@@ -626,14 +622,6 @@
 				4908759E1A9709EC00BA5338 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		490875A21A9709EC00BA5338 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				490875A31A9709EC00BA5338 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -720,11 +708,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				INFOPLIST_FILE = Intellibins/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a0993078-7873-4820-8a33-ef9dbccb92bc";
 			};
 			name = Debug;
 		};
@@ -733,11 +723,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				INFOPLIST_FILE = Intellibins/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a0993078-7873-4820-8a33-ef9dbccb92bc";
 			};
 			name = Release;
 		};

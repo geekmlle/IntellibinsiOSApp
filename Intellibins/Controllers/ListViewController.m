@@ -103,6 +103,9 @@
 - (void)applyFilterClicked:(id)sender
 {
     [Util saveCategories];
+    if (self.onCompletion) {
+        self.onCompletion([Util sharedInstance].reloadMap);
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

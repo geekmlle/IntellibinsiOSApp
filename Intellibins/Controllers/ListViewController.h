@@ -19,4 +19,6 @@
     BOOL hideHelp;
 }
 
+@property (nonatomic, strong) void (^onCompletion)(BOOL reload);
+
 @end

@@ -63,6 +63,7 @@
 		49D60D431AC1278B00AD1881 /* plastic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D3C1AC1278B00AD1881 /* plastic@2x.png */; };
 		49D60D451AC13FBC00AD1881 /* avatar_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D441AC13FBC00AD1881 /* avatar_mask@2x.png */; };
 		49D60D481ACF2CA400AD1881 /* MapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D60D471ACF2CA400AD1881 /* MapAnnotationView.m */; };
+		CC0A37931B26836B00CFBB0C /* binData.json in Resources */ = {isa = PBXBuildFile; fileRef = CC0A37921B26836B00CFBB0C /* binData.json */; };
 		CC8CF3D61B18184300B713C7 /* Arvo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC8CF3C01B18182500B713C7 /* Arvo-Bold.ttf */; };
 		CC8CF3D71B18184300B713C7 /* Arvo-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC8CF3C11B18182500B713C7 /* Arvo-BoldItalic.ttf */; };
 		CC8CF3D81B18184300B713C7 /* Arvo-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC8CF3C21B18182500B713C7 /* Arvo-Italic.ttf */; };
@@ -173,6 +174,7 @@
 		49D60D441AC13FBC00AD1881 /* avatar_mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_mask@2x.png"; sourceTree = "<group>"; };
 		49D60D461ACF2CA400AD1881 /* MapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapAnnotationView.h; path = Cells/MapAnnotationView.h; sourceTree = "<group>"; };
 		49D60D471ACF2CA400AD1881 /* MapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapAnnotationView.m; path = Cells/MapAnnotationView.m; sourceTree = "<group>"; };
+		CC0A37921B26836B00CFBB0C /* binData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = binData.json; sourceTree = "<group>"; };
 		CC8CF3C01B18182500B713C7 /* Arvo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Arvo-Bold.ttf"; path = "Font/Arvo-Bold.ttf"; sourceTree = "<group>"; };
 		CC8CF3C11B18182500B713C7 /* Arvo-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Arvo-BoldItalic.ttf"; path = "Font/Arvo-BoldItalic.ttf"; sourceTree = "<group>"; };
 		CC8CF3C21B18182500B713C7 /* Arvo-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Arvo-Italic.ttf"; path = "Font/Arvo-Italic.ttf"; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				CC8CF3931B180E4700B713C7 /* Fonts */,
 				49AE84541AA6DE1000C27822 /* bin_data.txt */,
 				49AE844C1AA5942B00C27822 /* locations-v01.json */,
+				CC0A37921B26836B00CFBB0C /* binData.json */,
 				49D60D361AC1278B00AD1881 /* electric@2x.png */,
 				49D60D371AC1278B00AD1881 /* glass@2x.png */,
 				49D60D381AC1278B00AD1881 /* hazard@2x.png */,
@@ -513,6 +516,7 @@
 				CC8CF3DC1B18184300B713C7 /* Lato-Bold.ttf in Resources */,
 				CC8CF3DD1B18184300B713C7 /* Lato-BoldItalic.ttf in Resources */,
 				CC8CF3DE1B18184300B713C7 /* Lato-Hairline.ttf in Resources */,
+				CC0A37931B26836B00CFBB0C /* binData.json in Resources */,
 				CC8CF3DF1B18184300B713C7 /* Lato-HairlineItalic.ttf in Resources */,
 				CC8CF3E01B18184300B713C7 /* Lato-Heavy.ttf in Resources */,
 				CC8CF3E11B18184300B713C7 /* Lato-HeavyItalic.ttf in Resources */,

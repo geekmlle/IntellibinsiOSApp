@@ -90,7 +90,7 @@
 + (void) loadTempBins
 {
     NSError *error = nil;
-    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"bin_data" ofType:@"txt"];
+    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"binData" ofType:@"json"];
     NSData *returnedData = [NSData dataWithContentsOfFile:filepath options:NSDataReadingMappedIfSafe error:&error];
     //NSString *returnedString = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
     id object = [NSJSONSerialization

@@ -3340,6 +3340,16 @@
     "Material Type":"Plastic Cup, Plastic Bottle, Plastic Lid, Newspaper, Paper Magazine, Paper Container, Paper Drink Carton, Paper Lid, Paper Sheet, Glass Bottle, Aluminum Can, Aluminum Wrap, Aluminim Bottle"
   },
   {
+  "Short Name":"Bin",
+  "Borough":"Manhattan",
+  "Park/Site Name":"Pier 25",
+  "Address":"Hudson River Park",
+  "Latitude":"",
+  "Longitude":"",
+  "Type":"Bin",
+  "Material Type":"Plastic Cup, Plastic Bottle, Plastic Lid, Newspaper, Paper Magazine, Paper Container, Paper Drink Carton, Paper Lid, Paper Sheet, Glass Bottle, Aluminum Can, Aluminum Wrap, Aluminim Bottle"
+  },
+  {
     "Short Name":"Bin",
     "Borough":"Manhattan",
     "Park/Site Name":"Pier 25 Mini Golf & Skate Park",

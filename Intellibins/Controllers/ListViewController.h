@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "HelpView.h"
 
+#define TUTORIALHELP_KEY @"listTutorial"
+
 @interface ListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     IBOutlet UITableView *_tableView;
@@ -19,6 +21,9 @@
     BOOL hideHelp;
 }
 
+@property (strong, nonatomic) IBOutlet UIView *policyViewHolder;
+@property (strong, nonatomic) IBOutlet UITextView *policyTextView;
 @property (nonatomic, strong) void (^onCompletion)(BOOL reload);
+- (IBAction)onPolicyAcceptTapped:(id)sender;
 
 @end

@@ -41,10 +41,6 @@ static BOOL mapChangedFromUserInteraction = NO;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    UIBarButtonItem *filter = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStyleBordered target:self action:@selector(openFilterList:)];
-    [filter setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Lato-Regular" size:17.], NSForegroundColorAttributeName: [UIColor kIntellibinsGreen]} forState:UIControlStateNormal];
-    self.navigationItem.leftBarButtonItem = filter;
-    
     
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = 1000;
@@ -56,9 +52,6 @@ static BOOL mapChangedFromUserInteraction = NO;
     self.binList = [Util sharedInstance].bins;
     self.categoryList = [[NSMutableArray alloc] init];
     
-    self.title = @"Bins";
-    
-    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     
     [self.locationManager startUpdatingLocation];
     [self addAnnotationsForBinsNearCoordinate:CLLocationCoordinate2DMake(40.765592, -73.979506)];
@@ -87,7 +80,28 @@ static BOOL mapChangedFromUserInteraction = NO;
     NSLog(@"%f, %f", self.userCoordinate.latitude, self.userCoordinate.longitude);
     [super viewWillAppear:animated];
     [self refreshCategoryAndAnnotation];
+    
+    //not show Navigation Bar (such as Filter) before showing Policy
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if([userDefaults boolForKey:TUTORIALHELP_KEY]){
+        [self setUpNavigationBarStyle];
+    }
+
+    
 }
+
+- (void)setUpNavigationBarStyle
+{
+    UIBarButtonItem *filter = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStyleBordered target:self action:@selector(openFilterList:)];
+    [filter setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Lato-Regular" size:17.], NSForegroundColorAttributeName: [UIColor kIntellibinsGreen]} forState:UIControlStateNormal];
+    self.navigationItem.leftBarButtonItem = filter;
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    
+    self.title = @"Bins";
+
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

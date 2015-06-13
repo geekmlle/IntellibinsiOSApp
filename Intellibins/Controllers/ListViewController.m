@@ -13,7 +13,6 @@
 #import "MapViewController.h"
 #import "UIColor+IntellibinsColor.h"
 
-#define TUTORIAL_KEY @"listTutorial"
 #define TUTORIAL_KEY_2 @"switchTutorial"
 
 @interface ListViewController ()
@@ -25,16 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    UIBarButtonItem *applyBtn = [[UIBarButtonItem alloc] initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(applyFilterClicked:)];
-    [applyBtn setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Lato-Regular" size:17.], NSForegroundColorAttributeName: [UIColor kIntellibinsGreen]} forState:UIControlStateNormal];
-    self.navigationItem.rightBarButtonItem = applyBtn;
 
     
     categories = [Util sharedInstance].categories;
     [_tableView registerClass:[CategoryTableViewCell class] forCellReuseIdentifier:@"CellIdentifier"];
     
-    self.title = @"Item Types";
+    self.title = @"Intellibins";
     
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     
@@ -51,19 +46,27 @@
         [_tableView setLayoutMargins:UIEdgeInsetsZero];
     }
     
-    self.view.alpha = 0.8;
+    self.policyViewHolder.hidden = YES;
+
 }
 
-- (void)viewDidAppear:(BOOL)animated
+
+- (void)setUpPolicyView
 {
-    [super viewDidAppear:animated];
+    self.policyViewHolder.hidden = NO;
+    self.policyTextView.editable = NO;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if(![defaults boolForKey:TUTORIAL_KEY])
+    if(![defaults boolForKey:TUTORIALHELP_KEY])
     {
-        [self showTutorial:0];
-        [defaults setBool:YES forKey:TUTORIAL_KEY];
-        [defaults synchronize];
+        [self setUpPolicyView];
+    }else {
+        [self setUpStyle];
     }
 }
 
@@ -183,5 +186,33 @@
         if(help) [help hideView:nil];
         if(help2) [help2 hideView:nil];
     }
+}
+- (IBAction)onPolicyAcceptTapped:(id)sender
+{
+    [self showTutorial:0];
+    self.policyViewHolder.hidden = YES;
+    
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if(![defaults boolForKey:TUTORIALHELP_KEY])
+    {
+        [defaults setBool:YES forKey:TUTORIALHELP_KEY];
+        [defaults synchronize];
+    }
+    
+    [self setUpStyle];
+
+}
+
+- (void)setUpStyle
+{
+    self.view.alpha = 0.8;
+    
+    // show apply button after user "accept" policy
+    self.title = @"Item Types";
+    
+    UIBarButtonItem *applyBtn = [[UIBarButtonItem alloc] initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(applyFilterClicked:)];
+    [applyBtn setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Lato-Regular" size:17.], NSForegroundColorAttributeName: [UIColor kIntellibinsGreen]} forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = applyBtn;
 }
 @end

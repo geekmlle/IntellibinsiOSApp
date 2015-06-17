@@ -9,6 +9,7 @@
 #import "Util.h"
 #import "TempItem.h"
 #import "TempBin.h"
+#import "UIColor+IntellibinsColor.h"
 
 #define CATEGORY_KEY @"iCategories"
 
@@ -38,7 +39,50 @@
     }
     else
     {
+
+        TempItem *plasticBottle = [[TempItem alloc] init];
+        plasticBottle.item_name = @"Plastic Bottle";
+        plasticBottle.item_type = @"plasticBottle";
+        plasticBottle.is_toggled = YES;
         
+        TempItem *plasticBag = [[TempItem alloc] init];
+        plasticBag.item_name = @"Plastic Bag";
+        plasticBag.item_type = @"PlasticBag";
+        plasticBag.is_toggled = YES;
+        
+        TempItem *newspaper = [[TempItem alloc] init];
+        newspaper.item_name = @"Newspaper";
+        newspaper.item_type = @"newspaper";
+        newspaper.is_toggled = YES;
+        
+        TempItem *glassBottle = [[TempItem alloc] init];
+        glassBottle.item_name = @"Glass Bottle";
+        glassBottle.item_type = @"glassBottle";
+        glassBottle.is_toggled = YES;
+        
+        TempItem *clothes = [[TempItem alloc] init];
+        clothes.item_name = @"clothes";
+        clothes.item_type = @"clothes";
+        clothes.is_toggled = YES;
+        
+        TempItem *aluminumCan = [[TempItem alloc] init];
+        aluminumCan.item_name = @"aluminum Can";
+        aluminumCan.item_type = @"aluminumCan";
+        aluminumCan.is_toggled = YES;
+        
+        TempItem *bubbleWrap = [[TempItem alloc] init];
+        bubbleWrap.item_name = @"Bubble Wrap";
+        bubbleWrap.item_type = @"bubbleWrap";
+        bubbleWrap.is_toggled = YES;
+        
+        TempItem *electronics = [[TempItem alloc] init];
+        electronics.item_name = @"Electronics";
+        electronics.item_type = @"electronics";
+        electronics.is_toggled = YES;
+        
+        
+        
+        /*
         TempItem *paper = [[TempItem alloc] init];
         paper.item_name = @"Paper";
         paper.item_type = @"paper";
@@ -54,7 +98,7 @@
         metal.item_type = @"aluminum";
         metal.is_toggled = YES;
         
-        TempItem *glass = [[TempItem alloc] init];
+        TempItem *glass = [[TempItem alloc] ini sqt];
         glass.item_name = @"Glass";
         glass.item_type = @"glass";
         glass.is_toggled = YES;
@@ -68,8 +112,10 @@
         other.item_name = @"Other";
         other.item_type = @"other";
         other.is_toggled = YES;
+         
+         */
         
-        [Util sharedInstance].categories = [[NSArray alloc] initWithObjects:paper, plastic, metal, glass, hazard, other, nil];
+        [Util sharedInstance].categories = [[NSArray alloc] initWithObjects:plasticBottle, plasticBag, newspaper, glassBottle, clothes, aluminumCan, bubbleWrap, electronics, nil];
         [Util saveCategories];
     }
 }
@@ -128,52 +174,77 @@
 
 +(UIImage *)getImageForCategoryName:(NSString *)category
 {
-    NSRange range = [category rangeOfString:@"paper" options:NSCaseInsensitiveSearch];
+    NSRange range = [category rangeOfString:@"plasticBottle" options:NSCaseInsensitiveSearch];
     if(range.location != NSNotFound)
-        return [UIImage imageNamed:@"paper"];
+        return [UIImage imageNamed:@"plasticBottle"];
     
-    range = [category rangeOfString:@"plastic" options:NSCaseInsensitiveSearch];
+    range = [category rangeOfString:@"plasticBag" options:NSCaseInsensitiveSearch];
     if(range.location != NSNotFound)
-        return [UIImage imageNamed:@"plastic"];
+        return [UIImage imageNamed:@"plasticBag"];
     
-    range = [category rangeOfString:@"aluminum" options:NSCaseInsensitiveSearch];
+    range = [category rangeOfString:@"Newspaper" options:NSCaseInsensitiveSearch];
     if(range.location != NSNotFound)
-        return [UIImage imageNamed:@"metal"];
+        return [UIImage imageNamed:@"newspaper"];
     
-    range = [category rangeOfString:@"glass" options:NSCaseInsensitiveSearch];
+    range = [category rangeOfString:@"glassBottle" options:NSCaseInsensitiveSearch];
     if(range.location != NSNotFound)
-        return [UIImage imageNamed:@"glass"];
+        return [UIImage imageNamed:@"glassBottle"];
     
-    range = [category rangeOfString:@"hazard" options:NSCaseInsensitiveSearch];
+    range = [category rangeOfString:@"clothes" options:NSCaseInsensitiveSearch];
     if(range.location != NSNotFound)
-        return [UIImage imageNamed:@"hazard"];
+        return [UIImage imageNamed:@"clothes"];
     
-    return [UIImage imageNamed:@"other"];
+    range = [category rangeOfString:@"aluminumCan" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIImage imageNamed:@"aluminumCan"];
+    
+    range = [category rangeOfString:@"bubbleWrap" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIImage imageNamed:@"bubbleWrap"];
+    
+    range = [category rangeOfString:@"Electronics" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+    return [UIImage imageNamed:@"electronics"];
+    
+    return [UIImage imageNamed:@"Other"];
+    
 }
 
 + (UIColor *)getColorForCategoryName:(NSString *)category
 {
-    NSRange range = [category rangeOfString:@"paper" options:NSCaseInsensitiveSearch];
+    NSRange range = [category rangeOfString:@"plasticBottle" options:NSCaseInsensitiveSearch];
     if(range.location != NSNotFound)
-        return [UIColor lightGrayColor];
+        return [UIColor kIntellibinsRed];
     
-    range = [category rangeOfString:@"plastic" options:NSCaseInsensitiveSearch];
+    range = [category rangeOfString:@"electronic" options:NSCaseInsensitiveSearch];
     if(range.location != NSNotFound)
-        return [UIColor colorWithRed:0.0 green:191.0/255.0 blue:255.0/255.0 alpha:1.0];
+        return [UIColor kIntellibinsGray];
     
-    range = [category rangeOfString:@"aluminum" options:NSCaseInsensitiveSearch];
+    range = [category rangeOfString:@"aluminumCan" options:NSCaseInsensitiveSearch];
     if(range.location != NSNotFound)
-        return [UIColor darkGrayColor];
+        return [UIColor kIntellibinsYellow];
     
-    range = [category rangeOfString:@"glass" options:NSCaseInsensitiveSearch];
+    range = [category rangeOfString:@"glassBottle" options:NSCaseInsensitiveSearch];
     if(range.location != NSNotFound)
-        return [UIColor orangeColor];
+        return [UIColor kIntellibinsBlue];
     
-    range = [category rangeOfString:@"hazard" options:NSCaseInsensitiveSearch];
+    range = [category rangeOfString:@"clothes" options:NSCaseInsensitiveSearch];
     if(range.location != NSNotFound)
-        return [UIColor greenColor];
+        return [UIColor kIntellibinsLightRed];
     
-    return [UIColor redColor];
+    range = [category rangeOfString:@"paper" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIColor kIntellibinsOrange];
+    
+    range = [category rangeOfString:@"bubbleWrap" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIColor kIntellibinsPurple];
+    
+    range = [category rangeOfString:@"plasticBag" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIColor kIntellibinsLightGreen];
+    
+    return [UIColor whiteColor];
 }
 
 @end

@@ -11,5 +11,14 @@
 @interface UIColor (IntellibinsColor)
 
 + (UIColor *)kIntellibinsGreen;
++ (UIColor *)kIntellibinsRed;
++ (UIColor *)kIntellibinsGray;
++ (UIColor *)kIntellibinsBlue;
++ (UIColor *)kIntellibinsYellow;
++ (UIColor *)kIntellibinsOrange;
++ (UIColor *)kIntellibinsLightRed;
++ (UIColor *)kIntellibinsPurple;
++ (UIColor *)kIntellibinsLightGreen;
+
 
 @end

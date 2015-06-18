@@ -54,7 +54,7 @@
 		49AE84531AA59D7F00C27822 /* MapAnnotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AE84521AA59D7F00C27822 /* MapAnnotion.m */; };
 		49AE84551AA6DE1000C27822 /* bin_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49AE84541AA6DE1000C27822 /* bin_data.txt */; };
 		49AE84581ABBDA5C00C27822 /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AE84571ABBDA5C00C27822 /* CategoryCollectionViewCell.m */; };
-		49D60D3D1AC1278B00AD1881 /* electronics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D361AC1278B00AD1881 /* electronics@2x.png */; };
+		49D60D3D1AC1278B00AD1881 /* electric@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D361AC1278B00AD1881 /* electric@2x.png */; };
 		49D60D3E1AC1278B00AD1881 /* glass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D371AC1278B00AD1881 /* glass@2x.png */; };
 		49D60D3F1AC1278B00AD1881 /* hazard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D381AC1278B00AD1881 /* hazard@2x.png */; };
 		49D60D401AC1278B00AD1881 /* metal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D391AC1278B00AD1881 /* metal@2x.png */; };
@@ -68,9 +68,10 @@
 		CC0B3B861B313E4B0060F515 /* bubbleWrap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC0B3B801B313E4B0060F515 /* bubbleWrap@2x.png */; };
 		CC0B3B871B313E4B0060F515 /* clothes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC0B3B811B313E4B0060F515 /* clothes@2x.png */; };
 		CC0B3B881B313E4B0060F515 /* glassBottle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC0B3B821B313E4B0060F515 /* glassBottle@2x.png */; };
-		CC0B3B891B313E4B0060F515 /* Newspaper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC0B3B831B313E4B0060F515 /* Newspaper@2x.png */; };
 		CC0B3B8A1B313E4B0060F515 /* plasticBag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC0B3B841B313E4B0060F515 /* plasticBag@2x.png */; };
 		CC0B3B8C1B313E540060F515 /* plasticBottle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC0B3B8B1B313E540060F515 /* plasticBottle@2x.png */; };
+		CC6A3CF21B32679C006BD4B6 /* electronics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6A3CF11B32679C006BD4B6 /* electronics@2x.png */; };
+		CC6A3CF41B32691D006BD4B6 /* newspaper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6A3CF31B32691D006BD4B6 /* newspaper@2x.png */; };
 		CC8CF3D61B18184300B713C7 /* Arvo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC8CF3C01B18182500B713C7 /* Arvo-Bold.ttf */; };
 		CC8CF3D71B18184300B713C7 /* Arvo-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC8CF3C11B18182500B713C7 /* Arvo-BoldItalic.ttf */; };
 		CC8CF3D81B18184300B713C7 /* Arvo-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC8CF3C21B18182500B713C7 /* Arvo-Italic.ttf */; };
@@ -171,7 +172,7 @@
 		49AE84541AA6DE1000C27822 /* bin_data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bin_data.txt; sourceTree = "<group>"; };
 		49AE84561ABBDA5C00C27822 /* CategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryCollectionViewCell.h; path = Cells/CategoryCollectionViewCell.h; sourceTree = "<group>"; };
 		49AE84571ABBDA5C00C27822 /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryCollectionViewCell.m; path = Cells/CategoryCollectionViewCell.m; sourceTree = "<group>"; };
-		49D60D361AC1278B00AD1881 /* electronics@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electronics@2x.png"; sourceTree = "<group>"; };
+		49D60D361AC1278B00AD1881 /* electric@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electric@2x.png"; sourceTree = "<group>"; };
 		49D60D371AC1278B00AD1881 /* glass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glass@2x.png"; sourceTree = "<group>"; };
 		49D60D381AC1278B00AD1881 /* hazard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hazard@2x.png"; sourceTree = "<group>"; };
 		49D60D391AC1278B00AD1881 /* metal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "metal@2x.png"; sourceTree = "<group>"; };
@@ -186,9 +187,10 @@
 		CC0B3B801B313E4B0060F515 /* bubbleWrap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubbleWrap@2x.png"; sourceTree = "<group>"; };
 		CC0B3B811B313E4B0060F515 /* clothes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clothes@2x.png"; sourceTree = "<group>"; };
 		CC0B3B821B313E4B0060F515 /* glassBottle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glassBottle@2x.png"; sourceTree = "<group>"; };
-		CC0B3B831B313E4B0060F515 /* Newspaper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Newspaper@2x.png"; sourceTree = "<group>"; };
 		CC0B3B841B313E4B0060F515 /* plasticBag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plasticBag@2x.png"; sourceTree = "<group>"; };
 		CC0B3B8B1B313E540060F515 /* plasticBottle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plasticBottle@2x.png"; sourceTree = "<group>"; };
+		CC6A3CF11B32679C006BD4B6 /* electronics@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electronics@2x.png"; sourceTree = "<group>"; };
+		CC6A3CF31B32691D006BD4B6 /* newspaper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newspaper@2x.png"; sourceTree = "<group>"; };
 		CC8CF3C01B18182500B713C7 /* Arvo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Arvo-Bold.ttf"; path = "Font/Arvo-Bold.ttf"; sourceTree = "<group>"; };
 		CC8CF3C11B18182500B713C7 /* Arvo-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Arvo-BoldItalic.ttf"; path = "Font/Arvo-BoldItalic.ttf"; sourceTree = "<group>"; };
 		CC8CF3C21B18182500B713C7 /* Arvo-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Arvo-Italic.ttf"; path = "Font/Arvo-Italic.ttf"; sourceTree = "<group>"; };
@@ -330,7 +332,8 @@
 				49AE84541AA6DE1000C27822 /* bin_data.txt */,
 				49AE844C1AA5942B00C27822 /* locations-v01.json */,
 				CC0A37921B26836B00CFBB0C /* binData.json */,
-				49D60D361AC1278B00AD1881 /* electronics@2x.png */,
+				49D60D361AC1278B00AD1881 /* electric@2x.png */,
+				CC6A3CF11B32679C006BD4B6 /* electronics@2x.png */,
 				49D60D371AC1278B00AD1881 /* glass@2x.png */,
 				49D60D381AC1278B00AD1881 /* hazard@2x.png */,
 				49D60D391AC1278B00AD1881 /* metal@2x.png */,
@@ -339,9 +342,9 @@
 				49D60D3C1AC1278B00AD1881 /* plastic@2x.png */,
 				CC0B3B7F1B313E4B0060F515 /* aluminumCan@2x.png */,
 				CC0B3B801B313E4B0060F515 /* bubbleWrap@2x.png */,
+				CC6A3CF31B32691D006BD4B6 /* newspaper@2x.png */,
 				CC0B3B811B313E4B0060F515 /* clothes@2x.png */,
 				CC0B3B821B313E4B0060F515 /* glassBottle@2x.png */,
-				CC0B3B831B313E4B0060F515 /* Newspaper@2x.png */,
 				CC0B3B841B313E4B0060F515 /* plasticBag@2x.png */,
 				CC0B3B8B1B313E540060F515 /* plasticBottle@2x.png */,
 				490875FD1A9C5C8400BA5338 /* button-hover.png */,
@@ -541,6 +544,7 @@
 				CC8CF3DF1B18184300B713C7 /* Lato-HairlineItalic.ttf in Resources */,
 				CC8CF3E01B18184300B713C7 /* Lato-Heavy.ttf in Resources */,
 				CC0B3B8C1B313E540060F515 /* plasticBottle@2x.png in Resources */,
+				CC6A3CF41B32691D006BD4B6 /* newspaper@2x.png in Resources */,
 				CC8CF3E11B18184300B713C7 /* Lato-HeavyItalic.ttf in Resources */,
 				CC0B3B871B313E4B0060F515 /* clothes@2x.png in Resources */,
 				CC8CF3E21B18184300B713C7 /* Lato-Italic.ttf in Resources */,
@@ -552,6 +556,7 @@
 				CC8CF3E81B18184300B713C7 /* Lato-Semibold.ttf in Resources */,
 				CC8CF3E91B18184300B713C7 /* Lato-SemiboldItalic.ttf in Resources */,
 				CC8CF3EA1B18184300B713C7 /* Lato-Thin.ttf in Resources */,
+				CC6A3CF21B32679C006BD4B6 /* electronics@2x.png in Resources */,
 				CC8CF3EB1B18184300B713C7 /* Lato-ThinItalic.ttf in Resources */,
 				4908760F1A9C5C8400BA5338 /* button.png in Resources */,
 				49D60D401AC1278B00AD1881 /* metal@2x.png in Resources */,
@@ -569,7 +574,6 @@
 				49D60D411AC1278B00AD1881 /* other@2x.png in Resources */,
 				49D60D3F1AC1278B00AD1881 /* hazard@2x.png in Resources */,
 				49D60D421AC1278B00AD1881 /* paper@2x.png in Resources */,
-				CC0B3B891B313E4B0060F515 /* Newspaper@2x.png in Resources */,
 				490876181A9C5C8400BA5338 /* tutorial3.png in Resources */,
 				4908759F1A9709EC00BA5338 /* Main.storyboard in Resources */,
 				490876121A9C5C8400BA5338 /* tutorial1.png in Resources */,
@@ -577,7 +581,7 @@
 				CC0B3B861B313E4B0060F515 /* bubbleWrap@2x.png in Resources */,
 				490875DD1A97118500BA5338 /* TutorialViewController.xib in Resources */,
 				CC0B3B8A1B313E4B0060F515 /* plasticBag@2x.png in Resources */,
-				49D60D3D1AC1278B00AD1881 /* electronics@2x.png in Resources */,
+				49D60D3D1AC1278B00AD1881 /* electric@2x.png in Resources */,
 				4908760D1A9C5C8400BA5338 /* button-hover@2x.png in Resources */,
 				49D60D431AC1278B00AD1881 /* plastic@2x.png in Resources */,
 				49D60D3E1AC1278B00AD1881 /* glass@2x.png in Resources */,
@@ -740,13 +744,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Intellibins LLC (LE9YB428QE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Intellibins LLC (LE9YB428QE)";
 				INFOPLIST_FILE = Intellibins/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8dfe1f2a-68a9-49d4-b17f-e54ba2a183ae";
 			};
 			name = Debug;
 		};
@@ -755,13 +759,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Intellibins LLC (LE9YB428QE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Intellibins LLC (LE9YB428QE)";
 				INFOPLIST_FILE = Intellibins/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8dfe1f2a-68a9-49d4-b17f-e54ba2a183ae";
 			};
 			name = Release;
 		};

@@ -61,12 +61,12 @@
         glassBottle.is_toggled = YES;
         
         TempItem *clothes = [[TempItem alloc] init];
-        clothes.item_name = @"clothes";
+        clothes.item_name = @"Clothes";
         clothes.item_type = @"clothes";
         clothes.is_toggled = YES;
         
         TempItem *aluminumCan = [[TempItem alloc] init];
-        aluminumCan.item_name = @"aluminum Can";
+        aluminumCan.item_name = @"Aluminum Can";
         aluminumCan.item_type = @"aluminumCan";
         aluminumCan.is_toggled = YES;
         

@@ -55,4 +55,77 @@
     return [UIColor colorWithRed:(153/255.0) green:(204/255.0) blue:(0/255.0) alpha:1.0];
 }
 
++ (UIColor *)kIntellibinsPink
+{
+    return [UIColor colorWithRed:(255/255.0) green:(58/255.0) blue:(127/255.0) alpha:1.0];
+}
+
++ (UIColor *)kIntellibinsLime
+{
+    return [UIColor colorWithRed:(204/255.0) green:(221/255.0) blue:(30/255.0) alpha:1.0];
+}
+
++ (UIColor *)kIntellibinsCyan
+{
+    return [UIColor colorWithRed:(0/255.0) green:(183/255.0) blue:(209/255.0) alpha:1.0];
+}
+
++ (UIColor *)kIntellibinsIndigo
+{
+    return [UIColor colorWithRed:(61/255.0) green:(77/255.0) blue:(138/255.0) alpha:1.0];
+}
+
++ (UIColor *)kIntellibinsDeepYellow
+{
+    return [UIColor colorWithRed:(253/255.0) green:(234/255.0) blue:(21/255.0) alpha:1.0];
+}
+
++ (UIColor *)kIntellibinsTeal
+{
+    return [UIColor colorWithRed:(0/255.0) green:(150/255.0) blue:(135/255.0) alpha:1.0];
+}
+
++ (UIColor *)kIntellibinsDarkGreen
+{
+    return [UIColor colorWithRed:(70/255.0) green:(175/255.0) blue:(174/255.0) alpha:1.0];
+}
+
++ (UIColor *)kIntellibinsDeepOrange
+{
+    return [UIColor colorWithRed:(255/255.0) green:(85/255.0) blue:(5/255.0) alpha:1.0];
+}
+
++ (UIColor *)kIntellibinsLightBlue
+{
+    return [UIColor colorWithRed:(0/255.0) green:(166/255.0) blue:(246/255.0) alpha:1.0];
+}
+
++ (UIColor *)kIntellibinsLightGray
+{
+    return [UIColor colorWithRed:(94/255.0) green:(124/255.0) blue:(139/255.0) alpha:1.0];
+}
+
++ (UIColor *)kIntellibinsVeryLightGreen
+{
+    return [UIColor colorWithRed:(204/255.0) green:(221/255.0) blue:(30/255.0) alpha:1.0];
+}
+
++ (UIColor *)kIntellibinsBrown
+{
+    return [UIColor colorWithRed:(121/255.0) green:(84/255.0) blue:(70/255.0) alpha:1.0];
+}
+
++ (UIColor *)kIntellibinsAmber
+{
+    return [UIColor colorWithRed:(255/255.0) green:(192/255.0) blue:(0/255.0) alpha:1.0];
+}
+
++ (UIColor *)kIntellibinsDefaultColor
+{
+    return [UIColor colorWithRed:(0/255.0) green:(173/255.0) blue:(159/255.0) alpha:1.0];
+}
+
+
+
+
 @end

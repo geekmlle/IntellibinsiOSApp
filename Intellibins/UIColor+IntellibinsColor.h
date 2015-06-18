@@ -19,6 +19,19 @@
 + (UIColor *)kIntellibinsLightRed;
 + (UIColor *)kIntellibinsPurple;
 + (UIColor *)kIntellibinsLightGreen;
-
++ (UIColor *)kIntellibinsPink;
++ (UIColor *)kIntellibinsLime;
++ (UIColor *)kIntellibinsCyan;
++ (UIColor *)kIntellibinsIndigo;
++ (UIColor *)kIntellibinsDeepYellow;
++ (UIColor *)kIntellibinsTeal;
++ (UIColor *)kIntellibinsDarkGreen;
++ (UIColor *)kIntellibinsDeepOrange;
++ (UIColor *)kIntellibinsLightBlue;
++ (UIColor *)kIntellibinsLightGray;
++ (UIColor *)kIntellibinsVeryLightGreen;
++ (UIColor *)kIntellibinsBrown;
++ (UIColor *)kIntellibinsAmber;
++ (UIColor *)kIntellibinsDefaultColor;
 
 @end

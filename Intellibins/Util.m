@@ -81,6 +81,70 @@
         electronics.is_toggled = YES;
         
         
+        TempItem *aluminumBottle = [[TempItem alloc] init];
+        aluminumBottle.item_name = @"Aluminum Bottle";
+        aluminumBottle.item_type = @"Aluminum Bottle";
+        aluminumBottle.is_toggled = YES;
+        
+        TempItem *aluminumWrap = [[TempItem alloc] init];
+        aluminumWrap.item_name = @"Aluminum Wrap";
+        aluminumWrap.item_type = @"Aluminum Wrap";
+        aluminumWrap.is_toggled = YES;
+        
+        TempItem *glassContainer = [[TempItem alloc] init];
+        glassContainer.item_name = @"Glass Container";
+        glassContainer.item_type = @"Glass Container";
+        glassContainer.is_toggled = YES;
+        
+        TempItem *paperCardboard = [[TempItem alloc] init];
+        paperCardboard.item_name = @"Paper Cardboard";
+        paperCardboard.item_type = @"Paper Cardboard";
+        paperCardboard.is_toggled = YES;
+        
+        TempItem *paperContainer = [[TempItem alloc] init];
+        paperContainer.item_name = @"Paper Container";
+        paperContainer.item_type = @"Paper Container";
+        paperContainer.is_toggled = YES;
+        
+        TempItem *paperLid = [[TempItem alloc] init];
+        paperLid.item_name = @"Paper Lid";
+        paperLid.item_type = @"Paper Lid";
+        paperLid.is_toggled = YES;
+        
+        TempItem *paperMagazine = [[TempItem alloc] init];
+        paperMagazine.item_name = @"Paper Magazine";
+        paperMagazine.item_type = @"Paper Magazine";
+        paperMagazine.is_toggled = YES;
+        
+        TempItem *paperSheet = [[TempItem alloc] init];
+        paperSheet.item_name = @"Paper Sheet";
+        paperSheet.item_type = @"Paper Sheet";
+        paperSheet.is_toggled = YES;
+        
+        TempItem *plasticContainer = [[TempItem alloc] init];
+        plasticContainer.item_name = @"Plastic Container";
+        plasticContainer.item_type = @"Plastic Container";
+        plasticContainer.is_toggled = YES;
+        
+        TempItem *plasticCup = [[TempItem alloc] init];
+        plasticCup.item_name = @"Plastic Cup";
+        plasticCup.item_type = @"Plastic Cup";
+        plasticCup.is_toggled = YES;
+        
+        TempItem *plasticLid = [[TempItem alloc] init];
+        plasticLid.item_name = @"Plastic Lid";
+        plasticLid.item_type = @"Plastic Lid";
+        plasticLid.is_toggled = YES;
+        
+        TempItem *plasticUtensils = [[TempItem alloc] init];
+        plasticUtensils.item_name = @"Plastic Utensils";
+        plasticUtensils.item_type = @"Plastic Utensils";
+        plasticUtensils.is_toggled = YES;
+        
+        TempItem *plasticWrap = [[TempItem alloc] init];
+        plasticWrap.item_name = @"Plastic Wrap";
+        plasticWrap.item_type = @"Plastic Wrap";
+        plasticWrap.is_toggled = YES;
         
         /*
         TempItem *paper = [[TempItem alloc] init];
@@ -115,7 +179,7 @@
          
          */
         
-        [Util sharedInstance].categories = [[NSArray alloc] initWithObjects:plasticBottle, plasticBag, newspaper, glassBottle, clothes, aluminumCan, bubbleWrap, electronics, nil];
+        [Util sharedInstance].categories = [[NSArray alloc] initWithObjects:plasticBottle, plasticBag, newspaper, glassBottle, clothes, aluminumCan, bubbleWrap, electronics, aluminumBottle, aluminumWrap, glassContainer, paperCardboard, paperContainer, paperLid, paperMagazine, paperSheet, plasticContainer, plasticCup, plasticLid, plasticUtensils, plasticWrap,  nil];
         [Util saveCategories];
     }
 }
@@ -205,8 +269,61 @@
     range = [category rangeOfString:@"Electronics" options:NSCaseInsensitiveSearch];
     if(range.location != NSNotFound)
     return [UIImage imageNamed:@"electronics"];
+
+    range = [category rangeOfString:@"Aluminum Bottle" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIImage imageNamed:@"aluminumBottle"];
     
-    return [UIImage imageNamed:@"Other"];
+    range = [category rangeOfString:@"Aluminum Wrap" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIImage imageNamed:@"aluminumWrap"];
+    
+    range = [category rangeOfString:@"Glass Container" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIImage imageNamed:@"glassContainer"];
+    
+    range = [category rangeOfString:@"Paper Cardboard" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIImage imageNamed:@"paperCardboard"];
+    
+    range = [category rangeOfString:@"Paper Container" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIImage imageNamed:@"paperContainer"];
+    
+    range = [category rangeOfString:@"Paper Lid" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIImage imageNamed:@"paperLid"];
+    
+    range = [category rangeOfString:@"Paper Magazine" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIImage imageNamed:@"paperMagazine"];
+    
+    range = [category rangeOfString:@"Paper Sheet" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIImage imageNamed:@"paperSheet"];
+    
+    range = [category rangeOfString:@"Plastic Container" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIImage imageNamed:@"plasticContainer"];
+    
+    range = [category rangeOfString:@"Plastic Cup" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIImage imageNamed:@"plasticCup"];
+    
+    range = [category rangeOfString:@"Plastic Lid" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIImage imageNamed:@"plasticLid"];
+    
+    range = [category rangeOfString:@"Plastic Utensils" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIImage imageNamed:@"plasticUtensils"];
+    
+    range = [category rangeOfString:@"Plastic Wrap" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIImage imageNamed:@"plasticWrap"];
+    
+    //TODO: need new asset for Other types
+    return [UIImage imageNamed:@"plasticWrap"];
     
 }
 
@@ -216,7 +333,7 @@
     if(range.location != NSNotFound)
         return [UIColor kIntellibinsRed];
     
-    range = [category rangeOfString:@"Electronic" options:NSCaseInsensitiveSearch];
+    range = [category rangeOfString:@"Electronics" options:NSCaseInsensitiveSearch];
     if(range.location != NSNotFound)
         return [UIColor kIntellibinsGray];
     
@@ -232,7 +349,7 @@
     if(range.location != NSNotFound)
         return [UIColor kIntellibinsLightRed];
     
-    range = [category rangeOfString:@"Paper" options:NSCaseInsensitiveSearch];
+    range = [category rangeOfString:@"Newspaper" options:NSCaseInsensitiveSearch];
     if(range.location != NSNotFound)
         return [UIColor kIntellibinsOrange];
     
@@ -244,7 +361,59 @@
     if(range.location != NSNotFound)
         return [UIColor kIntellibinsLightGreen];
     
-    return [UIColor whiteColor];
+    range = [category rangeOfString:@"Aluminum Bottle" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIColor kIntellibinsPink];
+    
+    range = [category rangeOfString:@"Aluminum Wrap" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIColor kIntellibinsLime];
+    
+    range = [category rangeOfString:@"Glass Container" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIColor kIntellibinsCyan];
+    
+    range = [category rangeOfString:@"Paper Cardboard" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIColor kIntellibinsIndigo];
+    
+    range = [category rangeOfString:@"Paper Container" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIColor kIntellibinsDeepYellow];
+    
+    range = [category rangeOfString:@"Paper Lid" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIColor kIntellibinsTeal];
+    
+    range = [category rangeOfString:@"Paper Magazine" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIColor kIntellibinsDarkGreen];
+    
+    range = [category rangeOfString:@"Paper Sheet" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIColor kIntellibinsDeepOrange];
+    
+    range = [category rangeOfString:@"Plastic Container" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIColor kIntellibinsLightBlue];
+    
+    range = [category rangeOfString:@"Plastic Cup" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIColor kIntellibinsLightGray];
+    
+    range = [category rangeOfString:@"Plastic Lid" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIColor kIntellibinsVeryLightGreen];
+    
+    range = [category rangeOfString:@"Plastic Utensils" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIColor kIntellibinsBrown];
+    
+    range = [category rangeOfString:@"Plastic Wrap" options:NSCaseInsensitiveSearch];
+    if(range.location != NSNotFound)
+        return [UIColor kIntellibinsAmber];
+    
+    return [UIColor kIntellibinsDefaultColor];
 }
 
 

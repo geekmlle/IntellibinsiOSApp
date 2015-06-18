@@ -58,7 +58,6 @@
 		49D60D3E1AC1278B00AD1881 /* glass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D371AC1278B00AD1881 /* glass@2x.png */; };
 		49D60D3F1AC1278B00AD1881 /* hazard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D381AC1278B00AD1881 /* hazard@2x.png */; };
 		49D60D401AC1278B00AD1881 /* metal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D391AC1278B00AD1881 /* metal@2x.png */; };
-		49D60D411AC1278B00AD1881 /* other@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D3A1AC1278B00AD1881 /* other@2x.png */; };
 		49D60D421AC1278B00AD1881 /* paper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D3B1AC1278B00AD1881 /* paper@2x.png */; };
 		49D60D431AC1278B00AD1881 /* plastic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D3C1AC1278B00AD1881 /* plastic@2x.png */; };
 		49D60D451AC13FBC00AD1881 /* avatar_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D60D441AC13FBC00AD1881 /* avatar_mask@2x.png */; };
@@ -70,6 +69,19 @@
 		CC0B3B881B313E4B0060F515 /* glassBottle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC0B3B821B313E4B0060F515 /* glassBottle@2x.png */; };
 		CC0B3B8A1B313E4B0060F515 /* plasticBag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC0B3B841B313E4B0060F515 /* plasticBag@2x.png */; };
 		CC0B3B8C1B313E540060F515 /* plasticBottle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC0B3B8B1B313E540060F515 /* plasticBottle@2x.png */; };
+		CC1D7DA01B329726004FC2EB /* aluminumBottle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1D7D931B329726004FC2EB /* aluminumBottle@2x.png */; };
+		CC1D7DA11B329726004FC2EB /* aluminumWrap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1D7D941B329726004FC2EB /* aluminumWrap@2x.png */; };
+		CC1D7DA21B329726004FC2EB /* glassContainer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1D7D951B329726004FC2EB /* glassContainer@2x.png */; };
+		CC1D7DA31B329726004FC2EB /* paperCardboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1D7D961B329726004FC2EB /* paperCardboard@2x.png */; };
+		CC1D7DA41B329726004FC2EB /* paperContainer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1D7D971B329726004FC2EB /* paperContainer@2x.png */; };
+		CC1D7DA51B329726004FC2EB /* paperLid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1D7D981B329726004FC2EB /* paperLid@2x.png */; };
+		CC1D7DA61B329726004FC2EB /* paperMagazine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1D7D991B329726004FC2EB /* paperMagazine@2x.png */; };
+		CC1D7DA71B329726004FC2EB /* paperSheet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1D7D9A1B329726004FC2EB /* paperSheet@2x.png */; };
+		CC1D7DA81B329726004FC2EB /* plasticContainer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1D7D9B1B329726004FC2EB /* plasticContainer@2x.png */; };
+		CC1D7DA91B329726004FC2EB /* plasticCup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1D7D9C1B329726004FC2EB /* plasticCup@2x.png */; };
+		CC1D7DAA1B329726004FC2EB /* plasticLid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1D7D9D1B329726004FC2EB /* plasticLid@2x.png */; };
+		CC1D7DAB1B329726004FC2EB /* plasticUtensils@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1D7D9E1B329726004FC2EB /* plasticUtensils@2x.png */; };
+		CC1D7DAC1B329726004FC2EB /* plasticWrap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1D7D9F1B329726004FC2EB /* plasticWrap@2x.png */; };
 		CC6A3CF21B32679C006BD4B6 /* electronics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6A3CF11B32679C006BD4B6 /* electronics@2x.png */; };
 		CC6A3CF41B32691D006BD4B6 /* newspaper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6A3CF31B32691D006BD4B6 /* newspaper@2x.png */; };
 		CC8CF3D61B18184300B713C7 /* Arvo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC8CF3C01B18182500B713C7 /* Arvo-Bold.ttf */; };
@@ -176,7 +188,6 @@
 		49D60D371AC1278B00AD1881 /* glass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glass@2x.png"; sourceTree = "<group>"; };
 		49D60D381AC1278B00AD1881 /* hazard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hazard@2x.png"; sourceTree = "<group>"; };
 		49D60D391AC1278B00AD1881 /* metal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "metal@2x.png"; sourceTree = "<group>"; };
-		49D60D3A1AC1278B00AD1881 /* other@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "other@2x.png"; sourceTree = "<group>"; };
 		49D60D3B1AC1278B00AD1881 /* paper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paper@2x.png"; sourceTree = "<group>"; };
 		49D60D3C1AC1278B00AD1881 /* plastic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plastic@2x.png"; sourceTree = "<group>"; };
 		49D60D441AC13FBC00AD1881 /* avatar_mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_mask@2x.png"; sourceTree = "<group>"; };
@@ -189,6 +200,19 @@
 		CC0B3B821B313E4B0060F515 /* glassBottle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glassBottle@2x.png"; sourceTree = "<group>"; };
 		CC0B3B841B313E4B0060F515 /* plasticBag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plasticBag@2x.png"; sourceTree = "<group>"; };
 		CC0B3B8B1B313E540060F515 /* plasticBottle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plasticBottle@2x.png"; sourceTree = "<group>"; };
+		CC1D7D931B329726004FC2EB /* aluminumBottle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aluminumBottle@2x.png"; sourceTree = "<group>"; };
+		CC1D7D941B329726004FC2EB /* aluminumWrap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aluminumWrap@2x.png"; sourceTree = "<group>"; };
+		CC1D7D951B329726004FC2EB /* glassContainer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glassContainer@2x.png"; sourceTree = "<group>"; };
+		CC1D7D961B329726004FC2EB /* paperCardboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paperCardboard@2x.png"; sourceTree = "<group>"; };
+		CC1D7D971B329726004FC2EB /* paperContainer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paperContainer@2x.png"; sourceTree = "<group>"; };
+		CC1D7D981B329726004FC2EB /* paperLid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paperLid@2x.png"; sourceTree = "<group>"; };
+		CC1D7D991B329726004FC2EB /* paperMagazine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paperMagazine@2x.png"; sourceTree = "<group>"; };
+		CC1D7D9A1B329726004FC2EB /* paperSheet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paperSheet@2x.png"; sourceTree = "<group>"; };
+		CC1D7D9B1B329726004FC2EB /* plasticContainer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plasticContainer@2x.png"; sourceTree = "<group>"; };
+		CC1D7D9C1B329726004FC2EB /* plasticCup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plasticCup@2x.png"; sourceTree = "<group>"; };
+		CC1D7D9D1B329726004FC2EB /* plasticLid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plasticLid@2x.png"; sourceTree = "<group>"; };
+		CC1D7D9E1B329726004FC2EB /* plasticUtensils@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plasticUtensils@2x.png"; sourceTree = "<group>"; };
+		CC1D7D9F1B329726004FC2EB /* plasticWrap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plasticWrap@2x.png"; sourceTree = "<group>"; };
 		CC6A3CF11B32679C006BD4B6 /* electronics@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electronics@2x.png"; sourceTree = "<group>"; };
 		CC6A3CF31B32691D006BD4B6 /* newspaper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newspaper@2x.png"; sourceTree = "<group>"; };
 		CC8CF3C01B18182500B713C7 /* Arvo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Arvo-Bold.ttf"; path = "Font/Arvo-Bold.ttf"; sourceTree = "<group>"; };
@@ -332,12 +356,24 @@
 				49AE84541AA6DE1000C27822 /* bin_data.txt */,
 				49AE844C1AA5942B00C27822 /* locations-v01.json */,
 				CC0A37921B26836B00CFBB0C /* binData.json */,
+				CC1D7D931B329726004FC2EB /* aluminumBottle@2x.png */,
+				CC1D7D941B329726004FC2EB /* aluminumWrap@2x.png */,
+				CC1D7D951B329726004FC2EB /* glassContainer@2x.png */,
+				CC1D7D961B329726004FC2EB /* paperCardboard@2x.png */,
+				CC1D7D971B329726004FC2EB /* paperContainer@2x.png */,
+				CC1D7D981B329726004FC2EB /* paperLid@2x.png */,
+				CC1D7D991B329726004FC2EB /* paperMagazine@2x.png */,
+				CC1D7D9A1B329726004FC2EB /* paperSheet@2x.png */,
+				CC1D7D9B1B329726004FC2EB /* plasticContainer@2x.png */,
+				CC1D7D9C1B329726004FC2EB /* plasticCup@2x.png */,
+				CC1D7D9D1B329726004FC2EB /* plasticLid@2x.png */,
+				CC1D7D9E1B329726004FC2EB /* plasticUtensils@2x.png */,
+				CC1D7D9F1B329726004FC2EB /* plasticWrap@2x.png */,
 				49D60D361AC1278B00AD1881 /* electric@2x.png */,
 				CC6A3CF11B32679C006BD4B6 /* electronics@2x.png */,
 				49D60D371AC1278B00AD1881 /* glass@2x.png */,
 				49D60D381AC1278B00AD1881 /* hazard@2x.png */,
 				49D60D391AC1278B00AD1881 /* metal@2x.png */,
-				49D60D3A1AC1278B00AD1881 /* other@2x.png */,
 				49D60D3B1AC1278B00AD1881 /* paper@2x.png */,
 				49D60D3C1AC1278B00AD1881 /* plastic@2x.png */,
 				CC0B3B7F1B313E4B0060F515 /* aluminumCan@2x.png */,
@@ -536,6 +572,7 @@
 				CC8CF3D81B18184300B713C7 /* Arvo-Italic.ttf in Resources */,
 				CC8CF3D91B18184300B713C7 /* Arvo-Regular.ttf in Resources */,
 				CC8CF3DA1B18184300B713C7 /* Lato-Black.ttf in Resources */,
+				CC1D7DA61B329726004FC2EB /* paperMagazine@2x.png in Resources */,
 				CC8CF3DB1B18184300B713C7 /* Lato-BlackItalic.ttf in Resources */,
 				CC8CF3DC1B18184300B713C7 /* Lato-Bold.ttf in Resources */,
 				CC8CF3DD1B18184300B713C7 /* Lato-BoldItalic.ttf in Resources */,
@@ -550,17 +587,22 @@
 				CC8CF3E21B18184300B713C7 /* Lato-Italic.ttf in Resources */,
 				CC8CF3E31B18184300B713C7 /* Lato-Light.ttf in Resources */,
 				CC8CF3E41B18184300B713C7 /* Lato-LightItalic.ttf in Resources */,
+				CC1D7DA11B329726004FC2EB /* aluminumWrap@2x.png in Resources */,
 				CC8CF3E51B18184300B713C7 /* Lato-Medium.ttf in Resources */,
+				CC1D7DA01B329726004FC2EB /* aluminumBottle@2x.png in Resources */,
 				CC8CF3E61B18184300B713C7 /* Lato-MediumItalic.ttf in Resources */,
 				CC8CF3E71B18184300B713C7 /* Lato-Regular.ttf in Resources */,
+				CC1D7DA71B329726004FC2EB /* paperSheet@2x.png in Resources */,
 				CC8CF3E81B18184300B713C7 /* Lato-Semibold.ttf in Resources */,
 				CC8CF3E91B18184300B713C7 /* Lato-SemiboldItalic.ttf in Resources */,
 				CC8CF3EA1B18184300B713C7 /* Lato-Thin.ttf in Resources */,
+				CC1D7DA21B329726004FC2EB /* glassContainer@2x.png in Resources */,
 				CC6A3CF21B32679C006BD4B6 /* electronics@2x.png in Resources */,
 				CC8CF3EB1B18184300B713C7 /* Lato-ThinItalic.ttf in Resources */,
 				4908760F1A9C5C8400BA5338 /* button.png in Resources */,
 				49D60D401AC1278B00AD1881 /* metal@2x.png in Resources */,
 				490876191A9C5C8400BA5338 /* tutorial3@2x.png in Resources */,
+				CC1D7DA81B329726004FC2EB /* plasticContainer@2x.png in Resources */,
 				490876171A9C5C8400BA5338 /* tutorial2@3x.png in Resources */,
 				490876211A9DAD0300BA5338 /* CategoryTableViewCell.xib in Resources */,
 				490876111A9C5C8400BA5338 /* button@3x.png in Resources */,
@@ -571,7 +613,6 @@
 				490876131A9C5C8400BA5338 /* tutorial1@2x.png in Resources */,
 				49D60D451AC13FBC00AD1881 /* avatar_mask@2x.png in Resources */,
 				4908760C1A9C5C8400BA5338 /* button-hover.png in Resources */,
-				49D60D411AC1278B00AD1881 /* other@2x.png in Resources */,
 				49D60D3F1AC1278B00AD1881 /* hazard@2x.png in Resources */,
 				49D60D421AC1278B00AD1881 /* paper@2x.png in Resources */,
 				490876181A9C5C8400BA5338 /* tutorial3.png in Resources */,
@@ -581,20 +622,27 @@
 				CC0B3B861B313E4B0060F515 /* bubbleWrap@2x.png in Resources */,
 				490875DD1A97118500BA5338 /* TutorialViewController.xib in Resources */,
 				CC0B3B8A1B313E4B0060F515 /* plasticBag@2x.png in Resources */,
+				CC1D7DA91B329726004FC2EB /* plasticCup@2x.png in Resources */,
 				49D60D3D1AC1278B00AD1881 /* electric@2x.png in Resources */,
 				4908760D1A9C5C8400BA5338 /* button-hover@2x.png in Resources */,
 				49D60D431AC1278B00AD1881 /* plastic@2x.png in Resources */,
 				49D60D3E1AC1278B00AD1881 /* glass@2x.png in Resources */,
 				49AE84551AA6DE1000C27822 /* bin_data.txt in Resources */,
 				490875D81A97116600BA5338 /* ListViewController.xib in Resources */,
+				CC1D7DAC1B329726004FC2EB /* plasticWrap@2x.png in Resources */,
 				490876151A9C5C8400BA5338 /* tutorial2.png in Resources */,
 				CC0B3B881B313E4B0060F515 /* glassBottle@2x.png in Resources */,
+				CC1D7DA41B329726004FC2EB /* paperContainer@2x.png in Resources */,
+				CC1D7DAB1B329726004FC2EB /* plasticUtensils@2x.png in Resources */,
 				4908762B1A9EFF0D00BA5338 /* HelpView.xib in Resources */,
 				49AE844D1AA5942B00C27822 /* locations-v01.json in Resources */,
 				490875EC1A9711DC00BA5338 /* MapViewController.xib in Resources */,
 				490875A11A9709EC00BA5338 /* Images.xcassets in Resources */,
 				490876101A9C5C8400BA5338 /* button@2x.png in Resources */,
+				CC1D7DAA1B329726004FC2EB /* plasticLid@2x.png in Resources */,
 				490875E71A9711B300BA5338 /* BinDetailViewController.xib in Resources */,
+				CC1D7DA31B329726004FC2EB /* paperCardboard@2x.png in Resources */,
+				CC1D7DA51B329726004FC2EB /* paperLid@2x.png in Resources */,
 				490876161A9C5C8400BA5338 /* tutorial2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

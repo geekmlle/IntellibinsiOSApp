@@ -14,8 +14,12 @@
 #import "UIColor+IntellibinsColor.h"
 
 #define TUTORIAL_KEY_2 @"switchTutorial"
+#define TOGGLEDALLFILTERS @"toggledAllFilters"
 
 @interface ListViewController ()
+
+@property (nonatomic, strong) UIBarButtonItem *leftButtonItem;
+@property (nonatomic) BOOL toggledAll;
 
 @end
 
@@ -68,6 +72,15 @@
     }else {
         [self setUpStyle];
     }
+    
+    if([defaults boolForKey:TOGGLEDALLFILTERS]){
+        self.leftButtonItem.title = @"Deselect All";
+        self.toggledAll = YES;
+    }else {
+        self.leftButtonItem.title = @"Select All";
+        self.toggledAll = NO;
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -110,6 +123,33 @@
         self.onCompletion([Util sharedInstance].reloadMap);
     }
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)selectAllClicked:(id)sender
+{
+    if (self.toggledAll) {
+        for (TempItem *item in categories) {
+            item.is_toggled = NO;
+        }
+        self.toggledAll = NO;
+        self.leftButtonItem.title = @"Select All";
+
+    }else {
+        for (TempItem *item in categories) {
+            item.is_toggled = YES;
+        }
+        self.toggledAll = YES;
+        self.leftButtonItem.title = @"Deselect All";
+
+    }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[NSNumber numberWithBool:self.toggledAll] forKey:TOGGLEDALLFILTERS];
+    [defaults synchronize];
+    
+    [Util sharedInstance].reloadMap = YES;
+    [_tableView reloadData];
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -214,5 +254,9 @@
     UIBarButtonItem *applyBtn = [[UIBarButtonItem alloc] initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(applyFilterClicked:)];
     [applyBtn setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Lato-Regular" size:17.], NSForegroundColorAttributeName: [UIColor kIntellibinsGreen]} forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = applyBtn;
+    
+    self.leftButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Select All" style:UIBarButtonItemStyleDone target:self action:@selector(selectAllClicked:)];
+    [self.leftButtonItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Lato-Regular" size:17.], NSForegroundColorAttributeName: [UIColor kIntellibinsGreen]} forState:UIControlStateNormal];
+    self.navigationItem.leftBarButtonItem = self.leftButtonItem;
 }
 @end

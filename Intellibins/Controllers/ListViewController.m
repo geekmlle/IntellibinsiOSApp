@@ -12,6 +12,10 @@
 #import "TempItem.h"
 #import "MapViewController.h"
 #import "UIColor+IntellibinsColor.h"
+#import "GAI.h"
+#import "GAIFields.h"
+#import "GAITracker.h"
+#import "GAIDictionaryBuilder.h"
 
 #define TUTORIAL_KEY_2 @"switchTutorial"
 #define TOGGLEDALLFILTERS @"toggledAllFilters"
@@ -27,9 +31,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     // Do any additional setup after loading the view from its nib.
-	self.screenName = @"Main Screen";
-    
+	//self.screenName = @"Main Screen";
+	
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+	[tracker set:kGAIScreenName value:@"Main"];
+	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+
     categories = [Util sharedInstance].categories;
     [_tableView registerClass:[CategoryTableViewCell class] forCellReuseIdentifier:@"CellIdentifier"];
     
@@ -127,6 +136,15 @@
 
 - (void)selectAllClicked:(id)sender
 {
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+ 
+	[tracker set:kGAIScreenName value:@"SelectAllClicked"];
+	[tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
+														  action:@"touch"
+														   label:@"test"
+														   value:nil] build]];
+	[tracker set:kGAIScreenName value:nil];
+	
     if (self.toggledAll) {
         for (TempItem *item in categories) {
             item.is_toggled = NO;
@@ -142,7 +160,7 @@
         self.leftButtonItem.title = @"Deselect All";
 
     }
-    
+	
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:[NSNumber numberWithBool:self.toggledAll] forKey:TOGGLEDALLFILTERS];
     [defaults synchronize];
@@ -241,13 +259,13 @@
     }
     
     [self setUpStyle];
-
+	
 }
 
 - (void)setUpStyle
 {
     self.view.alpha = 0.8;
-    
+	
     // show apply button after user "accept" policy
     self.title = @"Item Types";
     

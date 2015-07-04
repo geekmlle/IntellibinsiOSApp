@@ -60,9 +60,20 @@
         [self performSelector:@selector(showCategoryList) withObject:nil afterDelay:0.5];
     }
 	
-	[[GAI sharedInstance] setDispatchInterval:10.0];
-	[[GAI sharedInstance] trackerWithTrackingId:@"UA-64767789-2"];
-    
+		// 1
+	[GAI sharedInstance].trackUncaughtExceptions = YES;
+ 
+		// 2
+	[[GAI sharedInstance].logger setLogLevel:kGAILogLevelVerbose];
+ 
+		// 3
+	[GAI sharedInstance].dispatchInterval = 20;
+ 
+		// 4
+	id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-64767789-2"];
+	
+	[GAI sharedInstance].defaultTracker = tracker;
+	
     return YES;
 }
 

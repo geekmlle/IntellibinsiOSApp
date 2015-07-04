@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "TempBin.h"
+#import "GAITrackedViewController.h"
 
-@interface BinDetailViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface BinDetailViewController : GAITrackedViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, retain) TempBin *bin;
 

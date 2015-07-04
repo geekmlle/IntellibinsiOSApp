@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "HelpView.h"
+#import "GAITrackedViewController.h"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface MapViewController : GAITrackedViewController <MKMapViewDelegate, CLLocationManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 {
     IBOutlet MKMapView *_mapView;
     IBOutlet UICollectionView *categoryCollectionView;

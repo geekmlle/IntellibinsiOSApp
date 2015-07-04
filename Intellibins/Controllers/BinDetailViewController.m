@@ -18,9 +18,12 @@
 
 @implementation BinDetailViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad { 
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+	
+	self.screenName = @"Bin Detail Screen";
+	
     [self.view setFrame:[UIScreen mainScreen].bounds];
     [self.content setFrame:[UIScreen mainScreen].bounds];
     

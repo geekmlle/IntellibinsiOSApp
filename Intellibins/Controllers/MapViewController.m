@@ -41,7 +41,8 @@ static BOOL mapChangedFromUserInteraction = NO;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+	self.screenName = @"Map Screen";
+	
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = 1000;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;

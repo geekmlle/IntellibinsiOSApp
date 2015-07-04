@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "HelpView.h"
+#import "GAITrackedViewController.h"
 
 #define TUTORIALHELP_KEY @"listTutorial"
 
-@interface ListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ListViewController : GAITrackedViewController <UITableViewDataSource, UITableViewDelegate>
 {
     IBOutlet UITableView *_tableView;
     

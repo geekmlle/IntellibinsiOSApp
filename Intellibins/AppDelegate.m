@@ -12,6 +12,7 @@
 #import "TutorialViewController.h"
 #import "Util.h"
 #import "UIColor+IntellibinsColor.h"
+#import "GAI.h"
 
 #define FORCE_TUTORIAL 0
 #define TUTORIAL_KEY @"kIntellibinTutorial"
@@ -58,6 +59,9 @@
     {
         [self performSelector:@selector(showCategoryList) withObject:nil afterDelay:0.5];
     }
+	
+	[[GAI sharedInstance] setDispatchInterval:10.0];
+	[[GAI sharedInstance] trackerWithTrackingId:@"UA-64767789-2"];
     
     return YES;
 }

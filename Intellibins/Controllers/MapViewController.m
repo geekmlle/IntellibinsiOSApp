@@ -54,7 +54,9 @@ static BOOL mapChangedFromUserInteraction = NO;
     
     
     [self.locationManager startUpdatingLocation];
-    [self addAnnotationsForBinsNearCoordinate:CLLocationCoordinate2DMake(40.765592, -73.979506)];
+    
+    _mapView.delegate = self;
+//    [self addAnnotationsForBinsNearCoordinate:CLLocationCoordinate2DMake(40.765592, -73.979506)];
     
     [categoryCollectionView registerClass:[CategoryCollectionViewCell class] forCellWithReuseIdentifier:@"CategoryCell"];
     
@@ -190,15 +192,51 @@ static BOOL mapChangedFromUserInteraction = NO;
     self.userCoordinate = newLocation.coordinate;
     
     //Random location near Central Park for testing...
-    //self.userCoordinate = CLLocationCoordinate2DMake(40.765592, -73.979506);
+//    self.userCoordinate = CLLocationCoordinate2DMake(40.765592, -73.979506);
+    
+    //40.61381	-73.93805  Brooklyn
+//    self.userCoordinate = CLLocationCoordinate2DMake(40.61381, -73.93805);
+    
+//    40.59877	-74.08229  Staten Island
+//    self.userCoordinate = CLLocationCoordinate2DMake(40.59877, -74.08229);
+    
+//    40.75639	-73.92148  Queens
+//    self.userCoordinate = CLLocationCoordinate2DMake(40.75639, -73.92148);
+    
+//    40.82971	-73.90619  Bronx
+//    self.userCoordinate = CLLocationCoordinate2DMake(40.82971, -73.90619);
+
+
     
     [manager stopUpdatingLocation];
+
+    
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:[[CLLocation alloc] initWithLatitude:self.userCoordinate.latitude longitude:self.userCoordinate.longitude] completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (error) {
+            NSLog(@"Geocode failed with error: %@", error);
+            return;
+        }
+        CLPlacemark *placemark = [placemarks objectAtIndex:0];
+        
+        NSString *area = [[NSString alloc]initWithString:placemark.locality];
+        if ([area isKindOfClass:[NSString class]] && ![area isEqualToString:@"New York"]) {
+            [self showAlertWhenNotInNYC];
+        }
+    }];
+    
     
     //Creating region for mapview
     MKCoordinateRegion region = {{self.userCoordinate.latitude, self.userCoordinate.longitude}, {0.02, 0.02}};
     [_mapView setRegion:region animated:YES];
     
     [self addAnnotationsForBinsNearCoordinate:self.userCoordinate];
+}
+
+- (void)showAlertWhenNotInNYC
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"So sorry, currently Intellibins are only available in NYC." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
 }
 
 - (void) addAnnotationsForBinsNearCoordinate:(CLLocationCoordinate2D)coordinate

@@ -44,7 +44,7 @@
     
     MapAnnotion *pin = [[MapAnnotion alloc] initWithCoordinate:CLLocationCoordinate2DMake(self.bin.latitude, self.bin.longitude) andTitle:self.bin.short_name andSubtitle:self.bin.park_site_name andIndex:0];
     [_mapView addAnnotation:pin];
-    [_mapView setMapType:MKMapTypeSatellite];
+    [_mapView setMapType:MKMapTypeStandard];
     
     MKCoordinateRegion region = {{self.bin.latitude, self.bin.longitude}, {0.005, 0.005}};
     [_mapView setRegion:region animated:NO];

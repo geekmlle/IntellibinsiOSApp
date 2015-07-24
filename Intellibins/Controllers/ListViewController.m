@@ -79,10 +79,7 @@
     }else {
         self.leftButtonItem.title = @"Select All";
         self.toggledAll = NO;
-        
-        for (TempItem *item in categories) {
-            item.is_toggled = NO;
-        }
+
     }
     
     [_tableView reloadData];

@@ -43,108 +43,108 @@
         TempItem *plasticBottle = [[TempItem alloc] init];
         plasticBottle.item_name = @"Plastic Bottle";
         plasticBottle.item_type = @"Plastic Bottle";
-        plasticBottle.is_toggled = YES;
+        plasticBottle.is_toggled = NO;
         
         TempItem *plasticBag = [[TempItem alloc] init];
         plasticBag.item_name = @"Plastic Bag";
         plasticBag.item_type = @"Plastic Bag";
-        plasticBag.is_toggled = YES;
+        plasticBag.is_toggled = NO;
         
         TempItem *newspaper = [[TempItem alloc] init];
         newspaper.item_name = @"Newspaper";
         newspaper.item_type = @"Newspaper";
-        newspaper.is_toggled = YES;
+        newspaper.is_toggled = NO;
         
         TempItem *glassBottle = [[TempItem alloc] init];
         glassBottle.item_name = @"Glass Bottle";
         glassBottle.item_type = @"Glass Bottle";
-        glassBottle.is_toggled = YES;
+        glassBottle.is_toggled = NO;
         
         TempItem *clothes = [[TempItem alloc] init];
         clothes.item_name = @"Clothes";
         clothes.item_type = @"Clothes";
-        clothes.is_toggled = YES;
+        clothes.is_toggled = NO;
         
         TempItem *aluminumCan = [[TempItem alloc] init];
         aluminumCan.item_name = @"Aluminum Can";
         aluminumCan.item_type = @"Aluminum Can";
-        aluminumCan.is_toggled = YES;
+        aluminumCan.is_toggled = NO;
         
         TempItem *bubbleWrap = [[TempItem alloc] init];
         bubbleWrap.item_name = @"Bubble Wrap";
         bubbleWrap.item_type = @"Bubble Wrap";
-        bubbleWrap.is_toggled = YES;
+        bubbleWrap.is_toggled = NO;
         
         TempItem *electronics = [[TempItem alloc] init];
         electronics.item_name = @"Electronics";
         electronics.item_type = @"Electronics";
-        electronics.is_toggled = YES;
+        electronics.is_toggled = NO;
         
         
         TempItem *aluminumBottle = [[TempItem alloc] init];
         aluminumBottle.item_name = @"Aluminum Bottle";
         aluminumBottle.item_type = @"Aluminum Bottle";
-        aluminumBottle.is_toggled = YES;
+        aluminumBottle.is_toggled = NO;
         
         TempItem *aluminumWrap = [[TempItem alloc] init];
         aluminumWrap.item_name = @"Aluminum Wrap";
         aluminumWrap.item_type = @"Aluminum Wrap";
-        aluminumWrap.is_toggled = YES;
+        aluminumWrap.is_toggled = NO;
         
         TempItem *glassContainer = [[TempItem alloc] init];
         glassContainer.item_name = @"Glass Container";
         glassContainer.item_type = @"Glass Container";
-        glassContainer.is_toggled = YES;
+        glassContainer.is_toggled = NO;
         
         TempItem *paperCardboard = [[TempItem alloc] init];
         paperCardboard.item_name = @"Paper Cardboard";
         paperCardboard.item_type = @"Paper Cardboard";
-        paperCardboard.is_toggled = YES;
+        paperCardboard.is_toggled = NO;
         
         TempItem *paperContainer = [[TempItem alloc] init];
         paperContainer.item_name = @"Paper Container";
         paperContainer.item_type = @"Paper Container";
-        paperContainer.is_toggled = YES;
+        paperContainer.is_toggled = NO;
         
         TempItem *paperLid = [[TempItem alloc] init];
         paperLid.item_name = @"Paper Lid";
         paperLid.item_type = @"Paper Lid";
-        paperLid.is_toggled = YES;
+        paperLid.is_toggled = NO;
         
         TempItem *paperMagazine = [[TempItem alloc] init];
         paperMagazine.item_name = @"Paper Magazine";
         paperMagazine.item_type = @"Paper Magazine";
-        paperMagazine.is_toggled = YES;
+        paperMagazine.is_toggled = NO;
         
         TempItem *paperSheet = [[TempItem alloc] init];
         paperSheet.item_name = @"Paper Sheet";
         paperSheet.item_type = @"Paper Sheet";
-        paperSheet.is_toggled = YES;
+        paperSheet.is_toggled = NO;
         
         TempItem *plasticContainer = [[TempItem alloc] init];
         plasticContainer.item_name = @"Plastic Container";
         plasticContainer.item_type = @"Plastic Container";
-        plasticContainer.is_toggled = YES;
+        plasticContainer.is_toggled = NO;
         
         TempItem *plasticCup = [[TempItem alloc] init];
         plasticCup.item_name = @"Plastic Cup";
         plasticCup.item_type = @"Plastic Cup";
-        plasticCup.is_toggled = YES;
+        plasticCup.is_toggled = NO;
         
         TempItem *plasticLid = [[TempItem alloc] init];
         plasticLid.item_name = @"Plastic Lid";
         plasticLid.item_type = @"Plastic Lid";
-        plasticLid.is_toggled = YES;
+        plasticLid.is_toggled = NO;
         
         TempItem *plasticUtensils = [[TempItem alloc] init];
         plasticUtensils.item_name = @"Plastic Utensils";
         plasticUtensils.item_type = @"Plastic Utensils";
-        plasticUtensils.is_toggled = YES;
+        plasticUtensils.is_toggled = NO;
         
         TempItem *plasticWrap = [[TempItem alloc] init];
         plasticWrap.item_name = @"Plastic Wrap";
         plasticWrap.item_type = @"Plastic Wrap";
-        plasticWrap.is_toggled = YES;
+        plasticWrap.is_toggled = NO;
         
         /*
         TempItem *paper = [[TempItem alloc] init];
